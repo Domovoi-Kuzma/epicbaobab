@@ -1,5 +1,10 @@
 <?php
-
+/**
+ * Created by PhpStorm.
+ * User: Sasha
+ * Date: 08.08.2019
+ * Time: 13:44
+ */
 /**
  * Class ModelInsertForm
  *
@@ -8,24 +13,50 @@
  * запрашивается пока только список из опций (список встреч для создания сотр.)/(список сотр. для создания встречи)
  * плюс класс подкидывает некоторые строки типа "список встреч" для отображения в заголовке страницы
  *
+ * отображается на viewInsertForm.php
  */
 class ModelInsertForm extends  CFormModel
 {
-    public $name;           //текстовое поле на форме.
-    public $title;          //заголовок страницы в окне браузера
-    public $formtitle;      //текст в теге <h1> на странице
-    public $buttonAction;   //действие в кнопке Submit
-
-    public $dbtable;        //таблица, из которой берётся список (например сотрудников)
-    public $buddyField;     //название её колонки с именами, из которой берётся список
-    public $prefix;         //текст, добавляемый перед именем например "сотрудник " если в списке "сотрудник Иванов"
-
-    public $options;        //SQL query result
+    /**
+     * @var string $name
+     * текстовое поле на форме.
+     */
+    public $name;
+    /**
+     * @var string $title
+     * заголовок страницы в окне браузера
+     */
+    public $title;
+    /**
+     * @var string $buttonAction
+     * действие в кнопке Submit
+     */
+    public $buttonAction;
+    /**
+     * @var string $dbtable
+     * таблица, из которой берётся список (например встреч для выставления отношений у нового сотрудника)
+     */
+    public $dbtable;
+    /**
+     * @var string $buddyField
+     * название колонки из $dbtable с именами, из которой берётся список
+     */
+    public $buddyField;
+    /**
+     * @var string
+     * текст, добавляемый перед именем например "сотрудник " если в списке "сотрудник Иванов"
+     */
+    public $prefix;
+    /**
+     * @var array $options SQL query result
+     */
+    public $options;
 
     /**
      * ModelInsertForm constructor.
-     * @param $title
-     * @param $what
+     * @param $title  инициализация текста в заголовке формы
+     * @param $what   опция либо 'employees' для работы со страницей сотрудников,
+     *                      либо 'meets' для работы со страницей встреч,
      */
     function __construct($title, $what)
     {
@@ -33,7 +64,6 @@ class ModelInsertForm extends  CFormModel
 
         if ($what == 'employees')
         {
-            $this->formtitle='сотрудника';
             $this->dbtable = 'meets';//editing employee requires list of meetings
             $this->buddyField = 'Meeting';
             $this->prefix = 'совещание ';
@@ -41,18 +71,17 @@ class ModelInsertForm extends  CFormModel
         }
         else//if ($what == 'meets')
         {
-            $this->formtitle='совещания';
-            $this->dbtable = 'people';//editing employee requires list of meetings
+            $this->dbtable = 'people';//editing employee requires list of people (to show in checkbox)
             $this->buddyField = 'Name';
             $this->prefix = 'коллега ';
             $this->buttonAction = 'site/insert_meets';
         }
     }
 
-    public function attributeNames(){
-        return array();
-    }
-
+    /**
+     * QueryNames
+     * выполняет запрос к БД списка пунктов для отображения в списке чекбоксов для выставления отношений у нового сотрудника
+     */
     public function QueryNames(){
         $sql = "SELECT * FROM $this->dbtable";
         $nameslist = Yii::app()->db->createCommand($sql)->queryAll();

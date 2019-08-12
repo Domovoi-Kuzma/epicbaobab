@@ -4,17 +4,26 @@
  * User: Sasha
  * Date: 08.08.2019
  * Time: 13:45
+ */
+
+/**
+ * Class ModelInsert
  * Модель, оперирующая данными от отправленной формы добавления Сотрудника
  * Впрочем, и добавления встречи тоже.
+ * добавляет новые записи в БД
  */
 class ModelInsert extends  CModel
 {
 
-    private $dbtable;               //имя таблицыБД, в которую вставляет модель
-    private $myNameFieldCaption;    //имя поля в этой таблице, соотв. имени.
+    /**
+     * @var string $dbtable             имя таблицыБД, в которую вставляет модель
+     * @var string $myNameFieldCaption  имя столбца в этой таблице, соотв. имени.
+     */
+    private $dbtable;               //
+    private $myNameFieldCaption;    //
     //private $buttonAction;
     /**
-     * @var string
+     * @var string $rel_infix_format $separator_format $rel_sufix_format
      * текстовые суффиксы, вставляемые в запрос, в зависимости от того, что добавляем
      * напр. в команде
      * INSERT INTO relations VALUES (options[0],ID),  (options[1], ID) и.т.д.
@@ -27,13 +36,11 @@ class ModelInsert extends  CModel
      * сепаратор '),(ID,';
      * суффикс ')'
      */
-    private $rel_infix_format;      //
-    private $rel_sufix_format;      //
-    private $separator_format;
+    private $rel_infix_format, $rel_sufix_format, $separator_format;
 
     /**
      * ModelInsert constructor.
-     * @param $what принимает строковое значение employees или meets
+     * @param string $what принимает строковое значение employees или meets
      * в зависимости от выбора меняются ключевые слова в командах БД
      */
     function __construct($what)

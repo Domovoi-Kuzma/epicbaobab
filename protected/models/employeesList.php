@@ -1,5 +1,6 @@
 <?php
 /**
+ * @deprecated No longer used by internal code and not recommended.
  * Created by PhpStorm.
  * User: Sasha
  * Date: 07.08.2019
@@ -13,7 +14,6 @@ class EmployeesList extends CModel
     {
         return 'Список сотрудников';
     }
-
     public function NamesList()
     {
         return $this->names;

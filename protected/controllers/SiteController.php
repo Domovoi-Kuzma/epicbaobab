@@ -1,5 +1,18 @@
 <?php
-
+/**
+ * Created by PhpStorm.
+ */
+/**
+ * Class SiteController
+ *
+ * мои actions это
+ * actionInsertEmployeeForm - переход на страницу с формой добавления встр.
+ * actionInsertMeetingForm	- переход на страницу с формой добавления сотр.
+ * actionInsert_employees 	- отправка формы по добавлению сотр.
+ * actionInsert_meets 		- отправка формы по добавлению встр.
+ * actionEmployees  		- переход на страницу со списком сотр.
+ * actionMeeting			- переход на страницу со списком встр.
+ */
 class SiteController extends Controller
 {
 	/**

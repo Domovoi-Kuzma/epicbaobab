@@ -6,19 +6,33 @@
  * Time: 13:43
  */
 /**
- * @var $model ModelInsertForm
+ * @var $model ModelShortList
+ * @var $what string опция 'employees' или 'meets
  * @var $this viewInsertForm
  */
-$this->pageTitle=Yii::app()->name . ' - '.$model->title;
-$this->breadcrumbs=array(
-    $model->title,
-);
+if ($what=='employees')
+{
+    $this->pageTitle=Yii::app()->name . ' - добавление нового сотрудника';
+    $this->breadcrumbs=array(
+        'добавление сотрудника',
+    );
+    echo '<h1>Форма!!! добавление нового сотрудника</h1>';
+    $action='site/insert_employees';
+}
+else//$what=='meets'
+{
+    $this->pageTitle=Yii::app()->name . ' - добавление новой встречи';
+    $this->breadcrumbs=array(
+        'добавление встречи',
+    );
+    echo '<h1>Форма!!! добавление новой встречи</h1>';
+    $action='site/insert_meets';
 
-echo '<h1>Форма!!! добавление нового - '.$model->title.'</h1>';
+}
 
 $form=$this->beginWidget('CActiveForm', array(
     'id'=>'append-form',
-    'action' =>[$model->buttonAction],
+    'action' =>[$action],
     //'enableClientValidation'=>false,//опции из примера проекта
     //'clientOptions'=>array(
     //    'validateOnSubmit'=>false,

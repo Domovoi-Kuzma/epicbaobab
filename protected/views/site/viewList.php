@@ -6,30 +6,49 @@
  * Time: 13:10
  */
 /**
- * @var $model ModelList
+ * @var $model ModelFullList
+ * @var $what string опция 'employees' или 'meets
  * @var $this viewList  вывод страницы списка сотрудников.встреч
  */
-$this->pageTitle=Yii::app()->name . ' - '.$model->Header() ;
-$this->breadcrumbs=array(
-    $model->Header(),
-);
-echo '<h1>Список - '.$model->Header().'</h1>';
 /**
  * @var $prefix string строка, прибавляемая спереди каждого подпункта списка. например "встреча " для встреч
  */
-$prefix=$model->Prefix();
+
+
+if ($what=='employees') {
+    $this->pageTitle = Yii::app()->name . ' - список сотрудников';
+    $this->breadcrumbs = array(
+        ' список сотрудников',
+    );
+    echo '<h1>Список - [сотрудники]</h1>';
+    $prefix = 'встреча';
+    $formaddress='index.php?r=site/insertEmployeeForm';
+    $editaddress='index.php?r=site/editEmployee';
+}
+else
+{
+    $this->pageTitle = Yii::app()->name . ' - список встреч';
+    $this->breadcrumbs = array(
+        ' список встреч',
+    );
+    echo '<h1>Список - [встречи]</h1>';
+    $prefix = 'коллега';
+    $formaddress='index.php?r=site/insertMeetingForm';
+    $editaddress='index.php?r=site/editMeeting';
+}
 /**
  * @var $field string имя индекса массива подпунктов $RelativesList вытаскиваемого моделью из БД
  */
-$field=$model->BuddyField();
+$field = $model->BuddyField();
 	{
         print ("<ul type='circle'>");
         foreach ($model->NamesList() as $key=>$item)
         {
             $n=$item[$model->MyField()];
-            echo "<li>$n";
+            $id=$item['ID'];
+            echo "<li><a href=".$editaddress."&id=$id>$n</a>";
             echo "<ul type='square'>";
-            foreach($model->RelativesList($key) as $buddy)
+            foreach($model->RelativesList($id) as $buddy)
             {
                 echo "<li>$prefix &lt;$buddy[$field]&gt;</li>";
             }
@@ -37,6 +56,6 @@ $field=$model->BuddyField();
         }
         echo '</ul>';
         echo '<hr>';
-        echo '<a href='.$model->Form().'>Форма добавления</a>';
+        echo '<a href='.$formaddress.'>Форма добавления</a>';
         echo '<hr>';
     }

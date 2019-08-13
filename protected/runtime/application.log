@@ -8092,3 +8092,1334 @@ REQUEST_URI=/index.php?r=site/employees
 in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php (31)
 in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (116)
 in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 15:06:48 [error] [exception.CException] exception 'CException' with message 'Property "ModelInsert.buttonAction" is not defined.' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php(51): CComponent->__set('buttonAction', 'people')
+#1 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(91): ModelInsert->__construct('employees')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionInsert_employees()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('insert_employee...')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/insert_emp...')
+#8 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/insert_employees
+HTTP_REFERER=http://localhost/index.php?r=site/insertEmployeeForm
+---
+2019/08/12 15:07:02 [error] [exception.CException] exception 'CException' with message 'Property "ModelInsert.buttonAction" is not defined.' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php(60): CComponent->__set('buttonAction', 'people')
+#1 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(102): ModelInsert->__construct('meets')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionInsert_meets()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('insert_meets')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/insert_mee...')
+#8 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/insert_meets
+HTTP_REFERER=http://localhost/index.php?r=site/insertMeetingForm
+---
+2019/08/12 15:09:43 [error] [exception.CException] exception 'CException' with message 'Property "ModelInsert.buttonAction" is not defined.' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php(51): CComponent->__set('buttonAction', 'people')
+#1 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(91): ModelInsert->__construct('employees')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionInsert_employees()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('insert_employee...')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/insert_emp...')
+#8 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/insert_employees
+HTTP_REFERER=http://localhost/index.php?r=site/insertEmployeeForm
+---
+2019/08/12 15:10:14 [error] [exception.CException] exception 'CException' with message 'Property "ModelInsert.buttonAction" is not defined.' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php(51): CComponent->__set('buttonAction', 'people')
+#1 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(91): ModelInsert->__construct('employees')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionInsert_employees()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('insert_employee...')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/insert_emp...')
+#8 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/insert_employees
+HTTP_REFERER=http://localhost/index.php?r=site/insertEmployeeForm
+---
+2019/08/12 15:35:34 [error] [exception.CException] exception 'CException' with message 'Property "ModelInsertForm.title" is not defined.' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\models\modelInsertForm.php(48): CComponent->__set('title', ' \xD0\xB4\xD0\xBE\xD0\xB1\xD0\xB0\xD0\xB2\xD0\xBB\xD0\xB5...')
+#1 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(69): ModelInsertForm->__construct(' \xD0\xB4\xD0\xBE\xD0\xB1\xD0\xB0\xD0\xB2\xD0\xBB\xD0\xB5...', 'employees')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionInsertEmployeeForm()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('insertEmployeeF...')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/insertEmpl...')
+#8 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/insertEmployeeForm
+HTTP_REFERER=http://localhost/index.php?r=site/employees
+---
+2019/08/12 15:36:27 [error] [exception.CException] exception 'CException' with message 'Property "ModelInsertForm.title" is not defined.' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\models\modelInsertForm.php(48): CComponent->__set('title', ' \xD0\xB4\xD0\xBE\xD0\xB1\xD0\xB0\xD0\xB2\xD0\xBB\xD0\xB5...')
+#1 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(69): ModelInsertForm->__construct(' \xD0\xB4\xD0\xBE\xD0\xB1\xD0\xB0\xD0\xB2\xD0\xBB\xD0\xB5...', 'employees')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionInsertEmployeeForm()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('insertEmployeeF...')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/insertEmpl...')
+#8 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/insertEmployeeForm
+HTTP_REFERER=http://localhost/index.php?r=site/employees
+---
+2019/08/12 15:36:31 [error] [php] Missing argument 2 for ModelList::__construct(), called in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php on line 114 and defined (C:\Users\Sasha\Documents\gazprom\protected\models\modelList.php:104)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/employees
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelList.php (104)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (114)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 15:37:31 [error] [exception.CException] exception 'CException' with message 'Property "ModelList.buddyPrefix" is not defined.' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\models\modelList.php(82): CComponent->__set('buddyPrefix', '\xD0\xB2\xD1\x81\xD1\x82\xD1\x80\xD0\xB5\xD1\x87\xD0\xB0')
+#1 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(114): ModelList->__construct('employees')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionEmployees()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('employees')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/employees')
+#8 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/employees
+HTTP_REFERER=http://localhost/index.php
+---
+2019/08/12 15:37:49 [error] [exception.CException] exception 'CException' with message 'Property "ModelList.buddyPrefix" is not defined.' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\models\modelList.php(82): CComponent->__set('buddyPrefix', '\xD0\xB2\xD1\x81\xD1\x82\xD1\x80\xD0\xB5\xD1\x87\xD0\xB0')
+#1 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(114): ModelList->__construct('employees')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionEmployees()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('employees')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/employees')
+#8 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/employees
+HTTP_REFERER=http://localhost/index.php
+---
+2019/08/12 15:37:50 [error] [exception.CException] exception 'CException' with message 'ModelList and its behaviors do not have a method or closure named "Header".' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php(12): CComponent->__call('Header', Array)
+#1 C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php(12): ModelList->Header()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\Sasha\\...')
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\Sasha\\...', Array, true)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\Sasha\\...', Array, true)
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): CController->renderPartial('viewList', Array, true)
+#6 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(116): CController->render('viewList', Array)
+#7 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionEmployees()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('employees')
+#12 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/employees')
+#13 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=site/employees
+HTTP_REFERER=http://localhost/index.php
+---
+2019/08/12 15:45:33 [error] [php] Undefined variable: what (C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php:18)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): SiteController->renderFile()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): SiteController->renderPartial()
+#2 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(116): SiteController->render()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionEmployees()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/employees
+in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php (18)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (116)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 15:47:07 [error] [exception.CException] exception 'CException' with message 'Property "ModelInsert.buttonAction" is not defined.' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php(51): CComponent->__set('buttonAction', 'people')
+#1 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(91): ModelInsert->__construct('employees')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionInsert_employees()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('insert_employee...')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/insert_emp...')
+#8 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/insert_employees
+HTTP_REFERER=http://localhost/index.php?r=site/employees
+---
+2019/08/12 15:47:29 [error] [php] Undefined index: ModelInsertForm (C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php:86)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/insert_employees
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php (86)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (92)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 15:47:50 [error] [php] Undefined index: ModelInsertForm (C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php:86)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/insert_employees
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php (86)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (92)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 16:05:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "editEmployee".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('editEmployee')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('editEmployee')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/editEmploy...')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/editEmployee
+HTTP_REFERER=http://localhost/index.php?r=site/employees
+---
+2019/08/12 16:12:46 [error] [php] Undefined variable: idval (C:\Users\Sasha\Documents\gazprom\protected\models\modelList.php:104)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelList.php (104)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 16:12:51 [error] [php] Undefined variable: idval (C:\Users\Sasha\Documents\gazprom\protected\models\modelList.php:104)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/employees
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelList.php (104)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (115)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 16:13:05 [error] [php] Undefined offset: 0 (C:\Users\Sasha\Documents\gazprom\protected\models\modelList.php:42)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): SiteController->renderFile()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): SiteController->renderPartial()
+#3 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(116): SiteController->render()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionEmployees()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/employees
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelList.php (42)
+in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php (51)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (116)
+2019/08/12 16:14:29 [error] [php] Undefined offset: 0 (C:\Users\Sasha\Documents\gazprom\protected\models\modelList.php:42)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): SiteController->renderFile()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): SiteController->renderPartial()
+#3 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(116): SiteController->render()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionEmployees()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/employees
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelList.php (42)
+in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php (51)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (116)
+2019/08/12 16:14:32 [error] [php] Undefined offset: 1 (C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php:53)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): SiteController->renderFile()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): SiteController->renderPartial()
+#2 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(116): SiteController->render()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionEmployees()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/employees
+in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php (53)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (116)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 16:21:48 [error] [exception.CException] exception 'CException' with message 'ModelInsert and its behaviors do not have a method or closure named "QueryNames".' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(130): CComponent->__call('QueryNames', Array)
+#1 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(130): ModelInsert->QueryNames()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionEditEmployee()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('editEmployee')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/editEmploy...')
+#8 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+HTTP_REFERER=http://localhost/index.php?r=site/employees
+---
+2019/08/12 16:36:20 [error] [php] Missing argument 2 for ModelShortList::__construct(), called in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php on line 69 and defined (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:46)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/insertEmployeeForm
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (46)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (69)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 16:54:02 [error] [php] Undefined index: Meeting (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:93)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=222
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (93)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 16:54:02 [error] [php] Undefined index: Meeting (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:93)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=222
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (93)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 16:55:30 [error] [php] Undefined index: Meeting (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:93)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=222
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (93)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 16:55:50 [error] [php] Array to string conversion (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:94)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (94)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 16:56:24 [error] [php] Array to string conversion (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:94)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (94)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 16:56:25 [error] [php] Undefined index: Name (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:93)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (93)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 16:56:26 [error] [php] Undefined index: Name (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:93)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (93)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 16:56:38 [error] [php] Undefined index: Name (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:93)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (93)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 16:56:39 [error] [php] Undefined index: Meeting (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:93)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (93)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 16:56:40 [error] [php] Undefined index: Meeting (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:93)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (93)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 16:56:40 [error] [php] Undefined index: Meeting (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:93)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (93)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 16:56:40 [error] [php] Undefined index: Meeting (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:93)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (93)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 16:57:10 [error] [php] Undefined index: Meeting (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:93)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (93)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 17:08:54 [error] [php] Undefined variable: action (C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php:37)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): SiteController->renderFile()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): SiteController->renderPartial()
+#2 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(131): SiteController->render()
+#3 unknown(0): SiteController->actionEditEmployee()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php (37)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (131)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 17:09:14 [error] [php] Undefined variable: action (C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php:37)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): SiteController->renderFile()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): SiteController->renderPartial()
+#2 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(131): SiteController->render()
+#3 unknown(0): SiteController->actionEditEmployee()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php (37)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (131)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 17:10:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "editMeeting".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('editMeeting')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('editMeeting')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/editMeetin...')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/editMeeting&id=1
+HTTP_REFERER=http://localhost/index.php?r=site/meeting
+---
+2019/08/12 17:10:28 [error] [php] Undefined offset: 0 (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:93)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/insertEmployeeForm
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (93)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (70)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 17:44:34 [error] [php] Undefined index: ModelInsertForm (C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php:45)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/saveEmployee
+in C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php (45)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (148)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 17:45:24 [error] [php] Undefined index: append-form (C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php:45)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/saveEmployee
+in C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php (45)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (148)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 17:48:30 [error] [php] Array to string conversion (C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php:46)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/saveEmployee
+in C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php (46)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (148)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 18:02:25 [error] [exception.CException] exception 'CException' with message 'Property "ModelSave.myNameFieldCaption" is not defined.' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php(32): CComponent->__set('myNameFieldCapt...', 'Name')
+#1 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(147): ModelSave->__construct('employees')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionSaveEmployee()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('saveEmployee')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/saveEmploy...')
+#8 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/saveEmployee
+HTTP_REFERER=http://localhost/index.php?r=site/editEmployee&id=2
+---
+2019/08/12 18:02:52 [error] [exception.CException] exception 'CException' with message 'Property "ModelSave.myNameFieldCaption" is not defined.' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php(32): CComponent->__set('myNameFieldCapt...', 'Name')
+#1 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(147): ModelSave->__construct('employees')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionSaveEmployee()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('saveEmployee')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/saveEmploy...')
+#8 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/saveEmployee
+HTTP_REFERER=http://localhost/index.php?r=site/editEmployee&id=2
+---
+2019/08/12 18:02:53 [error] [php] Undefined index: ModelInsertForm (C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php:72)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/saveEmployee
+in C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php (72)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (148)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 18:02:54 [error] [php] Undefined index: ModelInsertForm (C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php:72)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/saveEmployee
+in C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php (72)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (148)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 18:02:55 [error] [php] Undefined index: ModelInsertForm (C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php:72)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/saveEmployee
+in C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php (72)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (148)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 18:03:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "editMeeting".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('editMeeting')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('editMeeting')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/editMeetin...')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=site/editMeeting&id=1
+HTTP_REFERER=http://localhost/index.php?r=site/meeting
+---
+2019/08/12 18:15:26 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Иванова' in 'field list'. The SQL statement executed was: UPDATE people SET name=Иванова WHERE ID=1.
+in C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php (76)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (139)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 18:15:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Иванова' in 'field list'. The SQL statement executed was: UPDATE people SET name=Иванова WHERE ID=1' in C:\Users\Sasha\Documents\yii1\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php(76): CDbCommand->execute()
+#1 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(139): ModelSave->ExecuteSaving()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionSaveEmployee()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('saveEmployee')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/saveEmploy...')
+#8 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/saveEmployee
+HTTP_REFERER=http://localhost/index.php?r=site/editEmployee&id=1
+---
+2019/08/12 18:26:48 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'field list'. The SQL statement executed was: UPDATE meets SET name="Завтрак333" WHERE ID=1.
+in C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php (77)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (157)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/12 18:26:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'field list'. The SQL statement executed was: UPDATE meets SET name="Завтрак333" WHERE ID=1' in C:\Users\Sasha\Documents\yii1\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php(77): CDbCommand->execute()
+#1 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(157): ModelSave->ExecuteSaving()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionSaveMeeting()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('saveMeeting')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/saveMeetin...')
+#8 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/saveMeeting
+HTTP_REFERER=http://localhost/index.php?r=site/editMeeting&id=1
+---
+2019/08/13 10:00:53 [error] [php] Use of undefined constant co_counter - assumed 'co_counter' (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:103)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=2
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (103)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:01:52 [error] [php] Use of undefined constant co_counter - assumed 'co_counter' (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:103)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=2
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (103)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:02:04 [error] [php] Use of undefined constant co_counter - assumed 'co_counter' (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:103)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=2
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (103)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:02:19 [error] [php] Invalid argument supplied for foreach() (C:\Users\Sasha\Documents\yii1\framework\web\helpers\CHtml.php:1155)
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php(47): CActiveForm->checkBoxList()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(126): require()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): SiteController->renderFile()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): SiteController->renderPartial()
+#5 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(131): SiteController->render()
+#6 unknown(0): SiteController->actionEditEmployee()
+#7 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#11 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#12 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#13 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php (47)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (131)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:05:05 [error] [php] Invalid argument supplied for foreach() (C:\Users\Sasha\Documents\yii1\framework\web\helpers\CHtml.php:1155)
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php(47): CActiveForm->checkBoxList()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(126): require()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): SiteController->renderFile()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): SiteController->renderPartial()
+#5 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(131): SiteController->render()
+#6 unknown(0): SiteController->actionEditEmployee()
+#7 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#11 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#12 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#13 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php (47)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (131)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:09:01 [error] [php] Undefined offset: 0 (C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php:51)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): SiteController->renderFile()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): SiteController->renderPartial()
+#2 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(131): SiteController->render()
+#3 unknown(0): SiteController->actionEditEmployee()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php (51)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (131)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:11:02 [error] [php] Undefined offset: 0 (C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php:51)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): SiteController->renderFile()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): SiteController->renderPartial()
+#2 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(131): SiteController->render()
+#3 unknown(0): SiteController->actionEditEmployee()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php (51)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (131)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:11:03 [error] [exception.CException] exception 'CException' with message 'Property "ModelShortList.checkedoption" is not defined.' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php(52): CComponent->__get('checkedoption')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\Sasha\\...')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\Sasha\\...', Array, true)
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\Sasha\\...', Array, true)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): CController->renderPartial('viewEdit', Array, true)
+#5 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(131): CController->render('viewEdit', Array)
+#6 [internal function]: SiteController->actionEditEmployee('1')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#8 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('editEmployee')
+#13 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/editEmploy...')
+#14 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+HTTP_REFERER=http://localhost/index.php?r=site/employees
+---
+2019/08/13 10:11:03 [error] [exception.CException] exception 'CException' with message 'Property "ModelShortList.checkedoption" is not defined.' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php(52): CComponent->__get('checkedoption')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\Sasha\\...')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\Sasha\\...', Array, true)
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\Sasha\\...', Array, true)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): CController->renderPartial('viewEdit', Array, true)
+#5 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(131): CController->render('viewEdit', Array)
+#6 [internal function]: SiteController->actionEditEmployee('1')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#8 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('editEmployee')
+#13 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/editEmploy...')
+#14 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+HTTP_REFERER=http://localhost/index.php?r=site/employees
+---
+2019/08/13 10:11:04 [error] [exception.CException] exception 'CException' with message 'Property "ModelShortList.checkedoption" is not defined.' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php(52): CComponent->__get('checkedoption')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\Sasha\\...')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\Sasha\\...', Array, true)
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\Sasha\\...', Array, true)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): CController->renderPartial('viewEdit', Array, true)
+#5 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(131): CController->render('viewEdit', Array)
+#6 [internal function]: SiteController->actionEditEmployee('1')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#8 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('editEmployee')
+#13 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/editEmploy...')
+#14 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+HTTP_REFERER=http://localhost/index.php?r=site/employees
+---
+2019/08/13 10:11:05 [error] [exception.CException] exception 'CException' with message 'Property "ModelShortList.checkedoption" is not defined.' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php(52): CComponent->__get('checkedoption')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\Sasha\\...')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\Sasha\\...', Array, true)
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\Sasha\\...', Array, true)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): CController->renderPartial('viewEdit', Array, true)
+#5 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(131): CController->render('viewEdit', Array)
+#6 [internal function]: SiteController->actionEditEmployee('1')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#8 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('editEmployee')
+#13 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/editEmploy...')
+#14 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+HTTP_REFERER=http://localhost/index.php?r=site/employees
+---
+2019/08/13 10:11:05 [error] [exception.CException] exception 'CException' with message 'Property "ModelShortList.checkedoption" is not defined.' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php(52): CComponent->__get('checkedoption')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\Sasha\\...')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\Sasha\\...', Array, true)
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\Sasha\\...', Array, true)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): CController->renderPartial('viewEdit', Array, true)
+#5 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(131): CController->render('viewEdit', Array)
+#6 [internal function]: SiteController->actionEditEmployee('1')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#8 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('editEmployee')
+#13 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/editEmploy...')
+#14 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+HTTP_REFERER=http://localhost/index.php?r=site/employees
+---
+2019/08/13 10:11:05 [error] [exception.CException] exception 'CException' with message 'Property "ModelShortList.checkedoption" is not defined.' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php(52): CComponent->__get('checkedoption')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\Sasha\\...')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\Sasha\\...', Array, true)
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\Sasha\\...', Array, true)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): CController->renderPartial('viewEdit', Array, true)
+#5 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(131): CController->render('viewEdit', Array)
+#6 [internal function]: SiteController->actionEditEmployee('1')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#8 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('editEmployee')
+#13 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/editEmploy...')
+#14 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+HTTP_REFERER=http://localhost/index.php?r=site/employees
+---
+2019/08/13 10:11:21 [error] [exception.CException] exception 'CException' with message 'Property "ModelShortList.checkedoption" is not defined.' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php(52): CComponent->__get('checkedoption')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\Sasha\\...')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\Sasha\\...', Array, true)
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\Sasha\\...', Array, true)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): CController->renderPartial('viewEdit', Array, true)
+#5 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(131): CController->render('viewEdit', Array)
+#6 [internal function]: SiteController->actionEditEmployee('1')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#8 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('editEmployee')
+#13 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/editEmploy...')
+#14 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+HTTP_REFERER=http://localhost/index.php?r=site/employees
+---
+2019/08/13 10:15:35 [error] [php] Undefined variable: checkedoptions (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:106)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=3
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (106)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:16:33 [error] [php] Undefined variable: checkedoptions (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:106)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (106)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:16:47 [error] [php] Invalid argument supplied for foreach() (C:\Users\Sasha\Documents\yii1\framework\web\helpers\CHtml.php:1155)
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php(47): CActiveForm->checkBoxList()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(126): require()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): SiteController->renderFile()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): SiteController->renderPartial()
+#5 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(131): SiteController->render()
+#6 unknown(0): SiteController->actionEditEmployee()
+#7 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#11 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#12 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#13 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=1
+in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php (47)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (131)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:22:48 [error] [php] Array to string conversion (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:106)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=4
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (106)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:22:57 [error] [php] Array to string conversion (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:106)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=4
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (106)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:24:36 [error] [php] Array to string conversion (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:106)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=4
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (106)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:25:33 [error] [php] Undefined offset: 2 (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:103)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=2
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (103)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:26:36 [error] [php] Undefined offset: 2 (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:103)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=2
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (103)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:27:29 [error] [php] Missing argument 3 for CActiveForm::checkBoxList(), called in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php on line 47 and defined (C:\Users\Sasha\Documents\yii1\framework\web\widgets\CActiveForm.php:944)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): SiteController->renderFile()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): SiteController->renderPartial()
+#3 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(131): SiteController->render()
+#4 unknown(0): SiteController->actionEditEmployee()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#11 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=4
+in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php (47)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (131)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:27:49 [error] [php] Missing argument 3 for CActiveForm::checkBoxList(), called in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php on line 47 and defined (C:\Users\Sasha\Documents\yii1\framework\web\widgets\CActiveForm.php:944)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): SiteController->renderFile()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): SiteController->renderPartial()
+#3 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(131): SiteController->render()
+#4 unknown(0): SiteController->actionEditEmployee()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#11 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=4
+in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewEdit.php (47)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (131)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:28:45 [error] [php] Undefined offset: 2 (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:103)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=2
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (103)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:28:49 [error] [php] Undefined offset: 1 (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:103)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=6
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (103)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:30:10 [error] [php] Undefined offset: 2 (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:103)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=2
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (103)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:30:40 [error] [php] Undefined offset: 1 (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:103)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=6
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (103)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:31:37 [error] [php] Undefined offset: 2 (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:103)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=3
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (103)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:32:51 [error] [php] Undefined offset: 2 (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:103)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=3
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (103)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 10:33:02 [error] [php] Undefined offset: 2 (C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php:104)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/editEmployee&id=2
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (104)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (130)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 11:21:11 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'field list'. The SQL statement executed was: UPDATE meets SET name="Завтрак" WHERE ID=1.
+in C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php (77)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (157)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 11:21:11 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'name' in 'field list'. The SQL statement executed was: UPDATE meets SET name="Завтрак" WHERE ID=1' in C:\Users\Sasha\Documents\yii1\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\models\ModelSave.php(77): CDbCommand->execute()
+#1 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(157): ModelSave->ExecuteSaving()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionSaveMeeting()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('saveMeeting')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/saveMeetin...')
+#8 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/saveMeeting
+HTTP_REFERER=http://localhost/index.php?r=site/editMeeting&id=1
+---

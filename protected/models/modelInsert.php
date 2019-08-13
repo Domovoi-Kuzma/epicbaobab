@@ -48,7 +48,6 @@ class ModelInsert extends  CModel
         if ($what == 'employees')
         {
             $this->dbtable              = 'people';
-            $this->buttonAction         = 'people';
             $this->myNameFieldCaption   = 'Name';
             $this->rel_infix_format     = ' (%d,';
             $this->rel_sufix_format    = ');';
@@ -57,7 +56,6 @@ class ModelInsert extends  CModel
         else//if ($what == 'meets')
         {
             $this->dbtable              = 'meets';
-            $this->buttonAction         = 'people';
             $this->myNameFieldCaption   = 'Meeting';
             $this->rel_infix_format     = ' (';
             $this->rel_sufix_format    = ', %d);';

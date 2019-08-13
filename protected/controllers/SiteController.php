@@ -66,9 +66,9 @@ class SiteController extends Controller
 	 */
 	public function actionInsertEmployeeForm()
 	{
-		$model=new ModelInsertForm(' добавление сотрудника', 'employees');
+		$model=new ModelShortList('employees');
 		$model->QueryNames();
-		$this->render('viewInsertForm',array('model'=>$model));
+		$this->render('viewInsertForm',array('model'=>$model, 'what'=>'employees'));
 	}
 	/**
 	 * действие "добавление встречи"
@@ -77,9 +77,9 @@ class SiteController extends Controller
 	 */
 	public function actionInsertMeetingForm()
 	{
-		$model=new ModelInsertForm(' добавление встречи', 'meets');
+		$model=new ModelShortList('meets');
 		$model->QueryNames();
-		$this->render('viewInsertForm',array('model'=>$model));
+		$this->render('viewInsertForm',array('model'=>$model, 'what'=>'meets'));
 	}
 	/**
 	 * действие "добавление сотрудника в БД"
@@ -111,16 +111,54 @@ class SiteController extends Controller
 	 */
 	public function actionEmployees()
 	{
-		$model=new ModelList(' Список сотрудников', 'employees');
+		$model=new ModelFullList('employees');
 		$model->QueryNames();
-		$this->render('viewList',array('model'=>$model));
+		$this->render('viewList',array('model'=>$model, 'what'=>'employees'));
 	}
 	public function actionMeeting()
 	{
-		$model=new ModelList(' Список встреч', 'meets');
+		$model=new ModelFullList('meets');
 		$model->QueryNames();
-		$this->render('viewList',array('model'=>$model));
+		$this->render('viewList',array('model'=>$model, 'what'=>'meets'));
 	}
+	/**
+	 * действие "Редактирование сотрудника"  по адресу index.php?r=site/editEmployee
+	 */
+	public function actionEditEmployee($id)
+	{
+		$model=new ModelShortList('employees', $id);
+		$model->QueryNames();
+		$this->render('viewEdit',array('model'=>$model, 'what'=>'employees'));
+	}
+	/**
+	 * действие "Сохранение сотрудника"  по нажатию кнопки формы редактора
+	 */
+	public function actionSaveEmployee()
+	{
+		$model=new ModelSave('employees');
+		$model->ExecuteSaving();
+		$this->redirect('index.php?r=site/employees');
+	}
+	/**
+	 * действие "Редактирование сотрудника"  по адресу index.php?r=site/editEmployee
+	 */
+	public function actionEditMeeting($id)
+	{
+		$model=new ModelShortList('meets', $id);
+		$model->QueryNames();
+		$this->render('viewEdit',array('model'=>$model, 'what'=>'meets'));
+	}
+	/**
+	 * действие "Сохранение сотрудника"  по нажатию кнопки формы редактора
+	 */
+	public function actionSaveMeeting()
+	{
+		$model=new ModelSave('meets');
+		$model->ExecuteSaving();
+		$this->redirect('index.php?r=site/meeting');
+	}
+
+
 
 	/**
 	 * Displays the contact page

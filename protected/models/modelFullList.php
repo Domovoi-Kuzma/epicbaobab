@@ -11,7 +11,7 @@
  *  отображается на viewList.php
  * (это один вид, модель подкидывает в него различные данные в зависимости от опции employees/meets)
  */
-class ModelList extends CModel
+class ModelFullList extends CModel
 {
     /**
      * @var array|null должен содержать таблицу из базы(имён людей либо имён встреч)
@@ -62,37 +62,6 @@ class ModelList extends CModel
     {
         return $this->buddyNameFieldCaption;
     }
-
-    /**
-     * @var string
-     */
-    private $buddyPrefix;
-    /**
-     * @return string строка, прибавляемая спереди каждого подпункта списка.
-     * например "встреча " для встреч
-     */
-    public function Prefix()
-    {
-        return $this->buddyPrefix;
-    }
-    /**
-     * @return string URL страницы с формой добавления
-     */
-    private $formaddress;
-    public function Form()
-    {
-        return $this->formaddress;
-    }
-
-    private $title;
-    /**
-     * @return заголовок страницы
-     */
-    public function Header()
-    {
-        return $this->title;
-    }
-
     private $dbtable;
     private $buddyNameFieldCaptionEx;
     private $myIDFieldCaptionEx;
@@ -101,9 +70,8 @@ class ModelList extends CModel
      * @param string $title  заголовок, отображаемый на странице ()
      * @param string $what опция отображаемого списка "employees" либо "meets"
      */
-    function __construct($title, $what)
+    function __construct($what)
     {
-        $this->title = $title;
         if ($what == 'employees')
         {//параметры для создания списка сотрудников
             $this->dbtable = 'people';
@@ -111,8 +79,6 @@ class ModelList extends CModel
             $this->myIDFieldCaptionEx='p.ID';
             $this->buddyNameFieldCaptionEx = 'm.Meeting';
             $this->buddyNameFieldCaption='Meeting';
-            $this->buddyPrefix='встреча';
-            $this->formaddress='index.php?r=site/insertEmployeeForm';
         }
         else//if ($what == 'meets')
         {//параметры для создания списка встреч
@@ -121,8 +87,6 @@ class ModelList extends CModel
             $this->myIDFieldCaptionEx='m.ID';
             $this->buddyNameFieldCaptionEx = 'p.Name';
             $this->buddyNameFieldCaption='Name';
-            $this->buddyPrefix='сотрудник';
-            $this->formaddress='index.php?r=site/insertMeetingForm';
         }
     }
 
@@ -136,9 +100,9 @@ class ModelList extends CModel
 
         foreach ($this->names as $item)
         {
-            $idval=$item['ID'];
-            $sql = "SELECT $this->buddyNameFieldCaptionEx FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID AND p.ID=r.EID AND $this->myIDFieldCaptionEx=$idval";
-            $this->buddies[/*$item[$this->myNameFieldCaption]*/] = Yii::app()->db->createCommand($sql)->queryAll();
+            $id=$item['ID'];
+            $sql = "SELECT $this->buddyNameFieldCaptionEx FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID AND p.ID=r.EID AND $this->myIDFieldCaptionEx=$id";
+            $this->buddies[$id] = Yii::app()->db->createCommand($sql)->queryAll();
         }
     }
 

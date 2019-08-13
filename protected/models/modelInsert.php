@@ -83,18 +83,16 @@ class ModelInsert extends  CModel
      *          вариант 2 INSERT INTO relations VALUES (options[0],ID),  (options[1], ID) и.т.д.
      */
     public function ExecuteInsertion(){
-        $sql="INSERT INTO $this->dbtable($this->myNameFieldCaption) VALUES ('".$_POST["ModelInsertForm"]["name"]."');";
-        print("<br>mysql> $sql");
-
+        $sql="INSERT INTO $this->dbtable($this->myNameFieldCaption) VALUES ('".$_POST["ModelShortList"]["name"]."');";
         Yii::app()->db->createCommand($sql)->execute();
         $relateToID=Yii::app()->db->getLastInsertId();
-        if (!empty($_POST["ModelInsertForm"]["options"]))
+        if (!empty($_POST["ModelShortList"]["options"]))
         {
             //checkboxlist is indexed from 0;
             $separator  = sprintf($this->separator_format, $relateToID);
             $infix      = sprintf($this->rel_infix_format, $relateToID);
             $sufix      = sprintf($this->rel_sufix_format, $relateToID);
-            $relations = implode($separator, $_POST["ModelInsertForm"]["options"]);//решить вопрос повторов реляций вида(5,1) (1,5)
+            $relations = implode($separator, $_POST["ModelShortList"]["options"]);//решить вопрос повторов реляций вида(5,1) (1,5)
             $sql="INSERT INTO relations VALUES $infix$relations$sufix";//ещё раз пишем newkey в начало массива, иначе он не проставлен implodeом ,1),(5,2),(5,3)
 
             Yii::app()->db->createCommand($sql)->execute();

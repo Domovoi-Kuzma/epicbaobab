@@ -38,8 +38,8 @@ return array(
 			'allowAutoLogin'=>true,
 		),
 
-		// uncomment the following to enable URLs in path-format
-		/*
+		// comment the following to disable URLs in path-format
+
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
@@ -48,7 +48,6 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-		*/
 
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),

@@ -96,12 +96,16 @@ class ModelFullList extends CModel
     public function QueryNames()
     {
         $sql = "SELECT * FROM $this->dbtable";
+
         $this->names = Yii::app()->db->createCommand($sql)->queryAll();
+
 
         foreach ($this->names as $item)
         {
             $id=$item['ID'];
+
             $sql = "SELECT $this->buddyNameFieldCaptionEx FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID AND p.ID=r.EID AND $this->myIDFieldCaptionEx=$id";
+
             $this->buddies[$id] = Yii::app()->db->createCommand($sql)->queryAll();
         }
     }

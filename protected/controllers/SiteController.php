@@ -90,7 +90,7 @@ class SiteController extends Controller
 	{
 		$model=new ModelInsert('employees');
 		$model->ExecuteInsertion();
-		$this->redirect('index.php?r=site/employees');//после отправки формы уходим на какую-нибудь страницу
+		$this->redirect($this->createUrl('site/employees') );//после отправки формы уходим на какую-нибудь страницу
 	}
 	/**
 	 * действие "добавление встречи в БД"
@@ -101,7 +101,7 @@ class SiteController extends Controller
 	{
 		$model=new ModelInsert('meets');
 		$model->ExecuteInsertion();
-		$this->redirect('index.php?r=site/meeting');
+		$this->redirect($this->createUrl('site/meeting') );
 	}
 
 	/**
@@ -114,6 +114,9 @@ class SiteController extends Controller
 		$model=new ModelFullList('employees');
 		$model->QueryNames();
 		$this->render('viewList',array('model'=>$model, 'what'=>'employees'));
+
+		//echo $this->createUrl('aaa/bbb');
+		//die();
 	}
 	public function actionMeeting()
 	{
@@ -126,6 +129,7 @@ class SiteController extends Controller
 	 */
 	public function actionEditEmployee($id)
 	{
+		echo "$id";
 		$model=new ModelShortList('employees', $id);
 		$model->QueryNames();
 		$this->render('viewEdit',array('model'=>$model, 'what'=>'employees'));
@@ -135,12 +139,14 @@ class SiteController extends Controller
 	 */
 	public function actionSaveEmployee()
 	{
+
 		$model=new ModelSave('employees');
 		$model->ExecuteSaving();
-		$this->redirect('index.php?r=site/employees');
+		$this->redirect($this->createUrl('site/employees') );
 	}
 	/**
 	 * действие "Редактирование сотрудника"  по адресу index.php?r=site/editEmployee
+	 * @param $id int ID сотрудника в базе
 	 */
 	public function actionEditMeeting($id)
 	{
@@ -155,8 +161,26 @@ class SiteController extends Controller
 	{
 		$model=new ModelSave('meets');
 		$model->ExecuteSaving();
-		$this->redirect('index.php?r=site/meeting');
+		$this->redirect($this->createUrl('site/meeting') );
 	}
+
+	/**
+	 * Действие "Удаление сотрудника"
+	 * по адресу index.php/site/delete/employee/id/7
+	 * @param $id int ID сотрудника в базе
+	 */
+	public function actionDelete($what, $id)
+	{
+		$model=new ModelDelete($what);
+		$model->Execute($id);
+
+		if ($what == 'employees')
+			$this->redirect($this->createUrl('site/employees'));
+		else
+			$this->redirect($this->createUrl('site/meeting'));
+	}
+
+
 
 
 

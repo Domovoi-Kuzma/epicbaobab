@@ -14,7 +14,6 @@
  * @var $prefix string строка, прибавляемая спереди каждого подпункта списка. например "встреча " для встреч
  */
 
-
 if ($what=='employees') {
     $this->pageTitle = Yii::app()->name . ' - список сотрудников';
     $this->breadcrumbs = array(
@@ -22,8 +21,9 @@ if ($what=='employees') {
     );
     echo '<h1>Список - [сотрудники]</h1>';
     $prefix = 'встреча';
-    $formaddress='index.php?r=site/insertEmployeeForm';
-    $editaddress='index.php?r=site/editEmployee';
+    $formaddress=$this->createUrl('site/insertEmployeeForm');
+    $editaddress=$this->createUrl('site/editEmployee');
+    $deleteaddress=$this->createUrl('site/delete/what/employees');
 }
 else
 {
@@ -33,8 +33,9 @@ else
     );
     echo '<h1>Список - [встречи]</h1>';
     $prefix = 'коллега';
-    $formaddress='index.php?r=site/insertMeetingForm';
-    $editaddress='index.php?r=site/editMeeting';
+    $formaddress=$this->createUrl('site/insertMeetingForm');
+    $editaddress=$this->createUrl('site/editMeeting');
+    $deleteaddress=$this->createUrl('site/delete/what/meets');
 }
 /**
  * @var $field string имя индекса массива подпунктов $RelativesList вытаскиваемого моделью из БД
@@ -46,7 +47,7 @@ $field = $model->BuddyField();
         {
             $n=$item[$model->MyField()];
             $id=$item['ID'];
-            echo "<li><a href=".$editaddress."&id=$id>$n</a>";
+            echo "<li>$n <a href=$editaddress/id/$id>изменить</a>/<a href=$deleteaddress/id/$id>удалить</a>";
             echo "<ul type='square'>";
             foreach($model->RelativesList($id) as $buddy)
             {

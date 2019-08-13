@@ -9423,3 +9423,591 @@ Stack trace:
 REQUEST_URI=/index.php?r=site/saveMeeting
 HTTP_REFERER=http://localhost/index.php?r=site/editMeeting&id=1
 ---
+2019/08/13 12:37:16 [error] [exception.CException] exception 'CException' with message 'ModelFullList and its behaviors do not have a method or closure named "createUrl".' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php(62): CComponent->__call('createUrl', Array)
+#1 C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php(62): ModelFullList->createUrl('aaa/bbb')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(126): require('C:\\Users\\Sasha\\...')
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Users\\Sasha\\...', Array, true)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): CBaseController->renderFile('C:\\Users\\Sasha\\...', Array, true)
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): CController->renderPartial('viewList', Array, true)
+#6 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(116): CController->render('viewList', Array)
+#7 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionEmployees()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('employees')
+#12 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/employees')
+#13 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=site/employees
+HTTP_REFERER=http://localhost/index.php?r=site/meeting
+---
+2019/08/13 12:40:07 [error] [exception.CException] exception 'CException' with message 'ModelFullList and its behaviors do not have a method or closure named "createUrl".' in C:\Users\Sasha\Documents\yii1\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(118): CComponent->__call('createUrl', Array)
+#1 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(118): ModelFullList->createUrl('aaa/bbb')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionEmployees()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('employees')
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/employees')
+#8 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/index.php?r=site/employees
+HTTP_REFERER=http://localhost/index.php?r=site/meeting
+---
+2019/08/13 12:44:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/index.php?r=site/editMeeting&id=1
+HTTP_REFERER=http://localhost/index.php/site/meeting
+---
+2019/08/13 13:51:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/index.php?r=site/editMeeting&id=1
+HTTP_REFERER=http://localhost/index.php/site/meeting
+---
+2019/08/13 13:52:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/index.php?r=site/insertMeetingForm
+HTTP_REFERER=http://localhost/index.php/site/meeting
+---
+2019/08/13 13:53:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/index.php?r=site/editMeeting&id=1
+HTTP_REFERER=http://localhost/index.php/site/meeting
+---
+2019/08/13 14:05:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/index.php?r=site/insertEmployeeForm
+HTTP_REFERER=http://localhost/index.php/site/employees
+---
+2019/08/13 14:05:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "editEmployee&id=3".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('editEmployee&id...')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('editEmployee&id...')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/editEmploy...')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/editEmployee&id=3
+HTTP_REFERER=http://localhost/index.php/site/employees
+---
+2019/08/13 14:07:41 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'index.php' in 'on clause'. The SQL statement executed was: SELECT ID FROM people JOIN  relations ON ID=EID AND MID=index.php.
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (113)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (151)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 14:07:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'index.php' in 'on clause'. The SQL statement executed was: SELECT ID FROM people JOIN  relations ON ID=EID AND MID=index.php' in C:\Users\Sasha\Documents\yii1\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php(113): CDbCommand->queryAll()
+#2 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(151): ModelShortList->QueryNames()
+#3 [internal function]: SiteController->actionEditMeeting('index.php')
+#4 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#5 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('editMeeting')
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/editMeetin...')
+#11 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/index.php/site/editMeeting/id/index.php?r=site/saveMeeting
+HTTP_REFERER=http://localhost/index.php/site/editMeeting/id/2
+---
+2019/08/13 14:15:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'index.php' in 'on clause'. The SQL statement executed was: SELECT ID FROM meets JOIN  relations ON ID=MID AND EID=index.php.
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php (113)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (133)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 14:15:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'index.php' in 'on clause'. The SQL statement executed was: SELECT ID FROM meets JOIN  relations ON ID=MID AND EID=index.php' in C:\Users\Sasha\Documents\yii1\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\Sasha\Documents\gazprom\protected\models\modelShortList.php(113): CDbCommand->queryAll()
+#2 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(133): ModelShortList->QueryNames()
+#3 [internal function]: SiteController->actionEditEmployee('index.php')
+#4 C:\Users\Sasha\Documents\yii1\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(SiteController), Array)
+#5 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(SiteController), Object(ReflectionMethod), Array)
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('editEmployee')
+#10 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/editEmploy...')
+#11 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/index.php/site/editEmployee/id/index.php?r=site/saveEmployee
+HTTP_REFERER=http://localhost/index.php/site/editEmployee/id/1
+---
+2019/08/13 14:18:45 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:337
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('editEmployee')
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/editEmploy...')
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/index.php/site/editEmployee/id/1
+HTTP_REFERER=http://localhost/index.php/site/employees
+---
+2019/08/13 14:19:17 [error] [php] Undefined variable: id2 (C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php:132)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/editEmployee/id/1
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (132)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 14:19:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php/...')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/index.php/site/employees
+HTTP_REFERER=http://localhost/index.php/site/editEmployee/id/1
+---
+2019/08/13 14:20:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php/...')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/index.php/site/employees
+HTTP_REFERER=http://localhost/index.php/site/editEmployee/id/1
+---
+2019/08/13 14:22:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php/...')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/index.php/site/employees
+HTTP_REFERER=http://localhost/index.php/site/editEmployee/id/1
+---
+2019/08/13 14:23:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php/...')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/index.php/site/employees
+HTTP_REFERER=http://localhost/index.php/site/editEmployee/id/1
+---
+2019/08/13 14:25:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php/...')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/index.php/site/employees
+HTTP_REFERER=http://localhost/index.php/site/editEmployee/id/1
+---
+2019/08/13 14:26:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php/...')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/index.php/site/employees
+HTTP_REFERER=http://localhost/index.php/site/editEmployee/id/1
+---
+2019/08/13 14:37:48 [error] [php] Undefined variable: deleteaddress (C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php:26)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): SiteController->renderFile()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): SiteController->renderPartial()
+#2 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(116): SiteController->render()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionEmployees()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/employees
+in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php (26)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (116)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 14:38:10 [error] [php] Undefined variable: deleteaddress (C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php:38)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): SiteController->renderFile()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): SiteController->renderPartial()
+#2 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(125): SiteController->render()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionMeeting()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/meeting
+in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php (38)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (125)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 14:38:19 [error] [php] Undefined variable: deleteaddress (C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php:38)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): SiteController->renderFile()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): SiteController->renderPartial()
+#2 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(125): SiteController->render()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionMeeting()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/meeting
+in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php (38)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (125)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 14:38:19 [error] [php] Undefined variable: deleteaddress (C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php:38)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(872): SiteController->renderFile()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(785): SiteController->renderPartial()
+#2 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(125): SiteController->render()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionMeeting()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/meeting
+in C:\Users\Sasha\Documents\gazprom\protected\views\site\viewList.php (38)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (125)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 14:38:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "deleteEmployee".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('deleteEmployee')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('deleteEmployee')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/deleteEmpl...')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/deleteEmployee/id/7
+HTTP_REFERER=http://localhost/index.php/site/employees
+---
+2019/08/13 15:03:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "deleteMeeting".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('deleteMeeting')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('deleteMeeting')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/deleteMeet...')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/deleteMeeting/id/1
+HTTP_REFERER=http://localhost/index.php/site/meeting
+---
+2019/08/13 15:03:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "deleteMeeting".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('deleteMeeting')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('deleteMeeting')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/deleteMeet...')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/deleteMeeting/id/2
+HTTP_REFERER=http://localhost/index.php/site/meeting
+---
+2019/08/13 15:06:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "deleteMeeting".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('deleteMeeting')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('deleteMeeting')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/deleteMeet...')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/deleteMeeting/id/1
+HTTP_REFERER=http://localhost/index.php/site/meeting
+---
+2019/08/13 15:06:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "deleteEmployee".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('deleteEmployee')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('deleteEmployee')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/deleteEmpl...')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/deleteEmployee/id/1
+HTTP_REFERER=http://localhost/index.php/site/employees
+---
+2019/08/13 15:08:06 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:337
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('delete')
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/delete/emp...')
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/index.php/site/delete/employees/id/1
+HTTP_REFERER=http://localhost/index.php/site/employees
+---
+2019/08/13 15:09:46 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:337
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('delete')
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/delete/wha...')
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#7 {main}
+REQUEST_URI=/index.php/site/delete/what/employees/1
+---
+2019/08/13 15:12:13 [error] [php] Undefined index: ModelInsertForm (C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php:86)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/insert_employees
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php (86)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (92)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 15:12:56 [error] [php] Undefined index: ModelInsertForm (C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php:86)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/insert_employees
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php (86)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (92)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 15:13:24 [error] [php] Undefined index: ModelInsertForm (C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php:86)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/insert_employees
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php (86)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (92)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 15:13:28 [error] [php] Undefined index: ModelInsertForm (C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php:86)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/insert_employees
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php (86)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (92)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 15:13:43 [error] [php] Undefined index: ModelInsertForm (C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php:86)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/insert_employees
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php (86)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (92)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 15:14:08 [error] [php] Undefined index: ModelInsertForm (C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php:86)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/insert_employees
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php (86)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (92)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 15:14:13 [error] [php] Undefined index: append-form (C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php:86)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/insert_employees
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php (86)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (92)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 15:14:30 [error] [php] Undefined index: append-form (C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php:86)
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): SiteController->runAction()
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): SiteController->run()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#6 C:\Users\Sasha\Documents\gazprom\index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php/site/insert_employees
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelInsert.php (86)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (92)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 15:16:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.php".' in C:\Users\Sasha\Documents\yii1\framework\web\CController.php:486
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(270): CController->missingAction('index.php')
+#1 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('index.php')
+#2 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/index.php')
+#3 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php/site/index.php?r=site/employees
+HTTP_REFERER=http://localhost/index.php/site/insertEmployeeForm
+---
+2019/08/13 15:42:29 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '<br>SELECT m.Meeting FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID A' at line 1. The SQL statement executed was: <br>SELECT m.Meeting FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID AND p.ID=r.EID AND p.ID=0.
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelFullList.php (110)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (115)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 15:42:29 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '<br>SELECT m.Meeting FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID A' at line 1. The SQL statement executed was: <br>SELECT m.Meeting FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID AND p.ID=r.EID AND p.ID=0' in C:\Users\Sasha\Documents\yii1\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\Sasha\Documents\gazprom\protected\models\modelFullList.php(110): CDbCommand->queryAll()
+#2 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(115): ModelFullList->QueryNames()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionEmployees()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('employees')
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/employees')
+#9 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/site/employees
+HTTP_REFERER=http://localhost/index.php/site/index
+---
+2019/08/13 15:42:30 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '<br>SELECT m.Meeting FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID A' at line 1. The SQL statement executed was: <br>SELECT m.Meeting FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID AND p.ID=r.EID AND p.ID=0.
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelFullList.php (110)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (115)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 15:42:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '<br>SELECT m.Meeting FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID A' at line 1. The SQL statement executed was: <br>SELECT m.Meeting FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID AND p.ID=r.EID AND p.ID=0' in C:\Users\Sasha\Documents\yii1\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\Sasha\Documents\gazprom\protected\models\modelFullList.php(110): CDbCommand->queryAll()
+#2 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(115): ModelFullList->QueryNames()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionEmployees()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('employees')
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/employees')
+#9 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/site/employees
+HTTP_REFERER=http://localhost/index.php/site/index
+---
+2019/08/13 15:42:31 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '<br>SELECT m.Meeting FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID A' at line 1. The SQL statement executed was: <br>SELECT m.Meeting FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID AND p.ID=r.EID AND p.ID=0.
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelFullList.php (110)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (115)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 15:42:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '<br>SELECT m.Meeting FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID A' at line 1. The SQL statement executed was: <br>SELECT m.Meeting FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID AND p.ID=r.EID AND p.ID=0' in C:\Users\Sasha\Documents\yii1\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\Sasha\Documents\gazprom\protected\models\modelFullList.php(110): CDbCommand->queryAll()
+#2 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(115): ModelFullList->QueryNames()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionEmployees()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('employees')
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/employees')
+#9 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/site/employees
+HTTP_REFERER=http://localhost/index.php/site/index
+---
+2019/08/13 15:42:50 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '<br>SELECT m.Meeting FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID A' at line 1. The SQL statement executed was: <br>SELECT m.Meeting FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID AND p.ID=r.EID AND p.ID=0.
+in C:\Users\Sasha\Documents\gazprom\protected\models\modelFullList.php (110)
+in C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php (115)
+in C:\Users\Sasha\Documents\gazprom\index.php (13)
+2019/08/13 15:42:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '<br>SELECT m.Meeting FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID A' at line 1. The SQL statement executed was: <br>SELECT m.Meeting FROM people p JOIN meets m JOIN relations r ON m.ID=r.MID AND p.ID=r.EID AND p.ID=0' in C:\Users\Sasha\Documents\yii1\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\Users\Sasha\Documents\yii1\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\Users\Sasha\Documents\gazprom\protected\models\modelFullList.php(110): CDbCommand->queryAll()
+#2 C:\Users\Sasha\Documents\gazprom\protected\controllers\SiteController.php(115): ModelFullList->QueryNames()
+#3 C:\Users\Sasha\Documents\yii1\framework\web\actions\CInlineAction.php(49): SiteController->actionEmployees()
+#4 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\Users\Sasha\Documents\yii1\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(282): CController->run('employees')
+#8 C:\Users\Sasha\Documents\yii1\framework\web\CWebApplication.php(141): CWebApplication->runController('site/employees')
+#9 C:\Users\Sasha\Documents\yii1\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#10 C:\Users\Sasha\Documents\gazprom\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/index.php/site/employees
+HTTP_REFERER=http://localhost/index.php/site/index
+---

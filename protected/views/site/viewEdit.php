@@ -19,7 +19,7 @@ if ($what=='employees') {
     );
     echo '<h1>редактирование - [сотрудник]</h1>';
     $prefix = '';
-    $formaddress='index.php?r=site/saveEmployee';
+    $formaddress=$this->createUrl('site/saveEmployee');
 }
 else
 {
@@ -29,7 +29,7 @@ else
     );
     echo '<h1>редактирование - [встречи]</h1>';
     $prefix = '';
-    $formaddress='index.php?r=site/saveMeeting';
+    $formaddress=$this->createUrl('site/saveMeeting');
 }
 
 $form=$this->beginWidget('CActiveForm', array(

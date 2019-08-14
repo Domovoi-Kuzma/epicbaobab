@@ -14,22 +14,17 @@ class ModelCriteria extends CFormModel{
     public $criteria;
 
     /**
+     * rules
      * Declares the validation rules.
+     * заполнено, неотрицательно, числовое.
      */
     public function rules()
     {
         return [
-              [['criteria'],  'required', 'message' => 'Введите предельное число участников'],
-              [['criteria'],  'compare', 'compareValue' => 0,'operator' => '>=', 'message' => 'Введите неотрицательное число - лимит участников'],
-              [['criteria'],  'numerical', 'message'=>'введите предельное число участников десятичным положительным числом'],
+            [['criteria'],  'required', 'message' => 'Введите предельное число участников'],
+            [['criteria'],  'numerical', 'message'=>'введите предельное число участников десятичным положительным числом'],
+            [['criteria'],  'compare', 'compareValue' => 0,'operator' => '>=', 'message' => 'Введите неотрицательное число - лимит участников'],
         ];
-            //"ModelCriteria.integer" is not defined.
-            //"ModelCriteria.0" is not defined.
-        /*return [
-          [ ['criteria', ],
-              'required'
-          ],
-        ];*/
     }
     /**
     * Declares customized attribute labels.

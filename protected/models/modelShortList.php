@@ -123,8 +123,7 @@ class ModelShortList extends  CFormModel
     public function rules()
     {
         return array(
-            // name, is required
-            array('name', 'required'),
+            [['name'],  'required', 'message' => 'Заполните поле с именем'],
         );
     }
 }

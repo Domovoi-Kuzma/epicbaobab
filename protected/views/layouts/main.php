@@ -32,6 +32,7 @@
 				array('label'=>'Home', 'url'=>array('/site/index')),
 				array('label'=>'Список сотрудников', 'url'=>array('/site/employees')),
 				array('label'=>'Список Встреч', 'url'=>array('/site/meeting')),
+				array('label'=>'Поиск Встреч', 'url'=>array('/site/criteriaForm')),
 				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'testtext')),
 				array('label'=>'Contact', 'url'=>array('/site/contact')),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),

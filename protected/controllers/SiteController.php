@@ -129,7 +129,6 @@ class SiteController extends Controller
 	 */
 	public function actionEditEmployee($id)
 	{
-		echo "$id";
 		$model=new ModelShortList('employees', $id);
 		$model->QueryNames();
 		$this->render('viewEdit',array('model'=>$model, 'what'=>'employees'));
@@ -180,9 +179,27 @@ class SiteController extends Controller
 			$this->redirect($this->createUrl('site/meeting'));
 	}
 
-
-
-
+	/**
+	 * viewCriteriaForm действие  ' поиск больших встреч'
+	 * переход по адресу index.php/site/viewCriteriaForm
+	 */
+	public function actionCriteriaForm()
+	{
+		$model=new ModelCriteria;
+		//var_dump($_POST);
+		if(isset($_POST['ModelCriteria'])) {
+			$model->attributes = $_POST['ModelCriteria'];
+			if ($model->validate()) {
+				$model->QueryNames();
+				$model->QueryBuddies();
+				//print ('- results inside actionCriteriaForm<br>');
+				//die();
+				$this->render('viewCriteriaForm',array('model'=>$model));
+				return;
+			}
+		}
+		$this->render('viewCriteriaForm',array('model'=>$model));
+	}
 
 	/**
 	 * Displays the contact page

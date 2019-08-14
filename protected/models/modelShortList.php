@@ -119,4 +119,12 @@ class ModelShortList extends  CFormModel
         if (!empty($result))
             $this->name=$result[0][$this->myField ];
     }
+
+    public function rules()
+    {
+        return array(
+            // name, is required
+            array('name', 'required'),
+        );
+    }
 }

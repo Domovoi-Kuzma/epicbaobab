@@ -59,17 +59,12 @@ class SiteController extends Controller
 		}
 	}
 
-	/**
-	 * действие "добавление сотрудника"
-	 * по адресу index.php?r=site/insertEmployeeForm
-	 * запрашиваем список встреч для рисования столбика чекбоксов и делаем форму.
-	 */
-	public function actionInsertEmployeeForm()
+	/*public function actionInsertEmployeeForm()
 	{
 		$model=new ModelShortList('employees');
 		$model->QueryNames();
 		$this->render('viewInsertForm',array('model'=>$model, 'what'=>'employees'));
-	}
+	}*/
 	/**
 	 * действие "добавление встречи"
 	 * по адресу index.php?r=site/insertMeetingForm
@@ -111,18 +106,28 @@ class SiteController extends Controller
 	 */
 	public function actionEmployees()
 	{
-		$model=new ModelFullList('employees');
-		$model->QueryNames();
-		$this->render('viewList',array('model'=>$model, 'what'=>'employees'));
-
-		//echo $this->createUrl('aaa/bbb');
-		//die();
+		$this->render('viewEmployees',array());
 	}
 	public function actionMeeting()
 	{
-		$model=new ModelFullList('meets');
-		$model->QueryNames();
-		$this->render('viewList',array('model'=>$model, 'what'=>'meets'));
+		$this->render('viewMeetings',array());
+	}
+
+	/**
+	 *
+	 */
+	public function actionInsertEmployeeForm()
+	{
+		if(isset($_POST['NameInput']))
+		{
+			$newman=new People();
+			$newman->saveAs($_POST['NameInput'], isset($_POST['options'])?$_POST['options']:[]);
+			$this->redirect($this->createUrl('site/employees'));
+		}
+		else
+		{
+			$this->render('viewInsertEmployeeForm', array());
+		}
 	}
 	/**
 	 * действие "Редактирование сотрудника"  по адресу index.php?r=site/editEmployee
@@ -160,7 +165,7 @@ class SiteController extends Controller
 	{
 		$model=new ModelSave('meets');
 		$model->ExecuteSaving();
-		$this->redirect($this->createUrl('site/meeting') );
+		$this->redirect($this->createUrl('site/meeting'));
 	}
 
 	/**

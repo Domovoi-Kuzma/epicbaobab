@@ -18,8 +18,16 @@ class Meets extends CActiveRecord
 	{
 		$this->Meeting = $_POST['NameInput'];
 		$this->Place=intval($_POST['room']);
+
 		//isset($_POST['options'])?$_POST['options']:[]
 		$this->save();
+		foreach($_POST['options'] as $opt)
+		{
+			$rel=new Relations();
+			$rel->EID=$opt;
+			$rel->MID=$this->ID;
+			$rel->save();
+		}
 	}
 	/**
 	 * @return string the associated database table name

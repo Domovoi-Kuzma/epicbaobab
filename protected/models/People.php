@@ -18,6 +18,9 @@ class People extends CActiveRecord
 	{
 		$this->Name=$_POST['NameInput'];
 		$this->Dept_ID=intval($_POST['Depato']);
+		$this->related_meets=Meets::model()->findByPk($_POST['options']);
+
+		//this->related_meets=
 		//isset($_POST['options'])?$_POST['options']:[]
 		$this->save();
 

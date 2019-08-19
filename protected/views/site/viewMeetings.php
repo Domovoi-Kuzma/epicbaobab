@@ -10,14 +10,14 @@ $this->breadcrumbs = array(
     ' список встреч',
 );
 $editaddress=$this->createUrl('site/editMeeting');
-$deleteaddress=$this->createUrl('site/delete/what/meets');
-$formaddress=$this->createUrl('site/insertMeetingForm');
+$deleteaddress=$this->createUrl('site/deleteMeeting');
+$formaddress=$this->createUrl('site/insertMeeting');
 echo '<h1>Список - [встречи]</h1>';
 $meetings=Meets::model()->findAll();
 echo "<ul type='circle'>";
 foreach ($meetings as $item)
 {
-    echo '<li>' . $item['Meeting'];
+    echo "<li>".$item['Meeting']." (room ".$item['room']['Number'].")(members: ".$item['memberCount'].")";
     echo "&nbsp;<a href=$editaddress/id/".$item['ID'].">изменить</a>/<a href=$deleteaddress/id/".$item['ID'].">удалить</a>";
     echo '<ul type="1">';
     foreach ($item['related_people'] as $jtem)

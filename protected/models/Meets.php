@@ -6,13 +6,19 @@
  * The followings are the available columns in table 'meets':
  * @property integer $ID
  * @property string $Meeting
+ * @property integer $Place
+ *
+ * The followings are the available model relations:
+ * @property Room $place
+ * @property Relations[] $relations
  */
 class Meets extends CActiveRecord
 {
-	public function SaveAs($name, $rel)
+	public function saveAs()
 	{
-		$this->Meeting=$name;
-		$this->related_people=$rel;
+		$this->Meeting = $_POST['NameInput'];
+		$this->Place=intval($_POST['room']);
+		//isset($_POST['options'])?$_POST['options']:[]
 		$this->save();
 	}
 	/**
@@ -31,10 +37,12 @@ class Meets extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			//array('Place', 'required'),
+			array('Place', 'numerical', 'integerOnly'=>true),
 			array('Meeting', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID, Meeting', 'safe', 'on'=>'search'),
+			array('ID, Meeting, Place', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -47,6 +55,8 @@ class Meets extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'related_people'=>array(self::MANY_MANY, 'People', 'relations(MID, EID)'),
+			'room' => array(self::BELONGS_TO, 'Room', 'Place'),
+			'memberCount' => array(self::STAT, 'People', 'relations(MID, EID)'),
 		);
 	}
 
@@ -58,6 +68,7 @@ class Meets extends CActiveRecord
 		return array(
 			'ID' => 'ID',
 			'Meeting' => 'Meeting',
+			'Place' => 'Place',
 		);
 	}
 
@@ -75,12 +86,12 @@ class Meets extends CActiveRecord
 	 */
 	public function search()
 	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('ID',$this->ID);
 		$criteria->compare('Meeting',$this->Meeting,true);
+		$criteria->compare('Place',$this->Place);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

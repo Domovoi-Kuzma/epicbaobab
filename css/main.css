@@ -4,7 +4,7 @@ body
 	padding: 0;
 	color: #555;
 	font: normal 10pt Arial,Helvetica,sans-serif;
-	background: #EFEFEF;
+	background: #F3A143;
 }
 
 #page
@@ -12,14 +12,14 @@ body
 	margin-top: 5px;
 	margin-bottom: 5px;
 	background: white;
-	border: 1px solid #C9E0ED;
+	border: 1px solid #5af398;
 }
 
 #header
 {
 	margin: 0;
 	padding: 0;
-	border-top: 3px solid #C9E0ED;
+	border-top: 3px solid #5af398;
 }
 
 #content
@@ -38,7 +38,7 @@ body
 	margin: 10px 20px;
 	font-size: 0.8em;
 	text-align: center;
-	border-top: 1px solid #C9E0ED;
+	border-top: 1px solid #F3A143;
 }
 
 #logo
@@ -75,7 +75,7 @@ body
 
 #mainmenu ul li a:hover, #mainmenu ul li.active a
 {
-	color: #6399cd;
+	color: #F3A143;
 	background-color:#EFF4FA;
 	text-decoration:none;
 }
@@ -132,7 +132,7 @@ div.view
 {
 	padding: 10px;
 	margin: 10px 0;
-	border: 1px solid #C9E0ED;
+	border: 1px solid #F3A143;
 }
 
 div.breadcrumbs
@@ -161,8 +161,8 @@ div.search-form
 .portlet-decoration
 {
 	padding: 3px 8px;
-	background: #B7D6E7;
-	border-left: 5px solid #6FACCF;
+	background: #F3A143;
+	border-left: 5px solid #F3A143;
 }
 
 .portlet-title
@@ -171,7 +171,7 @@ div.search-form
 	font-weight: bold;
 	padding: 0;
 	margin: 0;
-	color: #298dcd;
+	color: #F3A143;
 }
 
 .portlet-content
@@ -211,7 +211,7 @@ div.search-form
 .operations li a
 {
 	font: bold 12px Arial;
-	color: #0066A4;
+	color: #F3A143;
 	display: block;
 	padding: 2px 0 2px 8px;
 	line-height: 15px;
@@ -225,5 +225,5 @@ div.search-form
 
 .operations li a:hover
 {
-	background: #80CFFF;
+	background: #F3A143;
 }

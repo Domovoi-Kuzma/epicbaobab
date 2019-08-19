@@ -6,14 +6,21 @@
  * The followings are the available columns in table 'people':
  * @property integer $ID
  * @property string $Name
+ * @property integer $Dept_ID
+ *
+ * The followings are the available model relations:
+ * @property Department $dept
+ * @property Relations[] $relations
  */
 class People extends CActiveRecord
 {
-	public function SaveAs($name, $rel)
+	public function SaveAs()
 	{
-		$this->Name=$name;
-		$this->related_meets=$rel;
+		$this->Name=$_POST['NameInput'];
+		$this->Dept_ID=intval($_POST['Depato']);
+		//isset($_POST['options'])?$_POST['options']:[]
 		$this->save();
+
 	}
 	/**
 	 * @return string the associated database table name
@@ -31,10 +38,11 @@ class People extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('Dept_ID', 'numerical', 'integerOnly'=>true),
 			array('Name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID, Name', 'safe', 'on'=>'search'),
+			array('ID, Name, Dept_ID', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -46,7 +54,8 @@ class People extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'related_meets'=>array(self::MANY_MANY, 'Meets', 'relations(EID, MID)'),
+			'related_meets'=>array(self::MANY_MANY, 'Meets', 'relations(MID, EID)'),
+			'dept' => array(self::BELONGS_TO, 'Department', 'Dept_ID'),
 		);
 	}
 
@@ -58,6 +67,7 @@ class People extends CActiveRecord
 		return array(
 			'ID' => 'ID',
 			'Name' => 'Name',
+			'Dept_ID' => 'Dept',
 		);
 	}
 
@@ -81,6 +91,7 @@ class People extends CActiveRecord
 
 		$criteria->compare('ID',$this->ID);
 		$criteria->compare('Name',$this->Name,true);
+		$criteria->compare('Dept_ID',$this->Dept_ID);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

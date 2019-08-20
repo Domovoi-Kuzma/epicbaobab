@@ -14,20 +14,16 @@
  */
 class Meets extends CActiveRecord
 {
+	/**
+	 * Сохраняет параметры $_POST в модель и в БД
+	 */
 	public function saveAs()
 	{
 		$this->Meeting = $_POST['NameInput'];
 		$this->Place=intval($_POST['room']);
-
-		//isset($_POST['options'])?$_POST['options']:[]
+		if (isset($_POST['options']))
+			$this->related_people=$_POST['options'];
 		$this->save();
-		foreach($_POST['options'] as $opt)
-		{
-			$rel=new Relations();
-			$rel->EID=$opt;
-			$rel->MID=$this->ID;
-			$rel->save();
-		}
 	}
 	/**
 	 * @return string the associated database table name
@@ -115,5 +111,12 @@ class Meets extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	/**
+	 * @return an array of behavior configurations that this model should behave as.
+	 */
+	public function behaviors(){
+		return array( 'CAdvancedArBehavior' => array(
+			'class' => 'application.extensions.CAdvancedArBehavior'));
 	}
 }

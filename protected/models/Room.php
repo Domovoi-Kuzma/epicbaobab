@@ -83,6 +83,10 @@ class Room extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	public function getTree()
+	{
+		return $this->meets;
+	}
 
 	/**
 	 * Returns the static model of the specified AR class.
@@ -93,5 +97,16 @@ class Room extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	/**
+	 * @return boolean whether the Room record should be deleted.
+	 */
+	public function beforeDelete()
+	{
+		foreach($this->meets as $meeting)
+		{
+			$meeting->delete();
+		}
+		return parent::beforeDelete();
 	}
 }

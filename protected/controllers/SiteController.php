@@ -63,17 +63,14 @@ class SiteController extends Controller
 	 */
 	public function actionInsertEmployee()
 	{
-		if(isset($_POST['NameInput']))
+		$newman=new People();
+		if(isset($_POST['ID']))
 		{
-			$newman=new People();
 			$newman->SaveAs();
-			//$newman->save();
-
 			$this->redirect($this->createUrl('site/employees'));
 		}
 		else
 		{
-			$newman=new People();
 			$this->render('viewInsertEmployeeForm',
 				[
 					'model'		=>$newman,
@@ -88,17 +85,18 @@ class SiteController extends Controller
 	 */
 	public function actionInsertMeeting()
 	{
-		if(isset($_POST['yt0']))
+		$newmeet=new Meets();
+		if(isset($_POST['ID']))
 		{
-			$newmeet=new Meets();
 			$newmeet->saveAs();
 			$this->redirect($this->createUrl('site/meeting'));
 		}
 		else
 		{
 			$this->render('viewInsertMeetingForm', [
-				'optionsP'=>People::model()->findAll(),
-				'optionsR'=>Room::model()->findAll(),
+				'model'		=>$newmeet,
+				'optionsP'	=>People::model()->findAll(),
+				'optionsR'	=>Room::model()->findAll(),
 			]);
 		}
 	}
@@ -128,17 +126,14 @@ class SiteController extends Controller
 	/**
 	 * редактирование записи сотрудника
 	 * @param ключ записи в БД
+	 * @throws Exception
 	 */
 	public function actionEditEmployee($id){
-		if(isset($_POST['yt0']))
+		if(isset($_POST['ID']))
 		{
 			$newman=People::model()->findByPk(intval($_POST['ID']));
 			if (!$newman)
-			{
-				print("error. employee id=$id not found");
-				die();
-				$this->redirect(Yii::app()->homeUrl);
-			}
+				throw new Exception("error. edit employee id=$id not found");
 			$newman->saveAs();
 
 			$this->redirect($this->createUrl('site/employees'));
@@ -146,6 +141,8 @@ class SiteController extends Controller
 		else
 		{
 			$newman=People::model()->findByPk($id);
+			if (!$newman)
+				throw new Exception("error. edit employee id=$id not found");
 
 			$this->render('viewInsertEmployeeForm',
 				[
@@ -157,22 +154,29 @@ class SiteController extends Controller
 	}
 	/**
 	 * @param $id ключ в таблице встреч
+	 * @throws Exception
 	 */
 	public function actionEditMeeting($id){
-		if(isset($_POST['yt0']))
+
+		if(isset($_POST['ID']))
 		{
 			$id=intval($_POST['ID']);
-			$newmeet=Meets::model()->findByPk(intval($_POST['ID']));
+			$newmeet=Meets::model()->findByPk($id);
+			if (!$newmeet)
+				throw new Exception("error. edit meeting id=$id not found");
 			$newmeet->saveAs();
-
 			$this->redirect($this->createUrl('site/meeting'));
 		}
 		else
 		{
+			$newmeet=Meets::model()->findByPk($id);
+			if (!$newmeet)
+				throw new Exception("error. edit meeting id=$id not found");
 			$this->render('viewInsertMeetingForm',
 				[
+					'model'		=>	$newmeet,
 					'optionsP'=>People::model()->findAll(),
-					'optionsR'=>Rooms::model()->findAll(),
+					'optionsR'=>Room::model()->findAll(),
 				]);
 		}
 	}
@@ -192,6 +196,77 @@ class SiteController extends Controller
 			}
 		}
 		$this->render('viewCriteriaForm',array('model'=>$model));
+	}
+
+	/**
+	 * actionRoomExplore находит дерево комнат
+	 * @throws Exception
+	 */
+	public function actionRoomExplore()
+	{
+		if(isset($_GET['id']) ) {
+			$id=$_GET['id'];
+			$model=Room::model()->findByPk($id);
+			if (!$model)
+				throw new Exception("error. room id=$id not found");
+			$this->render('viewRoomTree',array('model'=>$model,));
+		}
+		else{
+			$this->render('viewRoomList',array('items'=>Room::model()->findAll(),));
+		}
+	}
+
+	/**
+	 * @throws Exception
+	 */
+	public function actionRoomDelete()
+	{
+		if(isset($_GET['id'])) {
+			$model = Room::model()->findByPk($_GET['id']);
+			if ($model) {
+				$model->delete();
+				$this->redirect($this->createUrl('site/roomExplore'));
+			}
+		}
+		else
+		{
+			throw new Exception("error. room not found");
+		}
+	}
+	/**
+	 * actionRoomExplore находит дерево комнат
+	 * @throws Exception
+	 */
+	public function actionDeptExplore()
+	{
+		if(isset($_GET['id']) ) {
+			$id=$_GET['id'];
+			$model=Department::model()->findByPk($id);
+			if (!$model)
+				throw new Exception("error. room id=$id not found");
+			$this->render('viewDepartmentTree',array('model'=>$model,));
+		}
+		else{
+			$this->render('viewDepartmentList',array('items'=>Department::model()->findAll(),));
+		}
+	}
+
+	/**
+	 * @throws Exception
+	 */
+	public function actionDeptDelete()
+	{
+		if(isset($_GET['id'])) {
+			$model = Department::model()->findByPk($_GET['id']);
+			if ($model) {
+				$model->delete();
+				$this->redirect($this->createUrl('site/deptExplore'));
+			}
+		}
+		else
+		{
+			throw new Exception("error. Department not found");
+		}
 	}
 
 }

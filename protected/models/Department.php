@@ -57,6 +57,10 @@ class Department extends CActiveRecord
 			'Caption' => 'Caption',
 		);
 	}
+	public function getTree()
+	{
+		return $this->peoples;
+	}
 
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
@@ -93,5 +97,16 @@ class Department extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	/**
+	 * @return boolean whether the Department record should be deleted.
+	 */
+	public function beforeDelete()
+	{
+		foreach($this->peoples as $man)
+		{
+			$man->delete();
+		}
+		return parent::beforeDelete();
 	}
 }

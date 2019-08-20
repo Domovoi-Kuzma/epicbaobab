@@ -13,7 +13,6 @@ $this->breadcrumbs=array(
 echo '<h1>Форма!!! добавление нового сотрудника</h1>';
 
 echo '<div class="form">';
-
 echo CHtml::beginForm($action, 'post', array('id'=>'ShortForm'));
 {
     {
@@ -25,12 +24,13 @@ echo CHtml::beginForm($action, 'post', array('id'=>'ShortForm'));
     }
     {
         echo '<div class="row">';
-        echo CHTML::checkBoxList('options',  [], CHTML::listData($optionsM, 'ID', 'Meeting'));
+        echo CHTML::checkBoxList('options',  CHTML::listData($model->related_meets,'ID','ID'), CHTML::listData($optionsM, 'ID', 'Meeting'));
 
-        if (isset($optionsD[0])) $selection=$optionsD[0]['ID'];
+        if (isset($optionsD[0]))
+            $selection=$optionsD[0]['ID'];
         else
             $selection='';
-        echo CHTML::radioButtonList('Depato',  $selection, CHTML::listData($optionsD, 'ID', 'Caption'));
+        echo CHTML::radioButtonList('Depato',  $model->dept['ID'], CHTML::listData($optionsD, 'ID', 'Caption'));
         echo '</div>';
     }
 }

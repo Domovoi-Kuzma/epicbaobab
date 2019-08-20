@@ -14,16 +14,16 @@
  */
 class People extends CActiveRecord
 {
+	/**
+	 * Сохраняет параметры $_POST в модель и в БД
+	 */
 	public function SaveAs()
 	{
 		$this->Name=$_POST['NameInput'];
 		$this->Dept_ID=intval($_POST['Depato']);
-		$this->related_meets=Meets::model()->findByPk($_POST['options']);
-
-		//this->related_meets=
-		//isset($_POST['options'])?$_POST['options']:[]
+		if (isset($_POST['options']))
+			$this->related_meets=$_POST['options'];
 		$this->save();
-
 	}
 	/**
 	 * @return string the associated database table name
@@ -57,7 +57,7 @@ class People extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'related_meets'=>array(self::MANY_MANY, 'Meets', 'relations(MID, EID)'),
+			'related_meets'=>array(self::MANY_MANY, 'Meets', 'relations(EID, MID)'),
 			'dept' => array(self::BELONGS_TO, 'Department', 'Dept_ID'),
 		);
 	}
@@ -110,5 +110,13 @@ class People extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+
+	/**
+	 * @return an array of behavior configurations that this model should behave as.
+	 */
+	public function behaviors(){
+		return array( 'CAdvancedArBehavior' => array(
+			'class' => 'application.extensions.CAdvancedArBehavior'));
 	}
 }

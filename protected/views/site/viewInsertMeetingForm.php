@@ -17,22 +17,21 @@ echo CHtml::beginForm($action, 'post', array('id'=>'ShortForm'));
 {
     {
         echo '<div class="row">';
+        echo CHTML::hiddenField('ID', $model->ID);
         echo CHtml::label('Название встречи', '');
-        echo CHtml::textField('NameInput', '');
+        echo CHtml::textField('NameInput', $model->Meeting);
         echo '</div>';
     }
     {
         echo '<div class="row">';
-        $optionsP=People::model()->findAll();
-        $superlist=CHTML::listData($optionsP, 'ID', 'Name');
-        echo CHTML::checkBoxList('options',  [], $superlist);
+        echo CHTML::checkBoxList('options', CHTML::listData($model->related_people,'ID','ID'), CHTML::listData($optionsP, 'ID', 'Name'));
 
         if (isset($optionsR[0]))
             $selection=$optionsR[0]['ID'];
         else
             $selection='';
 
-        echo CHTML::radioButtonList('room',  $selection, CHTML::listData($optionsR, 'ID', 'Number'));
+        echo CHTML::radioButtonList('room', $model->room['ID'], CHTML::listData($optionsR, 'ID', 'Number'));
         echo '</div>';
     }
 }

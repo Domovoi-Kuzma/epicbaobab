@@ -22,7 +22,7 @@ foreach ($meetings as $item)
     echo '<ul type="1">';
     foreach ($item['related_people'] as $jtem)
     {
-        echo '<li>'. $jtem['Name'] .'</li>';
+        echo '<li>'. $jtem['Name'].'('.$jtem['dept']['Caption'].')</li>';
     }
     echo '</ul>';
     echo '</li>';

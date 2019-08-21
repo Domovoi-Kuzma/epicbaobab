@@ -2,6 +2,7 @@
 
 class m190820_150529_create_department_table extends CDbMigration
 {
+
 	public function up()
 	{
 		$this->createTable('department', array(
@@ -9,14 +10,8 @@ class m190820_150529_create_department_table extends CDbMigration
 											'Caption' => 'varchar(255)',
 											)
 		);
-		$this->insert('department', array(
-											'Caption' => 'IT',
-										)
-		);
-		$this->insert('department', array(
-											'Caption' => 'HQ',
-										)
-		);
+
+		$this->insertMultiple('department',[['Caption' => 'IT'],['Caption' => 'HQ'],]);
 
 		$this->addColumn('people', 'Dept_ID', 'int');
 		$this->update('people', array(
@@ -31,8 +26,6 @@ class m190820_150529_create_department_table extends CDbMigration
 			'Dept_ID' => '2'),
 			'ID=3'
 		);
-		//$this->update('people',	['Dept_ID' => 1], ['ID' => 2]);
-		//$this->update('people',	['Dept_ID' => 2], ['ID' => 3]);
 	}
 
 	public function down()

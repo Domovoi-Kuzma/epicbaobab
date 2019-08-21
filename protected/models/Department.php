@@ -13,6 +13,17 @@
 class Department extends CActiveRecord
 {
 	/**
+	 * Сохраняет параметры $_POST в модель и в БД
+	 * @return  boolean успешность сохранения
+	 * @author 	Sasha
+	 * @data 	21.08.2019
+	 */
+	public function SaveAs()
+	{
+		$this->Caption = $_POST['CaptionInput'];
+		return $this->save();
+	}
+	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
@@ -103,8 +114,11 @@ class Department extends CActiveRecord
 	 */
 	public function beforeDelete()
 	{
+
 		foreach($this->peoples as $man)
 		{
+			$man->related_meets=[];
+			$man->save();
 			$man->delete();
 		}
 		return parent::beforeDelete();

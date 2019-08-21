@@ -34,6 +34,17 @@ class Room extends CActiveRecord
 			array('ID, Number', 'safe', 'on'=>'search'),
 		);
 	}
+	/**
+	 * Сохраняет параметры $_POST в модель и в БД
+	 * @return  boolean успешность сохранения
+	 * @author 	Sasha
+	 * @data 	21.08.2019
+	 */
+	public function SaveAs()
+	{
+		$this->Number = $_POST['NumberInput'];
+		return $this->save();
+	}
 
 	/**
 	 * @return array relational rules.

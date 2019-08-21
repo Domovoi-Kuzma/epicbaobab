@@ -33,8 +33,8 @@
 				array('label'=>'Список сотрудников', 'url'=>array('/site/employees')),
 				array('label'=>'Список Встреч', 'url'=>array('/site/meeting')),
 				array('label'=>'Поиск Встреч', 'url'=>array('/site/criteriaForm')),
-				array('label'=>'Вывод по комнатам', 'url'=>array('/site/roomExplore')),
-				array('label'=>'Вывод по отделам', 'url'=>array('/site/deptExplore')),
+				array('label'=>'Вывод по комнатам', 'url'=>array('/site/roomExplore/id/all')),
+				array('label'=>'Вывод по отделам', 'url'=>array('/site/deptExplore/id/all')),
 			),
 		)); ?>
 	</div><!-- mainmenu -->

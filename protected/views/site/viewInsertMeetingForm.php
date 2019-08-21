@@ -5,6 +5,14 @@
  * Date: 15.08.2019
  * Time: 18:04
  */
+/**
+ *  @author Sasha
+ *
+ *  Далее следуют параметры, передаваемые в рендер
+ *  @var SiteController $this
+ *  @var Meets          $model
+ *  @var string         $action
+ */
 $action='insertMeeting';
 $this->pageTitle=Yii::app()->name . ' - добавление новой встречи';
 $this->breadcrumbs=array(

@@ -5,6 +5,14 @@
  * Date: 15.08.2019
  * Time: 12:20
  */
+
+/**
+ * @author Sasha
+ *
+ *  Далее следуют параметры, передаваемые в рендер
+ * @var SiteController  $this
+ * @var Meets[]        $meetings
+ */
 $this->pageTitle = Yii::app()->name . ' - список встреч';
 $this->breadcrumbs = array(
     ' список встреч',
@@ -13,7 +21,6 @@ $editaddress=$this->createUrl('site/editMeeting');
 $deleteaddress=$this->createUrl('site/deleteMeeting');
 $formaddress=$this->createUrl('site/insertMeeting');
 echo '<h1>Список - [встречи]</h1>';
-$meetings=Meets::model()->findAll();
 echo "<ul type='circle'>";
 foreach ($meetings as $item)
 {

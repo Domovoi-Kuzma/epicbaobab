@@ -5,6 +5,14 @@
          * Date: 14.08.2019
          * Time: 13:13
          */
+/**
+ *  @author Sasha
+ *
+ *  Далее следуют параметры, передаваемые в рендер
+ *  @var SiteController $this
+ *  @var CActiveForm $form
+ *  @var ModelCriteria $model модель формы параметров поиска
+ */
         $this->pageTitle = Yii::app()->name . ' - поиск больших встреч';
         $this->breadcrumbs = array(
             ' поиск больших встреч',

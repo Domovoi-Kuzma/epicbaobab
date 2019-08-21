@@ -5,6 +5,13 @@
  * Date: 15.08.2019
  * Time: 10:58
  */
+/**
+ * @author Sasha
+ *
+ *  Далее следуют параметры, передаваемые в рендер
+ * @var SiteController  $this
+ * @var People[]        $employees
+ */
 $this->pageTitle = Yii::app()->name . ' - список сотрудников';
 $this->breadcrumbs = array(
     ' список сотрудников',
@@ -14,7 +21,6 @@ $deleteaddress=$this->createUrl('site/deleteEmployee');
 $formaddress=$this->createUrl('site/insertEmployee');
 
 echo '<h1>Список - [сотрудники]</h1>';
-$employees=People::model()->findAll();
 echo "<ul type='circle'>";
 foreach ($employees as $item)
 {
@@ -33,11 +39,3 @@ echo '<hr>';
 echo '<a href='.$formaddress.'>Форма добавления</a>';
 echo '<hr>';
 
-/*
- * пишу отношение people MANY_MANY meets
- *
- * */
-
-
-//$allpeople=people::model()->asArray()->all();
-//print(var_dump($allpeople) );

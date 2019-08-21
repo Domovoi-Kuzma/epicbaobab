@@ -5,6 +5,11 @@
  * Date: 20.08.2019
  * Time: 15:40
  */
+/**
+ * @author Sasha
+ * @var SiteController  $this
+ * @var Room[]          $items
+ */
 $this->pageTitle = Yii::app()->name . ' - список комнат';
 $this->breadcrumbs = array(
     ' список комнат',

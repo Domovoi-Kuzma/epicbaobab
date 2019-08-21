@@ -83,6 +83,10 @@ class Room extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+	/**
+	 * @return Meets[]
+	 */
 	public function getTree()
 	{
 		return $this->meets;

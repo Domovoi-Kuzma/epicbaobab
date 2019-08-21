@@ -5,6 +5,17 @@
  * Date: 20.08.2019
  * Time: 16:08
  */
+
+/**
+ * @author Sasha
+ *
+ * Далее следуют параметры, передаваемые в рендер
+ * @var SiteController  $this
+ * @var Room            $model
+*/
+/**
+ * @var string          $commonName
+ */
 $commonName="комната ".$model->Number;
 $this->pageTitle = Yii::app()->name . ' - '.$commonName;
 $this->breadcrumbs = array(

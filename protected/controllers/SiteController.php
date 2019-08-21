@@ -49,13 +49,14 @@ class SiteController extends Controller
 				$this->render('error', $error);
 		}
 	}
+
 	public function actionEmployees()
 	{
-		$this->render('viewEmployees',array());
+		$this->render('viewEmployees',array('employees'=>People::model()->findAll()));
 	}
 	public function actionMeeting()
 	{
-		$this->render('viewMeetings',array());
+		$this->render('viewMeetings',array('meetings'=>Meets::model()->findAll()));
 	}
 
 	/**
@@ -153,6 +154,7 @@ class SiteController extends Controller
 		}
 	}
 	/**
+	 *	редактирование записи встречи.
 	 * @param $id ключ в таблице встреч
 	 * @throws Exception
 	 */
@@ -217,6 +219,7 @@ class SiteController extends Controller
 	}
 
 	/**
+	 * actionRoomDelete удаляет комнату
 	 * @throws Exception
 	 */
 	public function actionRoomDelete()
@@ -252,6 +255,7 @@ class SiteController extends Controller
 	}
 
 	/**
+	 * actionDeptDelete удаляет отдел
 	 * @throws Exception
 	 */
 	public function actionDeptDelete()

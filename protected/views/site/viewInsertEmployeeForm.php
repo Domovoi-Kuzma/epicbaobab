@@ -5,6 +5,16 @@
  * Date: 15.08.2019
  * Time: 13:01
  */
+/**
+ *  @author Sasha
+ *
+ *  Далее следуют параметры, передаваемые в рендер
+ *  @var SiteController $this
+ *  @var People         $model
+*/
+/**
+ *  @var string         $action
+ */
 $action='insertEmployee';
 $this->pageTitle=Yii::app()->name . ' - добавление нового сотрудника';
 $this->breadcrumbs=array(

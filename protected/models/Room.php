@@ -120,7 +120,9 @@ class Room extends CActiveRecord
 	{
 		foreach($this->meets as $meeting)
 		{
-			$meeting->delete();
+			$meeting->related_people=[];
+			$meeting->save();
+			$meeting->delete();//Cannot delete parent row-foreign key constraint
 		}
 		return parent::beforeDelete();
 	}

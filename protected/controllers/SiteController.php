@@ -251,7 +251,7 @@ class SiteController extends Controller
 			$model = Room::model()->findByPk($id);
 			if ($model) {
 				$model->delete();
-				$this->redirect($this->createUrl('site/roomExplore/id/all'));
+				$this->redirect($this->createUrl('roomExplore/all'));
 			}
 		}
 		else
@@ -269,7 +269,7 @@ class SiteController extends Controller
 		$newrum = new Room();
 		if (isset($_POST['ID'])) {
 			$newrum->SaveAs();
-			$this->redirect($this->createUrl('site/roomExplore/id/all'));
+			$this->redirect($this->createUrl('roomExplore/all'));
 		} else {
 			$this->render('viewRoomForm',
 				[
@@ -289,14 +289,14 @@ class SiteController extends Controller
 	{
 		if(isset($_POST['ID']))
 		{
-			$newrum=Department::model()->findByPk(intval($_POST['ID']));
+			$newrum=Room::model()->findByPk(intval($_POST['ID']));
 			if (!$newrum)
-				throw new Exception("error. edit Department id=$id not found");
+				throw new Exception("error. edit room id=$id not found");
 			$newrum->SaveAs();
-			$this->redirect($this->createUrl('site/deptExplore/id/all'));
+			$this->redirect($this->createUrl('roomExplore/all'));
 		}
 		else {
-			$newrum=Department::model()->findByPk($id);
+			$newrum=Room::model()->findByPk($id);
 			$this->render('viewRoomForm',
 				[
 					'model' => $newrum,
@@ -316,7 +316,7 @@ class SiteController extends Controller
 		if($id!='all' ) {
 			$model=Department::model()->findByPk($id);
 			if (!$model)
-				throw new Exception("error. room id=$id not found");
+				throw new Exception("error. department id=$id not found");
 			$this->render('viewDepartmentTree',array('model'=>$model,));
 		}
 		else{
@@ -337,7 +337,7 @@ class SiteController extends Controller
 			$model = Department::model()->findByPk($id);
 			if ($model) {
 				$model->delete();
-				$this->redirect($this->createUrl('site/deptExplore/id/all'));
+				$this->redirect($this->createUrl('deptExplore/all'));
 			}
 		}
 		else
@@ -357,7 +357,7 @@ class SiteController extends Controller
 		$newdept = new Department();
 		if (isset($_POST['ID'])) {
 			$newdept->SaveAs();
-			$this->redirect($this->createUrl('site/deptExplore/id/all'));
+			$this->redirect($this->createUrl('deptExplore/all'));
 		} else {
 			$this->render('viewDepartmentForm',
 				[
@@ -382,7 +382,7 @@ class SiteController extends Controller
 			if (!$newdept)
 				throw new Exception("error. edit Department id=$id not found");
 			$newdept->SaveAs();
-			$this->redirect($this->createUrl('site/deptExplore/id/all'));
+			$this->redirect($this->createUrl('deptExplore/all'));
 		}
 		else {
 			$newdept=Department::model()->findByPk($id);

@@ -17,15 +17,15 @@ $this->pageTitle = Yii::app()->name . ' - список встреч';
 $this->breadcrumbs = array(
     ' список встреч',
 );
-$editaddress=$this->createUrl('site/editMeeting');
-$deleteaddress=$this->createUrl('site/deleteMeeting');
 $formaddress=$this->createUrl('site/insertMeeting');
 echo '<h1>Список - [встречи]</h1>';
 echo "<ul type='circle'>";
 foreach ($meetings as $item)
 {
+    $editaddress=$this->createUrl('site/editMeeting',['id'=>$item['ID']]);
+    $deleteaddress=$this->createUrl('site/deleteMeeting',['id'=>$item['ID']]);
     echo "<li>".$item['Meeting']." (room ".$item['room']['Number'].")(members: ".$item['memberCount'].")";
-    echo "&nbsp;<a href=$editaddress/id/".$item['ID'].">изменить</a>/<a href=$deleteaddress/id/".$item['ID'].">удалить</a>";
+    echo "&nbsp;<a href=$editaddress>изменить</a>/<a href=$deleteaddress>удалить</a>";
     echo '<ul type="1">';
     foreach ($item['related_people'] as $jtem)
     {

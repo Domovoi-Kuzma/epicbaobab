@@ -4,7 +4,7 @@
 return array(
 	'connectionString' => 'mysql:host=localhost;dbname=test',
 	'username' => 'root',
-	'password' => '',
+	'password' => '',//abracadabra
 	'charset' => 'utf8',
 	// uncomment the following lines to use a MySQL database
 	/*

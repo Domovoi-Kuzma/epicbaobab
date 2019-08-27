@@ -12,6 +12,7 @@
  * @var SiteController  $this
  * @var People[]        $employees
  */
+
 $this->pageTitle = Yii::app()->name . ' - список сотрудников';
 $this->breadcrumbs = array(
     ' список сотрудников',

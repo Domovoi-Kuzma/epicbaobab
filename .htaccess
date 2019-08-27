@@ -1,3 +1,8 @@
+AddType application/x-httpd-php .html .htm .php
+
+order allow, deny
+allow from All
+
 RewriteEngine on
 
 RewriteCond %{REQUEST_FILENAME} !-f

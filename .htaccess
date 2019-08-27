@@ -1,7 +1,7 @@
 AddType application/x-httpd-php .html .htm .php
 
-order allow, deny
-allow from All
+Order allow,deny
+Allow from All
 
 RewriteEngine on
 

@@ -30,3 +30,5 @@ foreach ($items as $item)
     echo '</li>';
 }
 echo '</ul>';
+$address=$this->createURL("insertDepartment");
+echo "<a href=$address>Добавить новый отдел</a>";

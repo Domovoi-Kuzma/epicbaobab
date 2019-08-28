@@ -5,11 +5,6 @@
  * Date: 20.08.2019
  * Time: 15:40
  */
-/**
- * @author Sasha
- * @var SiteController  $this
- * @var Room[]          $items
- */
 $this->pageTitle = Yii::app()->name . ' - список комнат';
 $this->breadcrumbs = array(
     ' список комнат',
@@ -28,3 +23,5 @@ foreach ($items as $item)
     echo '</li>';
 }
 echo '</ul>';
+$address=$this->createURL("insertRoom");
+echo "<a href=$address>Добавить новую комнату</a>";

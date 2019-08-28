@@ -16,6 +16,9 @@ class Meets extends CActiveRecord
 {
 	/**
 	 * Сохраняет параметры $_POST в модель и в БД
+	 * @return  boolean успешность сохранения
+	 * @author 	Sasha
+	 * @data 	21.08.2019
 	 */
 	public function saveAs()
 	{
@@ -23,7 +26,7 @@ class Meets extends CActiveRecord
 		$this->Place=intval($_POST['room']);
 		if (isset($_POST['options']))
 			$this->related_people=$_POST['options'];
-		$this->save();
+		return $this->save();
 	}
 	/**
 	 * @return string the associated database table name
@@ -76,6 +79,25 @@ class Meets extends CActiveRecord
 		);
 	}
 
+	/**
+	 * Возвращает массив встреч,
+	 * с числом участников не меньше $count
+	 * @return array массив моделей встреч
+	 * @param  $count заданный пользователем минимум участников
+	 * @author 	Sasha
+	 * @data 	21.08.2019
+	 */
+	public static function getAllByMemberCount($count)
+	{
+		$criteria=new CDbCriteria;
+		$criteria->select='Meeting,m.ID';
+		$criteria->alias = 'm';
+		$criteria->join='JOIN relations  ON m.id=MID';
+		$criteria->group='MID';
+		$criteria->having='COUNT(*)>='.$count;
+
+		return  Meets::model()->findAll($criteria);;
+	}
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *

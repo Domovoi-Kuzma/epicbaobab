@@ -30,11 +30,11 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'Список сотрудников', 'url'=>array('/site/employees')),
-				array('label'=>'Список Встреч', 'url'=>array('/site/meeting')),
-				array('label'=>'Поиск Встреч', 'url'=>array('/site/criteriaForm')),
-				array('label'=>'Вывод по комнатам', 'url'=>array('/site/roomExplore')),
-				array('label'=>'Вывод по отделам', 'url'=>array('/site/deptExplore')),
+				array('label'=>'Список сотрудников', 'url'=>array('employees')),
+				array('label'=>'Список Встреч', 'url'=>array('meeting')),
+				array('label'=>'Поиск Встреч', 'url'=>array('criteriaForm')),
+				array('label'=>'Вывод по комнатам', 'url'=>array('roomExplore/all')),
+				array('label'=>'Вывод по отделам', 'url'=>array('deptExplore/all')),
 			),
 		)); ?>
 	</div><!-- mainmenu -->

@@ -49,18 +49,29 @@ class SiteController extends Controller
 				$this->render('error', $error);
 		}
 	}
-
+	/**
+	 * вывод списка сотрудников
+	 * @author 	Sasha
+	 * @data 	21.08.2019
+	 */
 	public function actionEmployees()
 	{
 		$this->render('viewEmployees',array('employees'=>People::model()->findAll()));
 	}
+	/**
+	 * вывод списка встреч
+	 * @author 	Sasha
+	 * @data 	21.08.2019
+	 */
 	public function actionMeeting()
 	{
 		$this->render('viewMeetings',array('meetings'=>Meets::model()->findAll()));
 	}
 
 	/**
-	 * inserts people into DB
+	 * вывод формы добавления или само добавление сотрудника
+	 * @author 	Sasha
+	 * @data 	21.08.2019
 	 */
 	public function actionInsertEmployee()
 	{
@@ -82,7 +93,9 @@ class SiteController extends Controller
 	}
 
 	/**
-	 * добавление встречи
+	 * вывод формы добавления или само добавление встречи
+	 * @author 	Sasha
+	 * @data 	21.08.2019
 	 */
 	public function actionInsertMeeting()
 	{
@@ -104,8 +117,9 @@ class SiteController extends Controller
 
 	/**
 	 * удаление записи
-	 * @param $id ключ сотрудника.
-	 *
+	 * @param integer $id ключ сотрудника.
+	 * @author 	Sasha
+	 * @data 	21.08.2019
 	 */
 	public function actionDeleteEmployee($id)
 	{
@@ -114,9 +128,10 @@ class SiteController extends Controller
 	}
 
 	/**
-	 * удаление записи
-	 * @param $id ключ сотрудника.
-	 *
+	 * удаление встречи из базы
+	 * @param integer $id ключ встречи.
+	 * @author 	Sasha
+	 * @data 	21.08.2019
 	 */
 	public function actionDeleteMeeting($id)
 	{
@@ -126,8 +141,10 @@ class SiteController extends Controller
 
 	/**
 	 * редактирование записи сотрудника
-	 * @param ключ записи в БД
+	 * @param integer $id ключ записи в БД
 	 * @throws Exception
+	 * @author 	Sasha
+	 * @data 	21.08.2019
 	 */
 	public function actionEditEmployee($id){
 		if(isset($_POST['ID']))
@@ -155,8 +172,10 @@ class SiteController extends Controller
 	}
 	/**
 	 *	редактирование записи встречи.
-	 * @param $id ключ в таблице встреч
+	 * @param integer $id ключ в таблице встреч
 	 * @throws Exception
+	 * @author 	Sasha
+	 * @data 	21.08.2019
 	 */
 	public function actionEditMeeting($id){
 
@@ -183,31 +202,32 @@ class SiteController extends Controller
 		}
 	}
 	/**
-	 * viewCriteriaForm действие  ' поиск больших встреч'
+	 * viewCriteriaForm действие для страницы 'поиск больших встреч'
+	 * @author 	Sasha
+	 * @data 	21.08.2019
 	 */
 	public function actionCriteriaForm()
 	{
-		$model=new ModelCriteria;
-		if(isset($_POST['ModelCriteria'])) {
-			$model->attributes = $_POST['ModelCriteria'];
-			if ($model->validate()) {
-				$model->QueryNames();
-				$model->QueryBuddies();
-				$this->render('viewCriteriaForm',array('model'=>$model));
-				return;
-			}
+		if(isset($_POST['criteria']))
+		{
+			$criteria=intval($_POST['criteria']);
+			$meetingList = Meets::getAllByMemberCount($criteria);
+			$this->render('viewCriteriaForm', array('meetingList' => $meetingList));
 		}
-		$this->render('viewCriteriaForm',array('model'=>$model));
+		else
+			$this->render('viewCriteriaForm', array());
 	}
 
 	/**
-	 * actionRoomExplore находит дерево комнат
+	 * позволяет выбрать комнату и выводит список событий в ней
+	 * @param  string $id ключ комнаты базе
 	 * @throws Exception
+	 * @author 	Sasha
+	 * @data 	21.08.2019
 	 */
-	public function actionRoomExplore()
+	public function actionRoomExplore($id)
 	{
-		if(isset($_GET['id']) ) {
-			$id=$_GET['id'];
+		if($id!='all' ) {
 			$model=Room::model()->findByPk($id);
 			if (!$model)
 				throw new Exception("error. room id=$id not found");
@@ -219,16 +239,19 @@ class SiteController extends Controller
 	}
 
 	/**
-	 * actionRoomDelete удаляет комнату
+	 * удаляет комнату
+	 * @param  integer $id ключ комнаты базе
 	 * @throws Exception
+	 * @author 	Sasha
+	 * @data 	21.08.2019
 	 */
-	public function actionRoomDelete()
+	public function actionRoomDelete($id)
 	{
-		if(isset($_GET['id'])) {
-			$model = Room::model()->findByPk($_GET['id']);
+		if(isset($id)) {
+			$model = Room::model()->findByPk($id);
 			if ($model) {
 				$model->delete();
-				$this->redirect($this->createUrl('site/roomExplore'));
+				$this->redirect($this->createUrl('roomExplore/all'));
 			}
 		}
 		else
@@ -237,16 +260,63 @@ class SiteController extends Controller
 		}
 	}
 	/**
-	 * actionRoomExplore находит дерево комнат
-	 * @throws Exception
+	 * добавление новой записи комнаты в базу
+	 * @author 	Sasha
+	 * @data 	21.08.2019
 	 */
-	public function actionDeptExplore()
+	public function actionInsertRoom()
 	{
-		if(isset($_GET['id']) ) {
-			$id=$_GET['id'];
+		$newrum = new Room();
+		if (isset($_POST['ID'])) {
+			$newrum->SaveAs();
+			$this->redirect($this->createUrl('roomExplore/all'));
+		} else {
+			$this->render('viewRoomForm',
+				[
+					'model' => $newrum,
+					'action' => 'insertRoom',
+				]);
+		}
+	}
+	/**
+	 * редактирование записи комнаты
+	 * @param integer $id ключ записи в БД
+	 * @throws Exception
+	 * @author 	Sasha
+	 * @data 	21.08.2019
+	 */
+	public function actionEditRoom($id)
+	{
+		if(isset($_POST['ID']))
+		{
+			$newrum=Room::model()->findByPk(intval($_POST['ID']));
+			if (!$newrum)
+				throw new Exception("error. edit room id=$id not found");
+			$newrum->SaveAs();
+			$this->redirect($this->createUrl('roomExplore/all'));
+		}
+		else {
+			$newrum=Room::model()->findByPk($id);
+			$this->render('viewRoomForm',
+				[
+					'model' => $newrum,
+					'action' => 'editRoom',
+				]);
+		}
+	}
+	/**
+	 * позволяет выбрать отдел и выводит список сотрудников в нём
+	 * @param  string $id ключ отдела в базе
+	 * @throws Exception
+	 * @author 	Sasha
+	 * @data 	21.08.2019
+	 */
+	public function actionDeptExplore($id)
+	{
+		if($id!='all' ) {
 			$model=Department::model()->findByPk($id);
 			if (!$model)
-				throw new Exception("error. room id=$id not found");
+				throw new Exception("error. department id=$id not found");
 			$this->render('viewDepartmentTree',array('model'=>$model,));
 		}
 		else{
@@ -255,21 +325,72 @@ class SiteController extends Controller
 	}
 
 	/**
-	 * actionDeptDelete удаляет отдел
+	 * удаляет отдел
+	 * @param  integer $id ключ отдела базе
 	 * @throws Exception
+	 * @author 	Sasha
+	 * @data 	21.08.2019
 	 */
-	public function actionDeptDelete()
+	public function actionDeptDelete($id)
 	{
-		if(isset($_GET['id'])) {
-			$model = Department::model()->findByPk($_GET['id']);
+		if(isset($id)) {
+			$model = Department::model()->findByPk($id);
 			if ($model) {
 				$model->delete();
-				$this->redirect($this->createUrl('site/deptExplore'));
+				$this->redirect($this->createUrl('deptExplore/all'));
 			}
 		}
 		else
 		{
 			throw new Exception("error. Department not found");
+		}
+	}
+
+
+	/**
+	 * добавление новой записи отдела в базу
+	 * @author 	Sasha
+	 * @data 	21.08.2019
+	 */
+	public function actionInsertDepartment()
+	{
+		$newdept = new Department();
+		if (isset($_POST['ID'])) {
+			$newdept->SaveAs();
+			$this->redirect($this->createUrl('deptExplore/all'));
+		} else {
+			$this->render('viewDepartmentForm',
+				[
+					'model' => $newdept,
+					'action' => 'insertDepartment',
+				]);
+		}
+	}
+
+	/**
+	 * редактирование записи отдела
+	 * @param integer $id ключ записи в БД
+	 * @throws Exception
+	 * @author 	Sasha
+	 * @data 	21.08.2019
+	 */
+	public function actionEditDepartment($id)
+	{
+		if(isset($_POST['ID']))
+		{
+			$newdept=Department::model()->findByPk(intval($_POST['ID']));
+			if (!$newdept)
+				throw new Exception("error. edit Department id=$id not found");
+			$newdept->SaveAs();
+			$this->redirect($this->createUrl('deptExplore/all'));
+		}
+		else {
+			$newdept=Department::model()->findByPk($id);
+			$this->render('viewDepartmentForm',
+				[
+					'model' => $newdept,
+					'action' => 'editDepartment',
+				]);
 		}
 	}
 

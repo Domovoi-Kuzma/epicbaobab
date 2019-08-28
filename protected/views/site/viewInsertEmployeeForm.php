@@ -5,22 +5,12 @@
  * Date: 15.08.2019
  * Time: 13:01
  */
-/**
- *  @author Sasha
- *
- *  Далее следуют параметры, передаваемые в рендер
- *  @var SiteController $this
- *  @var People         $model
-*/
-/**
- *  @var string         $action
- */
 $action='insertEmployee';
 $this->pageTitle=Yii::app()->name . ' - добавление нового сотрудника';
 $this->breadcrumbs=array(
     'добавление сотрудника',
 );
-echo '<h1>Форма!!! добавление нового сотрудника</h1>';
+echo '<h1>Форма(добавления/редактирования) сотрудника!!!</h1>';
 
 echo '<div class="form">';
 echo CHtml::beginForm($action, 'post', array('id'=>'ShortForm'));

@@ -18,7 +18,7 @@ $this->pageTitle=Yii::app()->name . ' - добавление новой встр
 $this->breadcrumbs=array(
     'добавление встречи',
 );
-echo '<h1>Форма!!! добавление новой встречи</h1>';
+echo '<h1>Форма(добавления/редактирования) встречи</h1>';
 
 echo '<div class="form">';
 echo CHtml::beginForm($action, 'post', array('id'=>'ShortForm'));

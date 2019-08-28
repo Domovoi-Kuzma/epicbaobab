@@ -1,21 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sasha
- * Date: 20.08.2019
- * Time: 16:08
- */
-
-/**
- * @author Sasha
- *
- * Далее следуют параметры, передаваемые в рендер
- * @var SiteController  $this
- * @var Room            $model
-*/
-/**
- * @var string          $commonName
- */
 $commonName="комната ".$model->Number;
 $this->pageTitle = Yii::app()->name . ' - '.$commonName;
 $this->breadcrumbs = array(
@@ -30,7 +13,7 @@ foreach ($tree as $item) {
     echo $item->Meeting;
     {
         echo "<ul type='circle'>";
-        foreach ($item->related_people  as $jtem){
+        foreach ($item->related_people  as $jtem) {
             echo '<li>';
             echo $jtem['Name'].'('.$jtem['dept']['Caption'].')';
             echo '</li>';

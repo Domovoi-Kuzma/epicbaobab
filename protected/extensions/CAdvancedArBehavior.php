@@ -101,8 +101,7 @@ class CAdvancedArbehavior extends CActiveRecordBehavior
 			Yii::trace('writing MANY_MANY data for '.get_class($this->owner),
 					'system.db.ar.CActiveRecord');
 
-		foreach($this->getRelations() as $relation) 
-		{
+		foreach($this->getRelations() as $relation) {
 			$this->cleanRelation($relation);
 			$this->writeRelation($relation);
 		}
@@ -119,8 +118,7 @@ class CAdvancedArbehavior extends CActiveRecordBehavior
 	{
 		$relations = array();
 
-		foreach ($this->owner->relations() as $key => $relation) 
-		{
+		foreach ($this->owner->relations() as $key => $relation) {
 			if ($relation[0] == CActiveRecord::MANY_MANY && 
 					!in_array($key, $this->ignoreRelations) &&
 					$this->owner->hasRelated($key) && 
@@ -159,8 +157,7 @@ class CAdvancedArbehavior extends CActiveRecordBehavior
 			$this->owner->$key = array($this->owner->$key);
 
 		// An array of objects is given
-		foreach((array)$this->owner->$key as $foreignobject)
-		{
+		foreach((array)$this->owner->$key as $foreignobject) {
 			if(!is_numeric($foreignobject) && is_object($foreignobject))
 				$foreignobject = $foreignobject->{$foreignobject->$relation['m2mForeignField']};
 			$this->execute(

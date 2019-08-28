@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sasha
- * Date: 21.08.2019
- * Time: 17:43
- */
 echo '<h1>Форма(добавления/редактирования/отделения)!!!</h1>';
 echo '<div class="form">';
     echo CHtml::beginForm($action, 'post', array('id'=>'DepartmentForm'));

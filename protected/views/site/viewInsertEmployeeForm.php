@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sasha
- * Date: 15.08.2019
- * Time: 13:01
- */
 $action='insertEmployee';
 $this->pageTitle=Yii::app()->name . ' - добавление нового сотрудника';
 $this->breadcrumbs=array(

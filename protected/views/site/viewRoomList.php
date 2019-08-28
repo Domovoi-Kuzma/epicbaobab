@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sasha
- * Date: 20.08.2019
- * Time: 15:40
- */
 $this->pageTitle = Yii::app()->name . ' - список комнат';
 $this->breadcrumbs = array(
     ' список комнат',

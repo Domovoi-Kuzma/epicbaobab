@@ -1,18 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Sasha
- * Date: 15.08.2019
- * Time: 10:58
- */
-/**
- * @author Sasha
- *
- *  Далее следуют параметры, передаваемые в рендер
- * @var SiteController  $this
- * @var People[]        $employees
- */
-
 $this->pageTitle = Yii::app()->name . ' - список сотрудников';
 $this->breadcrumbs = array(
     ' список сотрудников',
@@ -27,8 +13,7 @@ foreach ($employees as $item) {
     echo "<li>".$item['Name']." (".$item['dept']['Caption'].")";
     echo "&nbsp;<a href=$editaddress>изменить</a>/<a href=$deleteaddress>удалить</a>";
     echo "<ul type='1'>";
-    foreach ($item['related_meets'] as $jtem)
-    {
+    foreach ($item['related_meets'] as $jtem) {
         echo '<li>'. $jtem['Meeting'] .'</li>';
     }
     echo '</ul>';

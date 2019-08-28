@@ -1,10 +1,4 @@
 <?php
-        /**
-         * Created by PhpStorm.
-         * User: Sasha
-         * Date: 14.08.2019
-         * Time: 13:13
-         */
         $this->pageTitle = Yii::app()->name . ' - поиск больших встреч';
         $this->breadcrumbs = array(
             ' поиск больших встреч',
@@ -26,11 +20,9 @@ echo '</div>';
 echo CHtml::endForm();
         if (isset($meetingList)) {
             echo '<br> Вывод результата<ul>';
-            foreach ($meetingList as $meetingValue)
-            {
+            foreach ($meetingList as $meetingValue) {
                 echo '<li>'.$meetingValue['Meeting'];
-                foreach ($meetingValue['related_people'] as $buddyValue)
-                {
+                foreach ($meetingValue['related_people'] as $buddyValue) {
                     echo "<ul>".$buddyValue['Name']."</ul>";
                 }
                 echo '</li>';

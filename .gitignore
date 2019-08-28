@@ -5,3 +5,5 @@ protected\runtime\*.*
 testBig.sql
 testOld.sql
 testSmall.sql
+toHosting.sql
+protected\config\database.php

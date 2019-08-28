@@ -20,8 +20,7 @@ $this->breadcrumbs = array(
 $formaddress=$this->createUrl('site/insertMeeting');
 echo '<h1>Список - [встречи]</h1>';
 echo "<ul type='circle'>";
-foreach ($meetings as $item)
-{
+foreach ($meetings as $item) {
     $editaddress=$this->createUrl('site/editMeeting',['id'=>$item['ID']]);
     $deleteaddress=$this->createUrl('site/deleteMeeting',['id'=>$item['ID']]);
     echo "<li>".$item['Meeting']." (room ".$item['room']['Number'].")(members: ".$item['memberCount'].")";

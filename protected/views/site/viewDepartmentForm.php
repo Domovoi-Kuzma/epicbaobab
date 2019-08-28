@@ -19,4 +19,3 @@ echo '<div class="form">';
         echo '</div>';//row кнопка
     echo CHtml::endForm();
 echo '</div>';//form
-?>

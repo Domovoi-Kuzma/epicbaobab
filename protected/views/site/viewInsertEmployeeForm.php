@@ -37,4 +37,3 @@ echo CHtml::beginForm($action, 'post', array('id'=>'ShortForm'));
 echo CHtml::submitButton('Submit');
 echo CHtml::endForm();
 echo '</div>';
-?>

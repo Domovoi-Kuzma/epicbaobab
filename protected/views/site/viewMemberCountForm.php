@@ -12,20 +12,19 @@
         echo '<h1>поиск больших встреч, на которых сотрудников больше критерия</h1>';
 
 echo '<div class="form">';
-    echo CHtml::beginForm('criteriaForm', 'post');
+    echo CHtml::beginForm('memberCountForm', 'post');
 
 
     echo '<div class="row">';
         echo CHtml::label('Введите минимальное число участников', '');
-        echo CHtml::textField('criteria', '');
+        echo CHtml::textField('count', '');
     echo '</div>';
     echo '<div class="row">';
             echo CHtml::submitButton('Submit');
     echo '</div>';
 echo '</div>';
 echo CHtml::endForm();
-        if (isset($meetingList))
-        {
+        if (isset($meetingList)) {
             echo '<br> Вывод результата<ul>';
             foreach ($meetingList as $meetingValue)
             {

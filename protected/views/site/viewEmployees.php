@@ -21,8 +21,7 @@ $formaddress=$this->createUrl('site/insertEmployee');
 
 echo '<h1>Список - [сотрудники]</h1>';
 echo "<ul type='circle'>";
-foreach ($employees as $item)
-{
+foreach ($employees as $item) {
     $editaddress=$this->createUrl('editEmployee',['id'=>$item['ID']]);
     $deleteaddress=$this->createUrl('deleteEmployee',['id'=>$item['ID']]);
     echo "<li>".$item['Name']." (".$item['dept']['Caption'].")";

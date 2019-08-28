@@ -13,8 +13,7 @@ $this->breadcrumbs = array(
 echo '<h1>Список - [комнаты]</h1>';
 
 echo "<ul type='circle'>";
-foreach ($items as $item)
-{
+foreach ($items as $item) {
     $address=$this->createURL("roomExplore", ['id'=>$item['ID']]);
     $delress=$this->createURL("roomDelete", ['id'=>$item['ID']]);
     echo '<li>';

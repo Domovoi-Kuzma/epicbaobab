@@ -19,16 +19,14 @@ $this->breadcrumbs = array(
 );
 
 echo "<h1>$commonName</h1>";
-$tree=$model->getTree();
+$tree=$model->peoples;
 echo "<ul type='circle'>";
-foreach ($tree as $item)
-{
+foreach ($tree as $item) {
     echo '<li>';
     echo $item->Name;
     {
         echo "<ul type='circle'>";
-        foreach ($item->related_meets  as $jtem)
-        {
+        foreach ($item->related_meets  as $jtem) {
             echo '<li>';
             echo $jtem['Meeting'].'('.$jtem['room']['Number'].')';
             echo '</li>';

@@ -1,0 +1,8 @@
+<?php
+// This is the database connection configuration example. Rename to database.php
+return array(
+    'connectionString' => 'mysql:host=localhost;dbname=test',
+    'username' => 'root',
+    'password' => 'abracadabra',
+    'charset' => 'utf8',
+);

@@ -35,6 +35,8 @@
                 array('label'=>'Поиск Встреч', 'url'=>array('memberCountForm')),
                 array('label'=>'Вывод по комнатам', 'url'=>array('roomExplore/all')),
                 array('label'=>'Вывод по отделам', 'url'=>array('deptExplore/all')),
+                array('label'=>'Войти', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
+                array('label'=>'Выйти', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
             ),
         )); ?>
     </div><!-- mainmenu -->

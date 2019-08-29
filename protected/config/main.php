@@ -33,9 +33,10 @@ return array(
 
     // application components
     'components'=>array(
-
-
-        // comment the following to disable URLs in path-format
+        'user'=>array(
+            // enable cookie-based authentication
+            'allowAutoLogin'=>true,
+        ),
 
         'urlManager'=>array(
             'urlFormat'=>'path',

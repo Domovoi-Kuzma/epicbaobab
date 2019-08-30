@@ -19,6 +19,9 @@ return array(
         'application.extensions.*',
     ),
 
+   // 'defaultController'=>'user',
+
+
     'modules'=>array(
         // uncomment the following to enable the Gii tool
 
@@ -37,15 +40,15 @@ return array(
             // enable cookie-based authentication
             'allowAutoLogin'=>true,
         ),
-
+/*
         'urlManager'=>array(
             'urlFormat'=>'path',
             'showScriptName'=>false,
             'rules'=>array(
-                '<action:\w+>/<id:\w+>*'=>'site/<action>',
-                '<action:\w+>'=>'site/<action>',
+                '<controller:\w+>/<action:\w+>/<id:\w+>*'=>'<controller>/<action>',
+                '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
             ),
-        ),
+        ),*/
 
         // database settings are configured in database.php
         'db'=>require(dirname(__FILE__).'/database.php'),

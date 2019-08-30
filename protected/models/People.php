@@ -125,4 +125,16 @@ class People extends CActiveRecord
         return array( 'CAdvancedArBehavior' => array(
             'class' => 'application.extensions.CAdvancedArBehavior'));
     }
+    /**
+     * Обрывает все отношения с другими таблицами перед удалением записи
+     * @return boolean whether the People record should be deleted.
+     * @author  Sasha
+     * @data    28.08.2019
+     */
+    public function beforeDelete()
+    {
+        $this->related_meets=[];
+        $this->save();
+        return parent::beforeDelete();
+    }
 }

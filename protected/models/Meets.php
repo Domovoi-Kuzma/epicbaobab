@@ -146,4 +146,16 @@ class Meets extends CActiveRecord
             'class' => 'application.extensions.CAdvancedArBehavior')
         );
     }
+    /**
+     * Обрывает все отношения с другими таблицами перед удалением записи
+     * @return boolean whether the Meets record should be deleted.
+     * @author  Sasha
+     * @data    28.08.2019
+     */
+    public function beforeDelete()
+    {
+        $this->related_people=[];
+        $this->save();
+        return parent::beforeDelete();
+    }
 }

@@ -11,20 +11,20 @@ $this->breadcrumbs=array(
 );
 echo '<h1>Представьтесь, пожалуйста!</h1>';
 echo '<div class="form">';
-    echo CHtml::beginForm($action, 'post', array('id'=>'RoomForm'));
+    echo CHtml::beginForm('login', 'post', array('id'=>'SignupForm'));
 
     echo '<div class="row">';
     echo CHtml::label('Имя пользователя', '');
-    echo CHtml::textField('Username');
-    echo '</div>';//row Название
+    echo CHtml::textField('username');
+    echo '</div>';//row Логин
 
     echo '<div class="row">';
     echo CHtml::label('Пароль', '');
-    echo CHtml::textField('зфыыцщкв');
-    echo '</div>';//row Название
+    echo CHtml::passwordField('password');
+    echo '</div>';//row Пароль
 
     echo '<div class="row">';
-    echo CHtml::submitButton('Submit');
+    echo CHtml::submitButton('Войти');
     echo '</div>';//row кнопка
     echo CHtml::endForm();
 echo '</div>';//form

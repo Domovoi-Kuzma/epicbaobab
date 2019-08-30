@@ -264,7 +264,7 @@ class SiteController extends Controller
         $newrum = new Room();
         if (isset($_POST['ID'])) {
             $newrum->saveAs();
-            $this->redirect($this->createUrl('roomExplore/all'));
+            $this->redirect($this->createUrl('site/roomExplore/all'));
         }
         else {
             $this->render('viewRoomForm',
@@ -287,7 +287,7 @@ class SiteController extends Controller
             if (is_null($newrum))
                 throw new CHttpException(404, "Записи комнаты с ключом $id нет в базе");
             $newrum->SaveAs();
-            $this->redirect($this->createUrl('roomExplore/all'));
+            $this->redirect($this->createUrl('site/roomExplore/all'));
         }
         else {
             $newrum=Room::model()->findByPk($id);
@@ -333,7 +333,7 @@ class SiteController extends Controller
             if (is_null($model))
                 throw new CHttpException(404, "Записи отдела с ключом $id нет в базе");
             $model->delete();
-            $this->redirect($this->createUrl('deptExplore/all'));
+            $this->redirect($this->createUrl('site/deptExplore/all'));
         }
         else
             throw new CHttpException(404, "неверный формат адреса");
@@ -350,7 +350,7 @@ class SiteController extends Controller
         $newdept = new Department();
         if (isset($_POST['ID'])) {
             $newdept->saveAs();
-            $this->redirect($this->createUrl('deptExplore/all'));
+            $this->redirect($this->createUrl('site/deptExplore/all'));
         } else {
             $this->render('viewDepartmentForm',
                 [
@@ -373,7 +373,7 @@ class SiteController extends Controller
             if (is_null($newdept))
                 throw new CHttpException(404, "Ошибка! Не найден отдел с ключём $id");
             $newdept->SaveAs();
-            $this->redirect($this->createUrl('deptExplore/all'));
+            $this->redirect($this->createUrl('site/deptExplore/all'));
         }
         else {
             $newdept=Department::model()->findByPk($id);

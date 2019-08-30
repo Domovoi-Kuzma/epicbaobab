@@ -11,7 +11,7 @@ $this->breadcrumbs=array(
 );
 echo '<h1>Представьтесь, пожалуйста!</h1>';
 echo '<div class="form">';
-    echo CHtml::beginForm('login', 'post', array('id'=>'SignupForm'));
+    echo CHtml::beginForm('index.php?r=user/login', 'post', array('id'=>'SignupForm'));
 
     echo '<div class="row">';
     echo CHtml::label('Имя пользователя', '');

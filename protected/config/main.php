@@ -38,6 +38,7 @@ return array(
     'components'=>array(
         'user'=>array(
             // enable cookie-based authentication
+            'class' => 'WebUser',
             'allowAutoLogin'=>true,
         ),
 /*
@@ -49,6 +50,11 @@ return array(
                 '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
             ),
         ),*/
+        'authManager'=>array(
+            'class'=>'CDbAuthManager',
+            'defaultRoles'=>array('authenticated', 'admin'),
+        ),
+
 
         // database settings are configured in database.php
         'db'=>require(dirname(__FILE__).'/database.php'),

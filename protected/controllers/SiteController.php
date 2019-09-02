@@ -386,5 +386,33 @@ class SiteController extends Controller
                 ]);
         }
     }
+    public function filters()
+    {
+        return array(
+            'accessControl', // perform access control for CRUD operations
+        );
+    }
+
+    /**
+     * задаёт ограничения на посещение страниц категориям пользователей
+     * @return array
+     */
+    public function accessRules()
+    {
+        return array(
+           /* array('allow',
+                'actions' => array('Index', 'Login'),
+                'users'=>array('*'),
+            ),*/
+            array('allow',
+                'actions' => array('employees', 'meeting', 'memberCountForm', 'roomExplore', 'deptExplore'),
+                'users'=>array('admin', 'signed'),
+            ),
+            array('deny',
+                'actions' => array('employees', 'meeting', 'memberCountForm', 'roomExplore', 'deptExplore'),
+                'users'=>array('guest'),
+            ),
+        );
+    }
 
 }

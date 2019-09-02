@@ -9,12 +9,12 @@ class m190830_135424_create_user_table extends CDbMigration
 			'username' => 'varchar(255)',
 			'password' => 'varchar(255)',
 			//'profile' => 'varchar(255)',//"enum('admin', 'guest'"
-			'profile' => "enum('guest','admin')",
+			'profile' => "enum('signed','admin')",
 		));
 		$this->insertMultiple('user',[
             ['username' => 'admin', 'password' => '$2y$13$q1NwjMjGO6GMSX2DAVuMu.Qqit9o9yAx.kVaIOX/ydcPPDbwCAbPe', 'profile' => 'admin',],
-			['username' => 'John',  'password' => '$2y$13$q1NwjMjGO6GMSX2DAVuMu.Qqit9o9yAx.kVaIOX/ydcPPDbwCAbPe',  'profile' => 'guest',],
-			['username' => 'Rambo', 'password' => '$2y$13$pa8t1ssT62LqlRcTVDp2Ge.nKF1DQnYy5JOcstvZgM.f6.1pMaPJm',  'profile' => 'guest',],
+			['username' => 'John',  'password' => '$2y$13$q1NwjMjGO6GMSX2DAVuMu.Qqit9o9yAx.kVaIOX/ydcPPDbwCAbPe',  'profile' => 'signed',],
+			['username' => 'Rambo', 'password' => '$2y$13$pa8t1ssT62LqlRcTVDp2Ge.nKF1DQnYy5JOcstvZgM.f6.1pMaPJm',  'profile' => 'signed',],
 		]);
 	}
 

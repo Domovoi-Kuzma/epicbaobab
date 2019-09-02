@@ -14,7 +14,7 @@ echo CHtml::textField('username');
 echo CHtml::label('Пароль', '');
 echo CHtml::textField('password');
 echo CHtml::label('Профиль', '');
-echo CHtml::dropDownList('profile','user', ['guest'=>'Обычный','admin'=>'Админский']);
+echo CHtml::dropDownList('profile','user', ['signed'=>'Обычный','admin'=>'Админский']);
 echo CHtml::submitButton('Добавить');
 echo CHtml::endForm();
 echo '</div>';

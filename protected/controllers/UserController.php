@@ -35,6 +35,20 @@ class UserController extends Controller
     }
 
     /**
+     * просмотр комментариев к встрече
+     * @param integer $id ключ записи встречи в БД
+     * @author  Sasha
+     * @data    02.09.2019
+     */
+    public function actionComments($id)
+    {
+        $model=Meets::model()->findByPk($id);
+        if (is_null($model))
+            throw new CHttpException(404, "Ошибка! Не найдена встреча с ключём $id");
+
+
+    }
+    /**
      * на страницу входа пользователя
      * @author  Sasha
      * @data    30.08.2019

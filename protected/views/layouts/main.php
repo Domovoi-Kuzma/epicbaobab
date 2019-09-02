@@ -30,11 +30,11 @@
         <?php $this->widget('zii.widgets.CMenu',array(
             'items'=>array(
                 array('label'=>'Home', 'url'=>array('/site/index')),
-                array('label'=>'Список сотрудников', 'url'=>array('/site/employees')),
-                array('label'=>'Список Встреч', 'url'=>array('/site/meeting')),
-                array('label'=>'Поиск Встреч', 'url'=>array('/site/memberCountForm')),
-                array('label'=>'Вывод по комнатам', 'url'=>array('/site/roomExplore/all')),
-                array('label'=>'Вывод по отделам', 'url'=>array('/site/deptExplore/all')),
+                array('label'=>'Список сотрудников', 'url'=>array('/site/employees'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Список Встреч', 'url'=>array('/site/meeting'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Поиск Встреч', 'url'=>array('/site/memberCountForm'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Вывод по комнатам', 'url'=>array('/site/roomExplore/all'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Вывод по отделам', 'url'=>array('/site/deptExplore/all'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Войти', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
                 array('label'=>'Выйти ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest),
             ),

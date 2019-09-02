@@ -19,14 +19,20 @@ class UserController extends Controller
 
     /**
      * место для вызова панели админа
+     * gazprom.loc/index.php?r=user/control
      * @author  Sasha
      */
     public function actionControl()
-    {//http://gazprom.loc/index.php?r=user/control
-        echo('<h1>YOURE IN THE SECRET PLACE</h1>');
-        die();
+    {
+        $this->render("globalAdminForm");
     }
 
+    public function actionAdminInsert()
+    {
+        $newuser=new User();
+        $newuser->saveAs();
+        $this->redirect('user/control');
+    }
 
     /**
      * на страницу входа пользователя
@@ -83,7 +89,7 @@ class UserController extends Controller
     {
         return array(
            array('allow',
-                'actions' => array('login'),
+                'actions' => array('Login'),
                 'users'=>array('*'),
             ),
             array('allow',

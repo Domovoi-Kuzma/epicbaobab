@@ -8,12 +8,14 @@ class m190830_135424_create_user_table extends CDbMigration
 			'ID' => 'pk',
 			'username' => 'varchar(255)',
 			'password' => 'varchar(255)',
-			'profile' => 'varchar(255)',//"enum('admin', 'guest'"
+			//'profile' => 'varchar(255)',//"enum('admin', 'guest'"
+			'profile' => "enum('guest','admin')",
 		));
 		$this->insertMultiple('user',[
-                                        ['username' => 'admin', 'password' => 'admin', 'profile' => 'admin',],
-                                        ['username' => 'user',  'password' => 'user',  'profile' => 'guest',],
-                             ]);
+            ['username' => 'admin', 'password' => '$2y$13$q1NwjMjGO6GMSX2DAVuMu.Qqit9o9yAx.kVaIOX/ydcPPDbwCAbPe', 'profile' => 'admin',],
+			['username' => 'John',  'password' => '$2y$13$q1NwjMjGO6GMSX2DAVuMu.Qqit9o9yAx.kVaIOX/ydcPPDbwCAbPe',  'profile' => 'guest',],
+			['username' => 'Rambo', 'password' => '$2y$13$pa8t1ssT62LqlRcTVDp2Ge.nKF1DQnYy5JOcstvZgM.f6.1pMaPJm',  'profile' => 'guest',],
+		]);
 	}
 
 	public function down()

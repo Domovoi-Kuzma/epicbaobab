@@ -40,8 +40,10 @@ div.form
 
 div.form input,
 div.form textarea,
+div.form label,
 div.form select
 {
+	display:inline-block;
 	margin: 0.2em 0 0.5em 0;
 }
 
@@ -53,12 +55,6 @@ div.form fieldset
     -moz-border-radius:7px;
 }
 
-div.form label
-{
-	font-weight: bold;
-	font-size: 0.9em;
-	display: block;
-}
 
 div.form .row
 {

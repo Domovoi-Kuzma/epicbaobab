@@ -11,6 +11,15 @@
  */
 class User extends CActiveRecord
 {
+	public function saveAs()
+	{
+
+		$this->username=(isset($_POST['username']))?$_POST['username']:'';
+		$this->password=(isset($_POST['password']))?$_POST['password']:'';
+		$this->profile =(isset($_POST['profile'])) ?$_POST['profile'] :'';
+		$this->password=$this->hashPassword($this->password);
+		$this->save();
+	}
 	/**
 	 * @return string the associated database table name
 	 */
@@ -27,7 +36,8 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password, profile', 'length', 'max'=>255),
+			array('username, password', 'length', 'max'=>255),
+			array('profile', 'length', 'max'=>5),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('ID, username, password, profile', 'safe', 'on'=>'search'),
@@ -95,5 +105,24 @@ class User extends CActiveRecord
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
+	}
+	/**
+	 * Checks if the given password is correct.
+	 * @param string the password to be validated
+	 * @return boolean whether the password is valid
+	 */
+	public function validatePassword($password)
+	{
+		return CPasswordHelper::verifyPassword($password,$this->password);
+	}
+
+	/**
+	 * Generates the password hash.
+	 * @param string password
+	 * @return string hash
+	 */
+	public function hashPassword($password)
+	{
+		return CPasswordHelper::hashPassword($password);
 	}
 }

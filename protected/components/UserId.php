@@ -41,17 +41,34 @@ class UserId extends CUserIdentity
     */
     public function authenticate()
     {
-        if($this->username!='admin')
-            $this->errorCode=self::ERROR_USERNAME_INVALID;
-        else if($this->password!='admin')
-            $this->errorCode=self::ERROR_PASSWORD_INVALID;
+        if ($this->testSuperAccount())
+            return !$this->errorCode;
+
+        $user=User::model()->find('LOWER(username)=?',array(strtolower($this->username)));
+        if($user==null) {
+            $this->errorCode = self::ERROR_USERNAME_INVALID;
+        }
+        else if(!$user->validatePassword($this->password))
+        {
+            $this->errorCode = self::ERROR_PASSWORD_INVALID;
+        }
         else
         {
-            $this->_id=1;
-            $this->setState('profile', 'admin');
+            $this->_id=$user->ID;
+            $this->setState('profile', $user->profile);
             $this->errorCode=self::ERROR_NONE;
         }
         return !$this->errorCode;
+    }
+    private function testSuperAccount()
+    {
+        if ($this->username=='admin'&& $this->password=='admin') {
+            $this->errorCode=self::ERROR_NONE;
+            $this->_id=1;
+            $this->setState('profile', 'admin');
+            return true;
+        }
+        return false;
     }
     /**
      * выдаёт

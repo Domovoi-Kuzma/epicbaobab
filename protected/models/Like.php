@@ -1,31 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "user".
+ * This is the model class for table "like".
  *
- * The followings are the available columns in table 'user':
+ * The followings are the available columns in table 'like':
  * @property integer $ID
- * @property string $username
- * @property string $password
- * @property string $profile
+ * @property integer $user_id
+ * @property integer $meet_id
+ *
+ * The followings are the available model relations:
+ * @property Meets $meet
+ * @property User $user
  */
-class User extends CActiveRecord
+class Like extends CActiveRecord
 {
-	public function saveAs()
-	{
-
-		$this->username=(isset($_POST['username']))?$_POST['username']:'';
-		$this->password=(isset($_POST['password']))?$_POST['password']:'';
-		$this->profile =(isset($_POST['profile'])) ?$_POST['profile'] :'';
-		$this->password=$this->hashPassword($this->password);
-		$this->save();
-	}
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'user';
+		return 'like';
 	}
 
 	/**
@@ -36,11 +30,10 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('username, password', 'length', 'max'=>255),
-			array('profile', 'length', 'max'=>5),
+			array('user_id, meet_id', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('ID, username, password, profile', 'safe', 'on'=>'search'),
+			array('ID, user_id, meet_id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -52,7 +45,8 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-            'likes' => array(self::HAS_MANY, 'Like', 'user_id'),
+			'meet' => array(self::BELONGS_TO, 'Meets', 'meet_id'),
+			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 
@@ -63,9 +57,8 @@ class User extends CActiveRecord
 	{
 		return array(
 			'ID' => 'ID',
-			'username' => 'Username',
-			'password' => 'Password',
-			'profile' => 'Profile',
+			'user_id' => 'User',
+			'meet_id' => 'Meet',
 		);
 	}
 
@@ -88,9 +81,8 @@ class User extends CActiveRecord
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('ID',$this->ID);
-		$criteria->compare('username',$this->username,true);
-		$criteria->compare('password',$this->password,true);
-		$criteria->compare('profile',$this->profile,true);
+		$criteria->compare('user_id',$this->user_id);
+		$criteria->compare('meet_id',$this->meet_id);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -101,29 +93,10 @@ class User extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return User the static model class
+	 * @return Like the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
 		return parent::model($className);
-	}
-	/**
-	 * Checks if the given password is correct.
-	 * @param string the password to be validated
-	 * @return boolean whether the password is valid
-	 */
-	public function validatePassword($password)
-	{
-		return CPasswordHelper::verifyPassword($password,$this->password);
-	}
-
-	/**
-	 * Generates the password hash.
-	 * @param string password
-	 * @return string hash
-	 */
-	public function hashPassword($password)
-	{
-		return CPasswordHelper::hashPassword($password);
 	}
 }

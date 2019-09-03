@@ -65,6 +65,7 @@ class Meets extends CActiveRecord
         return array(
             'related_people'=>array(self::MANY_MANY, 'People', 'relations(MID, EID)'),
             'room' => array(self::BELONGS_TO, 'Room', 'Place'),
+            'liked_by' => array(self::HAS_MANY, 'Like', 'meet_id'),
             'memberCount' => array(self::STAT, 'People', 'relations(MID, EID)'),
         );
     }

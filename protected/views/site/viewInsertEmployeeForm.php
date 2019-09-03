@@ -1,5 +1,4 @@
 <?php
-$action='insertEmployee';
 $this->pageTitle=Yii::app()->name . ' - добавление нового сотрудника';
 $this->breadcrumbs=array(
     'добавление сотрудника',

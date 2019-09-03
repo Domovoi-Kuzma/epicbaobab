@@ -1,5 +1,4 @@
 <?php
-$action='insertMeeting';
 $this->pageTitle=Yii::app()->name . ' - добавление новой встречи';
 $this->breadcrumbs=array(
     'добавление встречи',

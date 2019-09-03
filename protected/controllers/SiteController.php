@@ -77,12 +77,13 @@ class SiteController extends Controller
         $newman=new People();
         if (isset($_POST['ID'])){
             $newman->saveAs();
-            $this->redirect($this->createUrl('site/employees'));
+            $this->redirect($this->createUrl('employees'));
         }
         else{
             $this->render('viewInsertEmployeeForm',
                 [
                     'model'     =>$newman,
+                    'action'    =>$this->createUrl('insertEmployee'),
                     'optionsM'  =>Meets::model()->findAll(),
                     'optionsD'  =>Department::model()->findAll(),
                 ]);
@@ -104,6 +105,7 @@ class SiteController extends Controller
         else {
             $this->render('viewInsertMeetingForm', [
                 'model'     =>$newmeet,
+                'action'    =>$this->createUrl('insertMeeting'),
                 'optionsP'  =>People::model()->findAll(),
                 'optionsR'  =>Room::model()->findAll(),
             ]);
@@ -165,6 +167,7 @@ class SiteController extends Controller
             $this->render('viewInsertEmployeeForm',
                 [
                     'model'     =>  $record,
+                    'action'    =>$this->createUrl('editEmployee', ['id'=>$id]),
                     'optionsM'  =>Meets::model()->findAll(),
                     'optionsD'  =>Department::model()->findAll(),
                 ]);
@@ -194,6 +197,7 @@ class SiteController extends Controller
             $this->render('viewInsertMeetingForm',
                 [
                     'model'     =>  $record,
+                    'action'    =>  $this->createUrl('editMeeting', ['id'=>$id]),
                     'optionsP'=>People::model()->findAll(),
                     'optionsR'=>Room::model()->findAll(),
                 ]);

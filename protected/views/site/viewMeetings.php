@@ -1,3 +1,12 @@
+<script>
+    function changeDivIcon(id)
+    {
+        if (id.className == 'dislike_button_icon')
+            id.className = 'like_button_icon';
+        else
+            id.className = 'dislike_button_icon';
+    }
+</script>
 <?php
 $this->pageTitle = Yii::app()->name . ' - список встреч';
 $this->breadcrumbs = array(
@@ -11,8 +20,12 @@ foreach ($meetings as $item) {
     $deleteaddress=$this->createUrl('deleteMeeting',['id'=>$item['ID']]);
 
     $commentaddress='index.php?r=user/comments&id='.$item['ID'];
+    $iconID='likebutton_'.$item['ID'];
     echo "<li>".$item['Meeting']." (room ".$item['room']['Number'].")(members: ".$item['memberCount'].")";
-    echo "&nbsp;<a href=$editaddress>изменить</a>/<a href=$deleteaddress>удалить</a>/<a href=$commentaddress>комментарии</a>";
+
+    echo "&nbsp;<a href=$editaddress>изменить</a>/<a href=$deleteaddress>удалить</a>";
+
+    echo "<div onClick='changeDivIcon(this)' class='dislike_button_icon'></div>";
     echo '<ul type="1">';
     foreach ($item['related_people'] as $jtem) {
         echo '<li>'. $jtem['Name'].'('.$jtem['dept']['Caption'].')</li>';

@@ -1,15 +1,20 @@
 .like_button_icon {
-    background-image: url("no_heart.png");
 	width: 64px;
 	height: 64px;
+	background-image:var(--picture);
 }
-.dislike_button_icon {
-    background-image: url("heart.png");
-	width: 64px;
-	height: 64px;
+.like_button_icon span {
+	display:none;
 }
-.wait_button_icon {
-    background-image: url("wait.png");
-	width: 64px;
-	height: 64px;
+.like_button_icon:hover span {
+	display:block;
+	background-color:black;
+	border-radius:5px;
+	color:white;
+	box-shadow:1px 1px 3px gray;
+	position:relative;
+	padding:5px;
+	top:1.3em;
+	left:0px;
+	width:200px; /* I don't want the width to be too large... */
 }

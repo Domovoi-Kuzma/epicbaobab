@@ -111,17 +111,18 @@ class Meets extends CActiveRecord
     public function getLikeStatus()
     {
         Yii::trace("Meets::getLikeStatus ID: ".$this->ID, 'system.web.CController');
-        $tooltip = "";
+        $tooltip = [];
         $icon = 'like_button_icon';
         foreach($this->liked_by as $lover) {
             if ($lover->user_id == Yii::app()->user->id) {
                 $icon='dislike_button_icon';
             } else {
-                $tooltip.= $lover->user->username." ";
+                $tooltip[]= $lover->user->username;
             }
         }
-        if (!empty($tooltip)) $tooltip="also liked by ".$tooltip;
-        Yii::trace("Meets::getLikeStatus returned icon<$icon>, tooltip<$tooltip>", 'system.web.CController');
+        if (!empty($tooltip))
+            array_unshift($tooltip, "also liked by ");
+       // Yii::trace("Meets::getLikeStatus returned icon<$icon>, tooltip<$tooltip>", 'system.web.CController');
         return ['icon'=>$icon, 'tooltip'=>$tooltip];
     }
 
@@ -146,14 +147,16 @@ class Meets extends CActiveRecord
             $model->meet_id = $this->ID;
             $model->save();
             $retarray=$this->getLikeStatus();
-            Yii::trace("Meets::ToggleLike ID: ".$this->ID." returning1:".$retarray['icon'].'@'.$retarray['tooltip'], 'system.web.CController');
-            echo $retarray['icon'].'@'.$retarray['tooltip'];
+            $retstr=join("@", $retarray['tooltip']);
+            Yii::trace("Meets::ToggleLike ID: ".$this->ID." returning1:".$retarray['icon'].'@'.$retstr, 'system.web.CController');
+            echo $retarray['icon'].'@'.$retstr;
         }
         else {
             $result->delete();
             $retarray=$this->getLikeStatus($this->ID);
-            Yii::trace("Meets::ToggleLike ID: ".$this->ID." returning2:".$retarray['icon'].'@'.$retarray['tooltip'], 'system.web.CController');
-            echo $retarray['icon'].'@'.$retarray['tooltip'];
+            $retstr=join("@", $retarray['tooltip']);
+            Yii::trace("Meets::ToggleLike ID: ".$this->ID." returning2:".$retarray['icon'].'@'.$retstr, 'system.web.CController');
+            echo $retarray['icon'].'@'.$retstr;
         }
     }
 

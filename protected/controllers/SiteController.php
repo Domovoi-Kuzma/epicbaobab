@@ -111,7 +111,55 @@ class SiteController extends Controller
             ]);
         }
     }
+    private function getLikeStatus($meeting_id)
+    {
+        Yii::trace("getLikeStatus ID: $meeting_id ", 'system.web.CController');
+        $record=Meets::model()->findByPk($meeting_id);
+        if (is_null($record))
+            return ["new_icon"=>"error_button_icon", "tooltip"=>"error"];
+        $found=false;
+        $tooltip = "liked by ";
 
+    }
+    /**
+     * AJAX script called when meeting, liked by user
+     * @param integer $id ключ лайкнутой встречи.
+     */
+    public function actionToggleLike($meeting_id)
+    {
+        /*
+        $model=new Like;
+        $model->user_id=Yii::app()->user->id;
+        $model->meet_id=$meeting_id;*/
+        Yii::trace("actionToggleLike ID: $meeting_id GET: ".var_export($_GET, true), 'system.web.CController');
+        $record = null;
+        //$record=Meets::model()->findByPk($meeting_id);
+        if (is_null($record))
+        {
+            echo "error_button_icon@error";
+			Yii::app()->end();
+        }
+        $found=false;
+        $tooltip = "liked by ";
+        $comrades = [];
+        foreach($record->liked_by as $lover)
+            if ($lover->ID == Yii::app()->user->id) {
+                $found=true;
+            } else {
+                $tooltip += $lover->username+" ";
+                $comrades[]=$lover->ID;
+            }
+        if ($found) {
+            $switch_to="like_button_icon";
+        }
+        else {
+            $switch_to="dislike_button_icon";
+            $comrades[]=Yii::app()->user->id;
+        }
+        $record->liked_by=$comrades;
+        $record->save();
+        echo $switch_to."@".$tooltip;
+    }
     /**
      * Удаление записи
      * @param integer $id ключ сотрудника.

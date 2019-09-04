@@ -122,17 +122,13 @@ class SiteController extends Controller
         $tooltip = "";
         $icon = 'like_button_icon';
         foreach($record->liked_by as $lover) {
-            ob_start();
-            var_dump($lover);
-            $logstr = ob_get_clean();
-            Yii::trace("getLikeStatus lover is $logstr", 'system.web.CController');
             if ($lover->user_id == Yii::app()->user->id) {
                 $icon='dislike_button_icon';
             } else {
-                $tooltip += $lover->user->username+" ";
+                $tooltip.= $lover->user->username." ";
             }
         }
-        if (!empty($tooltip)) $tooltip="liked by "+$tooltip;
+        if (!empty($tooltip)) $tooltip="also liked by ".$tooltip;
         Yii::trace("getLikeStatus returned icon<$icon>, tooltip<$tooltip>", 'system.web.CController');
         return ['icon'=>$icon, 'tooltip'=>$tooltip];
     }
@@ -142,38 +138,28 @@ class SiteController extends Controller
      */
     public function actionToggleLike($meeting_id)
     {
-        /*
-        $model=new Like;
-        $model->user_id=Yii::app()->user->id;
-        $model->meet_id=$meeting_id;*/
-        Yii::trace("actionToggleLike ID: $meeting_id GET: ".var_export($_GET, true), 'system.web.CController');
-        $record = null;
-        //$record=Meets::model()->findByPk($meeting_id);
-        if (is_null($record))
-        {
-            echo "error_button_icon@error";
-			Yii::app()->end();
-        }
-        $found=false;
-        $tooltip = "liked by ";
-        $comrades = [];
-        foreach($record->liked_by as $lover)
-            if ($lover->ID == Yii::app()->user->id) {
-                $found=true;
-            } else {
-                $tooltip += $lover->username+" ";
-                $comrades[]=$lover->ID;
-            }
-        if ($found) {
-            $switch_to="like_button_icon";
+        Yii::trace("actionToggleLike ID: $meeting_id ", 'system.web.CController');
+        $criteria=new CDbCriteria();
+        $criteria->addCondition('user_id=:user_crit');
+        $criteria->addCondition('meet_id=:meet_crit');
+        $criteria->params=array(':user_crit'=>Yii::app()->user->id, ':meet_crit'=>$meeting_id);
+        $result=Like::model()->find($criteria);
+        if (is_null($result)) {
+            //insert users like here
+            $model = new Like;
+            $model->user_id = Yii::app()->user->id;
+            $model->meet_id = $meeting_id;
+            $model->save();
+            $retarray=$this->getLikeStatus($meeting_id);
+            Yii::trace("actionToggleLike ID: $meeting_id returning1:".$retarray['icon'].'@'.$retarray['tooltip'], 'system.web.CController');
+            echo $retarray['icon'].'@'.$retarray['tooltip'];
         }
         else {
-            $switch_to="dislike_button_icon";
-            $comrades[]=Yii::app()->user->id;
+            $result->delete();
+            $retarray=$this->getLikeStatus($meeting_id);
+            Yii::trace("actionToggleLike ID: $meeting_id returning2:".$retarray['icon'].'@'.$retarray['tooltip'], 'system.web.CController');
+            echo $retarray['icon'].'@'.$retarray['tooltip'];
         }
-        $record->liked_by=$comrades;
-        $record->save();
-        echo $switch_to."@".$tooltip;
     }
     /**
      * Удаление записи

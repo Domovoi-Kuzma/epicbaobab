@@ -35,16 +35,17 @@ $formaddress=$this->createUrl('insertMeeting');
 echo '<h1>Список - [встречи]</h1>';
 echo "<ul type='circle'>";
 foreach ($meetings as $item) {
-    $editaddress=$this->createUrl('editMeeting',['id'=>$item['ID']]);
-    $deleteaddress=$this->createUrl('deleteMeeting',['id'=>$item['ID']]);
+    $id=$item['ID'];
+    $editaddress=$this->createUrl('editMeeting',['id'=>$id]);
+    $deleteaddress=$this->createUrl('deleteMeeting',['id'=>$id]);
 
-    $commentaddress='index.php?r=user/comments&id='.$item['ID'];
-    $clickParam=$item['ID'];
+    $commentaddress='index.php?r=user/comments&id='.$id;
+    $likeParam=$this->getLikeStatus($id);
     echo "<li>".$item['Meeting']." (room ".$item['room']['Number'].")(members: ".$item['memberCount'].")";
 
     echo "&nbsp;<a href=$editaddress>изменить</a>/<a href=$deleteaddress>удалить</a>";
 
-    echo "<div title='This is my tooltip' onClick='toogleLikeRequest(this, $clickParam)' class='like_button_icon' param='$clickParam'></div>";
+    echo "<div title='".$likeParam['tooltip']."' onClick='toogleLikeRequest(this, $id)' class='".$likeParam['icon']."' param='$id'></div>";
     echo '<ul type="1">';
     foreach ($item['related_people'] as $jtem) {
         echo '<li>'. $jtem['Name'].'('.$jtem['dept']['Caption'].')</li>';

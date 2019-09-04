@@ -1,0 +1,15 @@
+.like_button_icon {
+    background-image: url("no_heart.png");
+	width: 64px;
+	height: 64px;
+}
+.dislike_button_icon {
+    background-image: url("heart.png");
+	width: 64px;
+	height: 64px;
+}
+.wait_button_icon {
+    background-image: url("wait.png");
+	width: 64px;
+	height: 64px;
+}

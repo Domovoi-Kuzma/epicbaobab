@@ -111,15 +111,30 @@ class SiteController extends Controller
             ]);
         }
     }
-    private function getLikeStatus($meeting_id)
+    public function getLikeStatus($meeting_id)
     {
         Yii::trace("getLikeStatus ID: $meeting_id ", 'system.web.CController');
-        $record=Meets::model()->findByPk($meeting_id);
-        if (is_null($record))
-            return ["new_icon"=>"error_button_icon", "tooltip"=>"error"];
-        $found=false;
-        $tooltip = "liked by ";
-
+        $record = Meets::model()->findByPk($meeting_id);
+        if (is_null($record)) {
+            Yii::trace("getLikeStatus returned error <record is null>", 'system.web.CController');
+            return ['icon' => 'error_button_icon', 'tooltip' => 'error'];
+        }
+        $tooltip = "";
+        $icon = 'like_button_icon';
+        foreach($record->liked_by as $lover) {
+            ob_start();
+            var_dump($lover);
+            $logstr = ob_get_clean();
+            Yii::trace("getLikeStatus lover is $logstr", 'system.web.CController');
+            if ($lover->user_id == Yii::app()->user->id) {
+                $icon='dislike_button_icon';
+            } else {
+                $tooltip += $lover->user->username+" ";
+            }
+        }
+        if (!empty($tooltip)) $tooltip="liked by "+$tooltip;
+        Yii::trace("getLikeStatus returned icon<$icon>, tooltip<$tooltip>", 'system.web.CController');
+        return ['icon'=>$icon, 'tooltip'=>$tooltip];
     }
     /**
      * AJAX script called when meeting, liked by user

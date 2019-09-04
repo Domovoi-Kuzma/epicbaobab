@@ -40,7 +40,9 @@ foreach ($meetings as $item) {
     $deleteaddress=$this->createUrl('deleteMeeting',['id'=>$id]);
 
     $commentaddress='index.php?r=user/comments&id='.$id;
-    $likeParam=$this->getLikeStatus($id);
+    $likeParam=$item->getLikeStatus();
+    var_dump($likeParam);
+
     echo "<li>".$item['Meeting']." (room ".$item['room']['Number'].")(members: ".$item['memberCount'].")";
 
     echo "&nbsp;<a href=$editaddress>изменить</a>/<a href=$deleteaddress>удалить</a>";

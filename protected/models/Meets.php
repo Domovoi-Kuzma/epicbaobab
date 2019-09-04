@@ -101,6 +101,62 @@ class Meets extends CActiveRecord
 
         return  Meets::model()->findAll($criteria);;
     }
+
+    /**
+     * получение списка лайков в виде массива + статус лайкнутости текущим юзером
+     * @return array
+     * @author  Sasha
+     * @data    04.09.2019
+     */
+    public function getLikeStatus()
+    {
+        Yii::trace("Meets::getLikeStatus ID: ".$this->ID, 'system.web.CController');
+        $tooltip = "";
+        $icon = 'like_button_icon';
+        foreach($this->liked_by as $lover) {
+            if ($lover->user_id == Yii::app()->user->id) {
+                $icon='dislike_button_icon';
+            } else {
+                $tooltip.= $lover->user->username." ";
+            }
+        }
+        if (!empty($tooltip)) $tooltip="also liked by ".$tooltip;
+        Yii::trace("Meets::getLikeStatus returned icon<$icon>, tooltip<$tooltip>", 'system.web.CController');
+        return ['icon'=>$icon, 'tooltip'=>$tooltip];
+    }
+
+    /**
+     * переворот лайка (если есть - удаление, если нет - добавление)
+     * @author  Sasha
+     * @data    04.09.2019
+     */
+    public function ToggleLike()
+    {
+        Yii::trace("Meets::ToggleLike ID: ".$this->ID, 'system.web.CController');
+        $criteria=new CDbCriteria();
+        $criteria->addCondition('user_id=:user_crit');
+        $criteria->addCondition('meet_id=:meet_crit');
+        $criteria->params=array(':user_crit'=>Yii::app()->user->id, ':meet_crit'=>$this->ID);
+        $result=Like::model()->find($criteria);
+
+        if (is_null($result)) {
+            //insert users like here
+            $model = new Like;
+            $model->user_id = Yii::app()->user->id;
+            $model->meet_id = $this->ID;
+            $model->save();
+            $retarray=$this->getLikeStatus();
+            Yii::trace("Meets::ToggleLike ID: ".$this->ID." returning1:".$retarray['icon'].'@'.$retarray['tooltip'], 'system.web.CController');
+            echo $retarray['icon'].'@'.$retarray['tooltip'];
+        }
+        else {
+            $result->delete();
+            $retarray=$this->getLikeStatus($this->ID);
+            Yii::trace("Meets::ToggleLike ID: ".$this->ID." returning2:".$retarray['icon'].'@'.$retarray['tooltip'], 'system.web.CController');
+            echo $retarray['icon'].'@'.$retarray['tooltip'];
+        }
+    }
+
     /**
      * Retrieves a list of models based on the current search/filter conditions.
      *

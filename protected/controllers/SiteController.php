@@ -68,6 +68,19 @@ class SiteController extends Controller
     }
 
     /**
+     * AJAX script called when meeting, liked by user
+     * @param integer $id ключ лайкнутой встречи.
+     * @author  Sasha
+     * @data    04.09.2019
+     */
+    public function actionToggleLike($meeting_id)
+    {
+        Yii::trace("actionToggleLike ID: $meeting_id ", 'system.web.CController');
+        $model=Meets::model()->findByPk($meeting_id);
+        $model->ToggleLike();
+    }
+
+    /**
      * Вывод формы добавления или само добавление сотрудника
      * @author  Sasha
      * @data    21.08.2019
@@ -109,56 +122,6 @@ class SiteController extends Controller
                 'optionsP'  =>People::model()->findAll(),
                 'optionsR'  =>Room::model()->findAll(),
             ]);
-        }
-    }
-    public function getLikeStatus($meeting_id)
-    {
-        Yii::trace("getLikeStatus ID: $meeting_id ", 'system.web.CController');
-        $record = Meets::model()->findByPk($meeting_id);
-        if (is_null($record)) {
-            Yii::trace("getLikeStatus returned error <record is null>", 'system.web.CController');
-            return ['icon' => 'error_button_icon', 'tooltip' => 'error'];
-        }
-        $tooltip = "";
-        $icon = 'like_button_icon';
-        foreach($record->liked_by as $lover) {
-            if ($lover->user_id == Yii::app()->user->id) {
-                $icon='dislike_button_icon';
-            } else {
-                $tooltip.= $lover->user->username." ";
-            }
-        }
-        if (!empty($tooltip)) $tooltip="also liked by ".$tooltip;
-        Yii::trace("getLikeStatus returned icon<$icon>, tooltip<$tooltip>", 'system.web.CController');
-        return ['icon'=>$icon, 'tooltip'=>$tooltip];
-    }
-    /**
-     * AJAX script called when meeting, liked by user
-     * @param integer $id ключ лайкнутой встречи.
-     */
-    public function actionToggleLike($meeting_id)
-    {
-        Yii::trace("actionToggleLike ID: $meeting_id ", 'system.web.CController');
-        $criteria=new CDbCriteria();
-        $criteria->addCondition('user_id=:user_crit');
-        $criteria->addCondition('meet_id=:meet_crit');
-        $criteria->params=array(':user_crit'=>Yii::app()->user->id, ':meet_crit'=>$meeting_id);
-        $result=Like::model()->find($criteria);
-        if (is_null($result)) {
-            //insert users like here
-            $model = new Like;
-            $model->user_id = Yii::app()->user->id;
-            $model->meet_id = $meeting_id;
-            $model->save();
-            $retarray=$this->getLikeStatus($meeting_id);
-            Yii::trace("actionToggleLike ID: $meeting_id returning1:".$retarray['icon'].'@'.$retarray['tooltip'], 'system.web.CController');
-            echo $retarray['icon'].'@'.$retarray['tooltip'];
-        }
-        else {
-            $result->delete();
-            $retarray=$this->getLikeStatus($meeting_id);
-            Yii::trace("actionToggleLike ID: $meeting_id returning2:".$retarray['icon'].'@'.$retarray['tooltip'], 'system.web.CController');
-            echo $retarray['icon'].'@'.$retarray['tooltip'];
         }
     }
     /**

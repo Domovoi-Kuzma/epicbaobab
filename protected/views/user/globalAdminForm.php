@@ -8,7 +8,14 @@
 echo "Добавить пользователя";
 echo '<div class="row">';
 echo '<div class="form">';
-echo CHtml::beginForm('index.php?r=user/adminInsert', 'post', array('id'=>'AddUserForm'));
+
+if(Yii::app()->user->hasFlash('error')) {
+    echo '<div class="flash-error">';
+    echo Yii::app()->user->getFlash('error');
+    echo '</div>';
+}
+
+echo CHtml::beginForm('adminInsert', 'post', array('id'=>'AddUserForm'));
 echo CHtml::label('Имя', '');
 echo CHtml::textField('username');
 echo CHtml::label('Пароль', '');

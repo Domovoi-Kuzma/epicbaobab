@@ -3,6 +3,8 @@
 //внимание! картинки отображаются в IE при указании папки CSS и наоборот в Chrome появляются только без папки!
 
 echo "    var ajaxAddress='".$this->createUrl('toggleLike',['meeting_id'=>''])."';\n";
+//URL адрес без конкретного айдишника в параметрах (его в скрипте конкатинируем в конец)
+// т.е. строка примерно подобного вида index.php?r=site/toggleLike&meeting_id=
 ?>
     function toogleLikeRequest(elem, id) {
         var xhr = new XMLHttpRequest();

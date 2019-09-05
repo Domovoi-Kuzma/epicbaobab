@@ -17,8 +17,9 @@ class User extends CActiveRecord
 		$this->username=(isset($_POST['username']))?$_POST['username']:'';
 		$this->password=(isset($_POST['password']))?$_POST['password']:'';
 		$this->profile =(isset($_POST['profile'])) ?$_POST['profile'] :'';
+        $this->likes=[];
 		$this->hashPassword($this->password);
-		$this->save();
+        return $this->save();
 	}
 	/**
 	 * @return string the associated database table name
@@ -37,7 +38,7 @@ class User extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('username, password', 'length', 'max'=>255),
-			array('profile', 'length', 'max'=>5),
+			array('profile', 'length', 'max'=>6),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('ID, username, password, profile', 'safe', 'on'=>'search'),
@@ -97,6 +98,7 @@ class User extends CActiveRecord
 		));
 	}
 
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
@@ -116,6 +118,23 @@ class User extends CActiveRecord
 	{
 		return CPasswordHelper::verifyPassword($password,$this->password);
 	}
+
+    /**
+     * Более подходящий для моей формы вариант getErrors()
+     * возможно найду ему замену в std методах yii
+     * @return string message
+     * @author  Sasha
+     * @date    05.09
+     */
+	public function getAllErrors() {
+        $source=$this->getErrors();
+        $logstr="";
+        foreach($source as $property) {
+            foreach ($property as $unfitness)
+                $logstr .= $unfitness . ", ";
+        }
+        return $logstr;
+    }
 
 	/**
 	 * Generates the password hash.

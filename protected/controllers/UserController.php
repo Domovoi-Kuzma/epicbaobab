@@ -30,8 +30,10 @@ class UserController extends Controller
     public function actionAdminInsert()
     {
         $newuser=new User();
-        $newuser->saveAs();
-        $this->redirect('user/control');
+        if(!$newuser->saveAs()) {
+            Yii::app()->user->setFlash('error', "Проверьте данные, Ошибка сохранения ".$newuser->getAllErrors());
+        }
+        $this->redirect('control');
     }
     /**
      * на страницу входа пользователя

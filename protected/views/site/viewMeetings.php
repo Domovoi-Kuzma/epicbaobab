@@ -1,24 +1,20 @@
 <script>
 <?php
-echo "    var ajaxAddress='".$this->createUrl('toggleLike',['meeting_id'=>''])."'\n";
-$pic_url=['like_button_icon'=>"url('no_heart.png')", 'dislike_button_icon'=>"url('heart.png')"];
+//внимание! картинки отображаются в IE при указании папки CSS и наоборот в Chrome появляются только без папки!
+
+echo "    var ajaxAddress='".$this->createUrl('toggleLike',['meeting_id'=>''])."';\n";
 ?>
-    function pic_url(macro) {
-        if (macro=='like_button_icon') return "url('css//no_heart.png')";
-        if (macro=='dislike_button_icon') return "url('css//heart.png')";
-    }
     function toogleLikeRequest(elem, id) {
         var xhr = new XMLHttpRequest();
 
-        xhr.onload = function() {
+        xhr.onload = function() {//сюда будет приходить ответ от SiteController::actionToggleLike($meeting_id)
             if (xhr.status === 200)
-            {
+            {//приходит ответ вида
                 while (elem.firstChild) {
                     elem.removeChild(elem.firstChild);
                 }
                 var results=xhr.responseText.split("@");
-                elem.style.backgroundImage = pic_url(results[0]);
-                console.log("set image "+pic_url(results[0]));
+                elem.style = "--picture: var(--"+results[0]+");";
                 for (var i=1; i<results.length; i++) {
                     if(results[i]!="") {
                         console.log("set text " + results[i]);
@@ -54,15 +50,13 @@ foreach ($meetings as $item) {
     echo "&nbsp;<a href=$editaddress>изменить</a>/<a href=$deleteaddress>удалить</a>";
 
     $likeParam=$item->getLikeStatus();
-    var_dump($likeParam);
-    echo "<div onClick='toogleLikeRequest(this, $id);' class='like_button_icon' style=\"--picture:".$pic_url[$likeParam['icon']]."\" >";
+    echo "<div onClick='toogleLikeRequest(this, $id);' class='button_icon' style=\"--picture: var(--".$likeParam['icon'].")\" >";
     foreach($likeParam['tooltip'] as $lover) {
         echo '<span>';
         echo $lover;
         echo '</span>';
     }
     echo "</div>\n";
-    //var_dump($likeParam);
     echo '<ul type="1">';
     foreach ($item['related_people'] as $jtem) {
         echo '<li>'. $jtem['Name'].'('.$jtem['dept']['Caption'].')</li>';

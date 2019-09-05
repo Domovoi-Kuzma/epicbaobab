@@ -1,12 +1,18 @@
-.like_button_icon {
+/*
+внимание! картинки отображаются в IE при
+указании папки CSS и наоборот в FF появляются только без папки!
+*/
+.button_icon {
+	--like_button_icon: url('no_heart.png');
+	--dislike_button_icon: url('heart.png');
 	width: 64px;
 	height: 64px;
 	background-image:var(--picture);
 }
-.like_button_icon span {
+.button_icon span {
 	display:none;
 }
-.like_button_icon:hover span {
+.button_icon:hover span {
 	display:block;
 	background-color:black;
 	border-radius:5px;

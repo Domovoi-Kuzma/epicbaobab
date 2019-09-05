@@ -113,7 +113,9 @@ class Meets extends CActiveRecord
         Yii::trace("Meets::getLikeStatus ID: ".$this->ID, 'system.web.CController');
         $tooltip = [];
         $icon = 'like_button_icon';
+        $count=0;
         foreach($this->liked_by as $lover) {
+            $count++;
             if ($lover->user_id == Yii::app()->user->id) {
                 $icon='dislike_button_icon';
             } else {
@@ -123,7 +125,7 @@ class Meets extends CActiveRecord
         if (!empty($tooltip))
             array_unshift($tooltip, "also liked by ");
        // Yii::trace("Meets::getLikeStatus returned icon<$icon>, tooltip<$tooltip>", 'system.web.CController');
-        return ['icon'=>$icon, 'tooltip'=>$tooltip];
+        return ['icon'=>$icon, 'tooltip'=>$tooltip, 'count'=>$count];
     }
 
     /**
@@ -141,22 +143,21 @@ class Meets extends CActiveRecord
         $result=Like::model()->find($criteria);
 
         if (is_null($result)) {
-            //insert users like here
+            //insert user's <like> here
             $model = new Like;
             $model->user_id = Yii::app()->user->id;
             $model->meet_id = $this->ID;
             $model->save();
             $retarray=$this->getLikeStatus();
-            $retstr=join("@", $retarray['tooltip']);
-            Yii::trace("Meets::ToggleLike ID: ".$this->ID." returning1:".$retarray['icon'].'@'.$retstr, 'system.web.CController');
-            echo $retarray['icon'].'@'.$retstr;
-        }
-        else {
+            $tooltip=join("@", $retarray['tooltip']);
+            Yii::trace("Meets::ToggleLike ID: ".$this->ID." returning1:".$retarray['icon'].'@'.$retarray['count'].'@'.$tooltip, 'system.web.CController');
+            echo $retarray['icon'].'@'.$retarray['count'].'@'.$tooltip;
+        } else {
             $result->delete();
-            $retarray=$this->getLikeStatus($this->ID);
-            $retstr=join("@", $retarray['tooltip']);
-            Yii::trace("Meets::ToggleLike ID: ".$this->ID." returning2:".$retarray['icon'].'@'.$retstr, 'system.web.CController');
-            echo $retarray['icon'].'@'.$retstr;
+            $retarray=$this->getLikeStatus();
+            $tooltip=join("@", $retarray['tooltip']);
+            Yii::trace("Meets::ToggleLike ID: ".$this->ID." returning2:".$retarray['icon'].'@'.$retarray['count'].'@'.$tooltip, 'system.web.CController');
+            echo $retarray['icon'].'@'.$retarray['count'].'@'.$tooltip;
         }
     }
 

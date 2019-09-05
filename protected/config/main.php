@@ -41,7 +41,7 @@ return array(
             'class' => 'WebUser',
             'allowAutoLogin'=>true,
         ),
-/*
+
         'urlManager'=>array(
             'urlFormat'=>'path',
             'showScriptName'=>false,
@@ -49,7 +49,7 @@ return array(
                 '<controller:\w+>/<action:\w+>/<id:\w+>*'=>'<controller>/<action>',
                 '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
             ),
-        ),*/
+        ),
         'authManager'=>array(
             'class'=>'CDbAuthManager',
             'defaultRoles'=>array('authenticated', 'admin'),

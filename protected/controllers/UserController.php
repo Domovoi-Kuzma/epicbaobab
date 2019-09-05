@@ -41,29 +41,22 @@ class UserController extends Controller
     public function actionLogin()
     {
         if (isset($_POST['username'])) {
-
-
             $uname=$_POST['username'];
             $pass=$_POST['password'];
-            //m>login was here in examle
-
             //using Identity class
             if($this->_identity===null) {
                 $this->_identity=new UserId($uname, $pass);
             }
             $this->_identity->authenticate();
             if ($this->_identity->errorCode==UserId::ERROR_NONE) {
-
                 //$duration=$this->rememberMe ? 60 : 0;
                 $duration = 60; // 1 minute
                 Yii::app()->user->login($this->_identity, $duration);
-
-
                 $this->redirect(Yii::app()->homeUrl);
             }
             else{
                 echo('<h1>YOU FAILED IT</h1>');
-                //var_dump($this->errorCode);
+                var_dump($this->errorCode);
                 die();
             }
         }

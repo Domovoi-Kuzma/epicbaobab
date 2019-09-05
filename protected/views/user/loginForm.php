@@ -9,6 +9,12 @@ $this->pageTitle=Yii::app()->name . ' - Login';
 $this->breadcrumbs=array(
     'вход на сайт',
 );
+
+if(Yii::app()->user->hasFlash('error')) {
+    echo '<div class="flash-error">';
+    echo Yii::app()->user->getFlash('error');
+    echo '</div>';
+}
 echo '<h1>Представьтесь, пожалуйста!</h1>';
 echo '<div class="form">';
     echo CHtml::beginForm('login', 'post', array('id'=>'SignupForm'));

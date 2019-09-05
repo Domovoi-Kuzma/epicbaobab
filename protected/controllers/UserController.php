@@ -54,10 +54,9 @@ class UserController extends Controller
                 Yii::app()->user->login($this->_identity, $duration);
                 $this->redirect(Yii::app()->homeUrl);
             }
-            else{
-                echo('<h1>YOU FAILED IT</h1>');
-                var_dump($this->errorCode);
-                die();
+            else {
+                Yii::app()->user->setFlash('error',"Ошибка идентификации ".$this->_identity->errorCode);
+                $this->refresh();
             }
         }
         $this->render("loginForm");

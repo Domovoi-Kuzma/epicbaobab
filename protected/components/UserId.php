@@ -45,7 +45,7 @@ class UserId extends CUserIdentity
             return !$this->errorCode;
 
         $user=User::model()->find('LOWER(username)=?',array(strtolower($this->username)));
-        if($user==null) {
+        if(is_null($user)) {
             $this->errorCode = self::ERROR_USERNAME_INVALID;
         }
         else if(!$user->validatePassword($this->password))
@@ -60,11 +60,17 @@ class UserId extends CUserIdentity
         }
         return !$this->errorCode;
     }
+    /*служебная функция захода админа без проверки базы*/
     private function testSuperAccount()
     {
-        if ($this->username=='admin'&& $this->password=='admin') {
+        $user=User::model()->find('LOWER(username)=\'admin\'');
+        if (Yii::app()->params['defaultAdmin'] && is_null($user) && $this->username=='admin' && $this->password=='admin') {
+            $user=new User;
+            $user->username='admin';
+            $user->hashPassword('admin');
+            $user->profile ='admin';
+            $user->save();
             $this->errorCode=self::ERROR_NONE;
-            $this->_id=1;
             $this->setState('profile', 'admin');
             return true;
         }

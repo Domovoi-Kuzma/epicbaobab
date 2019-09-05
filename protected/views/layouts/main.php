@@ -37,10 +37,12 @@
                 array('label'=>'Поиск Встреч', 'url'=>array('/site/memberCountForm'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Вывод по комнатам', 'url'=>array('/site/roomExplore/all'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Вывод по отделам', 'url'=>array('/site/deptExplore/all'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'CONTROL', 'url'=>array('/user/control'), 'visible'=>('admin'==Yii::app()->user->getState('profile') )),
                 array('label'=>'Войти', 'url'=>array('/user/login'), 'visible'=>Yii::app()->user->isGuest),
                 array('label'=>'Выйти ('.Yii::app()->user->name.')', 'url'=>array('/user/logout'), 'visible'=>!Yii::app()->user->isGuest),
             ),
-        )); ?>
+        ));
+        ?>
     </div><!-- mainmenu -->
     <?php if (isset($this->breadcrumbs)):?>
         <?php $this->widget('zii.widgets.CBreadcrumbs', array(

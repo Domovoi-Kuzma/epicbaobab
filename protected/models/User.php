@@ -17,7 +17,7 @@ class User extends CActiveRecord
 		$this->username=(isset($_POST['username']))?$_POST['username']:'';
 		$this->password=(isset($_POST['password']))?$_POST['password']:'';
 		$this->profile =(isset($_POST['profile'])) ?$_POST['profile'] :'';
-		$this->password=$this->hashPassword($this->password);
+		$this->hashPassword($this->password);
 		$this->save();
 	}
 	/**
@@ -124,6 +124,6 @@ class User extends CActiveRecord
 	 */
 	public function hashPassword($password)
 	{
-		return CPasswordHelper::hashPassword($password);
+        $this->password=CPasswordHelper::hashPassword($password);
 	}
 }

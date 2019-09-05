@@ -59,7 +59,7 @@ class UserController extends Controller
                 Yii::app()->user->login($this->_identity, $duration);
 
 
-                //$this->redirect(Yii::app()->homeUrl);
+                $this->redirect(Yii::app()->homeUrl);
             }
             else{
                 echo('<h1>YOU FAILED IT</h1>');

@@ -15,10 +15,12 @@ class User extends CActiveRecord
 	{
 
 		$this->username=(isset($_POST['username']))?$_POST['username']:'';
-		$this->password=(isset($_POST['password']))?$_POST['password']:'';
 		$this->profile =(isset($_POST['profile'])) ?$_POST['profile'] :'';
-        $this->likes=[];
-		$this->hashPassword($this->password);
+        //$this->likes=[];
+        if (!empty($_POST['password']))
+        {
+            $this->hashPassword($_POST['password']);
+        }
         return $this->save();
 	}
 	/**

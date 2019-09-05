@@ -5,7 +5,7 @@
  * Date: 02.09.2019
  * Time: 10:57
  */
-echo "Добавить пользователя";
+echo "<h1>Добавить пользователя</h1>";
 echo '<div class="row">';
 echo '<div class="form">';
 
@@ -16,16 +16,20 @@ if(Yii::app()->user->hasFlash('error')) {
 }
 
 echo CHtml::beginForm('adminInsert', 'post', array('id'=>'AddUserForm'));
-echo CHtml::label('Имя', '');
+//echo CHtml::label('Имя', '');
 echo CHtml::textField('username');
-echo CHtml::label('Пароль', '');
+//echo CHtml::label('Пароль', '');
 echo CHtml::textField('password');
-echo CHtml::label('Профиль', '');
+//echo CHtml::label('Профиль', '');
 echo CHtml::dropDownList('profile','user', ['signed'=>'Обычный','admin'=>'Админский']);
 echo CHtml::submitButton('Добавить');
 echo CHtml::endForm();
-echo '</div>';
-echo '</div>';
+echo '</div>';//form
+echo '</div>';//row
+echo "<h1>Изменить пользователя</h1>";
+foreach($users as $model)
+    $this->renderPartial("miniAdminForm", ['model'=>$model]);
+
 /**Перенести на LocalAdminForm.php
 echo '<hr>';
 echo "Изменить пользователя по ID";

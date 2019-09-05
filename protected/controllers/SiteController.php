@@ -200,7 +200,7 @@ class SiteController extends Controller
             if (is_null($record))
                 throw new CHttpException(404,"Записи встречи с ключом $id нет в базе");
             $record->saveAs();
-            $this->redirect($this->createUrl('site/meeting'));
+            $this->redirect($this->createUrl('meeting'));
         }
         else {
             $record=Meets::model()->findByPk($id);

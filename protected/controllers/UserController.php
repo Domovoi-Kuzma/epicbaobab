@@ -9,7 +9,6 @@
 /**
  * Class UserController
  * Работает по действиям, связанным с добавленным механизмом аккаунтов
- * @todo    добавить логин/логаут
  * @author  Sasha
  * @data    30.08.2019
  */
@@ -21,12 +20,53 @@ class UserController extends Controller
      * место для вызова панели админа
      * gazprom.loc/index.php?r=user/control
      * @author  Sasha
+     * @date    30.08.2019
      */
     public function actionControl()
     {
-        $this->render("globalAdminForm");
+        $users=User::model()->findAll();
+        $this->render("globalAdminForm", ['users'=>$users]);
     }
 
+    /**
+     * Удаление аккаунта на сайте. Вызывается с миниформы админа.
+     * @author  Sasha
+     * @data    05.09.2019
+     */
+    public function actionAdminDelete()
+    {
+        $id=intval($_POST['ID']);
+        $result = User::model()->deleteByPk($id);
+        if ($result!=1)
+            Yii::app()->user->setFlash('error', "Проверьте данные, 
+            Ошибка удаления админом пользователя: 
+            Удаление записи с ключом $id удалило $result записей");
+         $this->redirect($this->createUrl('control'));
+    }
+
+    /**
+     * Редактирование аккаунта на сайте. Вызывается с миниформы админа.
+     * @author  Sasha
+     * @data    05.09.2019
+     */
+    public function actionAdminEdit()
+    {
+        $id=intval($_POST['ID']);
+        $record = User::model()->findByPk($id);
+        if (is_null($record))
+            Yii::app()->user->setFlash('error', "Проверьте данные, 
+            Ошибка редактирования админом пользователя: Записи с ключом $id не найдено");
+        if (!$record->saveAs())
+            Yii::app()->user->setFlash('error', "Проверьте данные, 
+            Ошибка редактирования админом пользователя: ".$record->getAllErrors());
+        $this->redirect($this->createUrl('control'));
+    }
+
+    /**
+     * Добавление 1 нового пользователя админом
+     * @author Sasha
+     * @date 05.09.2018
+     */
     public function actionAdminInsert()
     {
         $newuser=new User();
@@ -38,7 +78,7 @@ class UserController extends Controller
     /**
      * на страницу входа пользователя
      * @author  Sasha
-     * @data    30.08.2019
+     * @date    30.08.2019
      */
     public function actionLogin()
     {

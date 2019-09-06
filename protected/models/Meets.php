@@ -130,6 +130,8 @@ class Meets extends CActiveRecord
 
     /**
      * переворот лайка (если есть - удаление, если нет - добавление)
+     * вывод массива результатов в документ для ajax в виде текста, разделённого @
+     * @todo разузнать, стоит ли вынести вывод в отдельный метод модели или вообще в новый вид.
      * @author  Sasha
      * @data    04.09.2019
      */
@@ -141,7 +143,6 @@ class Meets extends CActiveRecord
         $criteria->addCondition('meet_id=:meet_crit');
         $criteria->params=array(':user_crit'=>Yii::app()->user->id, ':meet_crit'=>$this->ID);
         $result=Like::model()->find($criteria);
-
         if (is_null($result)) {
             //insert user's <like> here
             $model = new Like;

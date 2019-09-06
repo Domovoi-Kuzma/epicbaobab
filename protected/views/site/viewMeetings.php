@@ -19,9 +19,13 @@ echo "    var ajaxAddress='".$this->createUrl('toggleLike',['meeting_id'=>''])."
                 elem.style = "--picture: var(--"+results[0]+");";
                 for (var i=1; i<results.length; i++) {
                     if(results[i]!="") {
-                        if (i==1) results[i]+=" лайков";
-                        console.log("set text " + results[i]);
                         var node = document.createElement("span");
+                        if (i==1) {
+                            results[i]+=" лайков";
+                            node.style="--highlight: green";
+                        }
+                        else
+                            node.style="--highlight: black";
                         var textnode = document.createTextNode(results[i]);
                         node.appendChild(textnode);
                         elem.appendChild(node);
@@ -54,11 +58,11 @@ foreach ($meetings as $item) {
 
     $likeParam=$item->getLikeStatus();
     echo "<div onClick='toogleLikeRequest(this, $id);' class='button_icon' style=\"--picture: var(--".$likeParam['icon'].")\" >";
-    echo '<span>';
+    echo '<span style="--highlight: green">';
     echo $likeParam['count']." лайков";
     echo '</span>';
     foreach($likeParam['tooltip'] as $lover) {
-        echo '<span>';
+        echo '<span style="--highlight: black">';
         echo $lover;
         echo '</span>';
     }

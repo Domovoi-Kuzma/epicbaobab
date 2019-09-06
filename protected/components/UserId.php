@@ -23,37 +23,16 @@ class UserId extends CUserIdentity
      * @throws CException
      * @return boolean успешность идентификации
      */
- /*   public function authenticate()
-    {
-        $record=User::model()->findByAttributes(array('username'=>$this->username));
-        if($record===null)
-            $this->errorCode=self::ERROR_USERNAME_INVALID;
-        else if(!CPasswordHelper::verifyPassword($this->password,$record->password))
-            $this->errorCode=self::ERROR_PASSWORD_INVALID;
-        else
-        {
-            $this->_id=$record->id;
-            $this->setState('profile', $record->profile);
-            $this->errorCode=self::ERROR_NONE;
-        }
-        return !$this->errorCode;
-    }
-    */
     public function authenticate()
     {
         if ($this->testSuperAccount())
             return !$this->errorCode;
-
         $user=User::model()->find('LOWER(username)=?',array(strtolower($this->username)));
-        if(is_null($user)) {
+        if (is_null($user)) {
             $this->errorCode = self::ERROR_USERNAME_INVALID;
-        }
-        else if(!$user->validatePassword($this->password))
-        {
+        } else if (!$user->validatePassword($this->password)) {
             $this->errorCode = self::ERROR_PASSWORD_INVALID;
-        }
-        else
-        {
+        } else {
             $this->_id=$user->ID;
             $this->setState('profile', $user->profile);
             $this->errorCode=self::ERROR_NONE;

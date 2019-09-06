@@ -19,9 +19,6 @@ return array(
         'application.extensions.*',
     ),
 
-   // 'defaultController'=>'user',
-
-
     'modules'=>array(
         // uncomment the following to enable the Gii tool
 

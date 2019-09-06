@@ -1,5 +1,4 @@
 <?php
-$likeParam=$model->getLikeStatus();
 if (is_null($likeParam['current']))
     $style='--picture: var(--like_button_icon)';
 else

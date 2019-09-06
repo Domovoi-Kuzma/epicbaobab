@@ -62,6 +62,64 @@ class Like extends CActiveRecord
 		);
 	}
 
+    /**
+     * получение списка лайков к встрече $MID в виде массива + статус лайкнутости текущим юзером
+     * @param  MID ключ встречи, которую проверяют
+     * @return array
+     * @author  Sasha
+     * @data    04.09.2019
+     */
+    public static function getLikeStatus($MID)
+    {
+        Yii::trace("Like::getLikeStatus ID: ".$MID, 'system.web.CController');
+
+        //таск1 посчитать все лайки
+        $criteria=new CDbCriteria();
+        $criteria->addCondition('meet_id=:meet_crit');
+        $criteria->params=array(':meet_crit'=>$MID);
+        $count=Like::model()->count($criteria);//
+
+        //таск2 получить имена всех лайкнувших
+        $criteria=new CDbCriteria();
+        $criteria->addCondition('meet_id=:meet_crit');
+        $criteria->addCondition('user_id!=:user_crit');
+        $criteria->params=array(':meet_crit'=>$MID, ':user_crit'=>Yii::app()->user->id);
+        $co_likers=Like::model()->findAll($criteria);
+
+        //таск3 узнать, лайкнул ли юзер
+        $criteria=new CDbCriteria();
+        $criteria->addCondition('user_id=:user_crit');
+        $criteria->addCondition('meet_id=:meet_crit');
+        $criteria->params=array(':meet_crit'=>$MID, ':user_crit'=>Yii::app()->user->id);
+        $currentlike=Like::model()->find($criteria);
+
+        return ['current'=>$currentlike, 'tooltip'=>$co_likers, 'count'=>$count];
+    }
+
+    /**
+     * переворот лайка (если есть - удаление, если нет - добавление)
+     * @param MID ключ модели в базе
+     * @author  Sasha
+     * @data    04.09.2019
+     */
+    public static function Toggle($MID)
+    {
+        Yii::trace("Like::Toggle ID: ".$MID, 'system.web.CController');
+        $criteria=new CDbCriteria();
+        $criteria->addCondition('user_id=:user_crit');
+        $criteria->addCondition('meet_id=:meet_crit');
+        $criteria->params=array(':user_crit'=>Yii::app()->user->id, ':meet_crit'=>$MID);
+        $result=Like::model()->find($criteria);
+        if (is_null($result)) {
+            $model = new Like;
+            $model->user_id = Yii::app()->user->id;
+            $model->meet_id = $MID;
+            $model->save();
+        } else {
+            $result->delete();
+        }
+    }
+
 	/**
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 *

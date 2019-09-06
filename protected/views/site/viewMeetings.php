@@ -38,7 +38,7 @@ foreach ($meetings as $item) {
 
     echo "&nbsp;<a href=$editaddress>изменить</a>/<a href=$deleteaddress>удалить</a>";
     echo "<div onClick='toogleLikeRequest(this, $id);'>";
-    $this->renderPartial("viewLikeButton", ['model'=>$item]);
+    $this->renderPartial("viewLikeButton", ['likeParam'=>Like::getLikeStatus($id)]);
     echo "</div>";
     echo '<ul type="1">';
     foreach ($item['related_people'] as $jtem) {

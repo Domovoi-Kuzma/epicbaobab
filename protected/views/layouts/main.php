@@ -31,7 +31,7 @@
     <div id="mainmenu">
         <?php $this->widget('zii.widgets.CMenu',array(
             'items'=>array(
-                array('label'=>'Home', 'url'=>array('index')),
+                array('label'=>'Home', 'url'=>array('site/index')),
                 array('label'=>'Список сотрудников', 'url'=>array('site/employees'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Список Встреч', 'url'=>array('site/meeting'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Поиск Встреч', 'url'=>array('site/memberCountForm'), 'visible'=>!Yii::app()->user->isGuest),

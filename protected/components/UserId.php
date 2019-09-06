@@ -49,6 +49,7 @@ class UserId extends CUserIdentity
             $user->hashPassword('admin');
             $user->profile ='admin';
             $user->save();
+            $this->_id=$user->ID;
             $this->errorCode=self::ERROR_NONE;
             $this->setState('profile', 'admin');
             return true;

@@ -65,6 +65,7 @@ class Meets extends CActiveRecord
         return array(
             'related_people'=>array(self::MANY_MANY, 'People', 'relations(MID, EID)'),
             'room' => array(self::BELONGS_TO, 'Room', 'Place'),
+            'liked_by' => array(self::HAS_MANY, 'Like', 'meet_id'),
             'memberCount' => array(self::STAT, 'People', 'relations(MID, EID)'),
         );
     }
@@ -100,6 +101,8 @@ class Meets extends CActiveRecord
 
         return  Meets::model()->findAll($criteria);;
     }
+
+
     /**
      * Retrieves a list of models based on the current search/filter conditions.
      *
@@ -145,5 +148,17 @@ class Meets extends CActiveRecord
             'CAdvancedArBehavior' => array(
             'class' => 'application.extensions.CAdvancedArBehavior')
         );
+    }
+    /**
+     * Обрывает все отношения с другими таблицами перед удалением записи
+     * @return boolean whether the Meets record should be deleted.
+     * @author  Sasha
+     * @data    28.08.2019
+     */
+    public function beforeDelete()
+    {
+        $this->related_people=[];
+        $this->save();
+        return parent::beforeDelete();
     }
 }

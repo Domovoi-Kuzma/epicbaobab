@@ -33,25 +33,34 @@ return array(
 
     // application components
     'components'=>array(
-
-
-        // comment the following to disable URLs in path-format
+        'user'=>array(
+            // enable cookie-based authentication
+            'class' => 'CWebUser',
+            'allowAutoLogin'=>true,
+        ),
 
         'urlManager'=>array(
             'urlFormat'=>'path',
             'showScriptName'=>false,
             'rules'=>array(
-                '<action:\w+>/<id:\w+>*'=>'site/<action>',
-                '<action:\w+>'=>'site/<action>',
+                '<action:(?!user\b)\b\w+>'=>'site/<action>',//e.g.gazprom.loc/employees    любое действие для SiteController кроме user
+                '<action:(?!user\b)\b\w+>/<id:\w+>*'=>'site/<action>',//e.g.gazprom.loc/employees  то же самое с параметром
+                '<controller:\w+>/<action:\w+>/<id:\w+>*'=>'<controller>/<action>',
+               // '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
             ),
         ),
+        'authManager'=>array(
+            'class'=>'CDbAuthManager',
+            'defaultRoles'=>array('authenticated', 'admin'),
+        ),
+
 
         // database settings are configured in database.php
         'db'=>require(dirname(__FILE__).'/database.php'),
 
         'errorHandler'=>array(
             // use 'site/error' action to display errors
-            'errorAction'=>YII_DEBUG ? 'site/error' : 'site/error',
+            'errorAction'=>'site/error',
         ),
 
         'log'=>array(
@@ -78,6 +87,7 @@ return array(
     'params'=>array(
         // this is used in contact page
         'adminEmail'=>'webmaster@example.com',
+        'defaultAdmin'=>'true',
     ),
 
 

@@ -68,6 +68,24 @@ class SiteController extends Controller
     }
 
     /**
+     * AJAX сценарий, вызываемый, когда сользователь нажимает по лайку/дизлайку
+     * @param integer $id ключ лайкнутой встречи.
+     * @author  Sasha
+     * @data    04.09.2019
+     */
+    public function actionToggleLike($meeting_id)
+    {
+        Yii::trace("actionToggleLike ID: $meeting_id ", 'system.web.CController');
+        Like::Toggle($meeting_id);
+        $this->renderPartial('viewLikeButton', [
+            'isCurrent' =>Like::isCurrentLikeByMeet($meeting_id),
+            'likeCount'     =>Like::getCountByMeet($meeting_id),
+            'tooltip'   =>Like::getOtherLikesByMeet($meeting_id),
+            ]
+        );
+    }
+
+    /**
      * Вывод формы добавления или само добавление сотрудника
      * @author  Sasha
      * @data    21.08.2019
@@ -77,12 +95,13 @@ class SiteController extends Controller
         $newman=new People();
         if (isset($_POST['ID'])){
             $newman->saveAs();
-            $this->redirect($this->createUrl('site/employees'));
+            $this->redirect($this->createUrl('employees'));
         }
         else{
             $this->render('viewInsertEmployeeForm',
                 [
                     'model'     =>$newman,
+                    'action'    =>$this->createUrl('insertEmployee'),
                     'optionsM'  =>Meets::model()->findAll(),
                     'optionsD'  =>Department::model()->findAll(),
                 ]);
@@ -99,17 +118,17 @@ class SiteController extends Controller
         $newmeet=new Meets();
         if (isset($_POST['ID'])) {
             $newmeet->saveAs();
-            $this->redirect($this->createUrl('site/meeting'));
+            $this->redirect($this->createUrl('meeting'));
         }
         else {
             $this->render('viewInsertMeetingForm', [
                 'model'     =>$newmeet,
+                'action'    =>$this->createUrl('insertMeeting'),
                 'optionsP'  =>People::model()->findAll(),
                 'optionsR'  =>Room::model()->findAll(),
             ]);
         }
     }
-
     /**
      * Удаление записи
      * @param integer $id ключ сотрудника.
@@ -122,7 +141,7 @@ class SiteController extends Controller
         if (is_null($record))
             throw new CHttpException(404,"Записи сотрудника с ключом $id нет в базе");
         $record->delete();
-        $this->redirect($this->createUrl('site/employees'));
+        $this->redirect($this->createUrl('employees'));
     }
 
     /**
@@ -137,7 +156,7 @@ class SiteController extends Controller
         if (is_null($record))
             throw new CHttpException(404,"Записи встречи с ключом $id нет в базе");
         $record->delete();
-        $this->redirect($this->createUrl('site/meeting'));
+        $this->redirect($this->createUrl('meeting'));
     }
 
     /**
@@ -155,7 +174,7 @@ class SiteController extends Controller
                 throw new CHttpException(404,"Записи сотрудника с ключом $id нет в базе");
             $record->saveAs();
 
-            $this->redirect($this->createUrl('site/employees'));
+            $this->redirect($this->createUrl('employees'));
         }
         else {
             $record=People::model()->findByPk($id);
@@ -165,6 +184,7 @@ class SiteController extends Controller
             $this->render('viewInsertEmployeeForm',
                 [
                     'model'     =>  $record,
+                    'action'    =>$this->createUrl('editEmployee', ['id'=>$id]),
                     'optionsM'  =>Meets::model()->findAll(),
                     'optionsD'  =>Department::model()->findAll(),
                 ]);
@@ -174,7 +194,7 @@ class SiteController extends Controller
      *  Редактирование записи встречи.
      * @param integer $id ключ в таблице встреч
      * @author  Sasha
-     * @data    21.08.2019
+     * @data 21.08.2019
      */
     public function actionEditMeeting($id)
     {
@@ -185,7 +205,7 @@ class SiteController extends Controller
             if (is_null($record))
                 throw new CHttpException(404,"Записи встречи с ключом $id нет в базе");
             $record->saveAs();
-            $this->redirect($this->createUrl('site/meeting'));
+            $this->redirect($this->createUrl('meeting'));
         }
         else {
             $record=Meets::model()->findByPk($id);
@@ -194,6 +214,7 @@ class SiteController extends Controller
             $this->render('viewInsertMeetingForm',
                 [
                     'model'     =>  $record,
+                    'action'    =>  $this->createUrl('editMeeting', ['id'=>$id]),
                     'optionsP'=>People::model()->findAll(),
                     'optionsR'=>Room::model()->findAll(),
                 ]);
@@ -385,6 +406,34 @@ class SiteController extends Controller
                     'action' => 'editDepartment',
                 ]);
         }
+    }
+    public function filters()
+    {
+        return array(
+            'accessControl', // perform access control for CRUD operations
+        );
+    }
+
+    /**
+     * задаёт ограничения на посещение страниц категориям пользователей
+     * @return array
+     */
+    public function accessRules()
+    {
+        return array(
+           /* array('allow',
+                'actions' => array('Index', 'Login'),
+                'users'=>array('*'),
+            ),*/
+            array('allow',
+                'actions' => array('employees', 'meeting', 'memberCountForm', 'roomExplore', 'deptExplore'),
+                'users'=>array('admin', 'signed'),
+            ),
+            array('deny',
+                'actions' => array('employees', 'meeting', 'memberCountForm', 'roomExplore', 'deptExplore'),
+                'users'=>array('guest'),
+            ),
+        );
     }
 
 }

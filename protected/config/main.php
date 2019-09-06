@@ -43,8 +43,10 @@ return array(
             'urlFormat'=>'path',
             'showScriptName'=>false,
             'rules'=>array(
+                '<action:(?!user\b)\b\w+>'=>'site/<action>',//e.g.gazprom.loc/employees    любое действие для SiteController кроме user
+                '<action:(?!user\b)\b\w+>/<id:\w+>*'=>'site/<action>',//e.g.gazprom.loc/employees  то же самое с параметром
                 '<controller:\w+>/<action:\w+>/<id:\w+>*'=>'<controller>/<action>',
-                '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+               // '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
             ),
         ),
         'authManager'=>array(
@@ -58,7 +60,7 @@ return array(
 
         'errorHandler'=>array(
             // use 'site/error' action to display errors
-            'errorAction'=>'site/error',
+            'errorAction'=>'error',
         ),
 
         'log'=>array(

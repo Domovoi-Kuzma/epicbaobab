@@ -3,7 +3,7 @@ $this->pageTitle = Yii::app()->name . ' - список сотрудников';
 $this->breadcrumbs = array(
     ' список сотрудников',
 );
-$formaddress=$this->createUrl('site/insertEmployee');
+$formaddress=$this->createUrl('insertEmployee');
 
 echo '<h1>Список - [сотрудники]</h1>';
 echo "<ul type='circle'>";

@@ -24,6 +24,7 @@ echo CHtml::beginForm($action, 'post', array('id'=>'ShortForm'));
         else
             $selection='';
 
+        echo '</div><div class="row">';
         echo CHTML::radioButtonList('room', $model->room['ID'], CHTML::listData($optionsR, 'ID', 'Number'));
         echo '</div>';
     }

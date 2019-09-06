@@ -60,7 +60,7 @@ return array(
 
         'errorHandler'=>array(
             // use 'site/error' action to display errors
-            'errorAction'=>'error',
+            'errorAction'=>'site/error',
         ),
 
         'log'=>array(

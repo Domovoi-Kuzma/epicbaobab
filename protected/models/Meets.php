@@ -149,16 +149,8 @@ class Meets extends CActiveRecord
             $model->user_id = Yii::app()->user->id;
             $model->meet_id = $this->ID;
             $model->save();
-            $retarray=$this->getLikeStatus();
-            $tooltip=join("@", $retarray['tooltip']);
-            Yii::trace("Meets::ToggleLike ID: ".$this->ID." returning1:".$retarray['icon'].'@'.$retarray['count'].'@'.$tooltip, 'system.web.CController');
-            echo $retarray['icon'].'@'.$retarray['count'].'@'.$tooltip;
         } else {
             $result->delete();
-            $retarray=$this->getLikeStatus();
-            $tooltip=join("@", $retarray['tooltip']);
-            Yii::trace("Meets::ToggleLike ID: ".$this->ID." returning2:".$retarray['icon'].'@'.$retarray['count'].'@'.$tooltip, 'system.web.CController');
-            echo $retarray['icon'].'@'.$retarray['count'].'@'.$tooltip;
         }
     }
 

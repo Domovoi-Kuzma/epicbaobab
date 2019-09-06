@@ -78,6 +78,7 @@ class SiteController extends Controller
         Yii::trace("actionToggleLike ID: $meeting_id ", 'system.web.CController');
         $model=Meets::model()->findByPk($meeting_id);
         $model->ToggleLike();
+        $this->renderPartial('viewLikeButton', ['model'=>$model]);
     }
 
     /**

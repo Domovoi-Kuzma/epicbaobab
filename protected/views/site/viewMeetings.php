@@ -11,26 +11,8 @@ echo "    var ajaxAddress='".$this->createUrl('toggleLike',['meeting_id'=>''])."
 
         xhr.onload = function() {//сюда будет приходить ответ от SiteController::actionToggleLike($meeting_id)
             if (xhr.status === 200)
-            {//приходит ответ вида
-                while (elem.firstChild) {
-                    elem.removeChild(elem.firstChild);
-                }
-                var results=xhr.responseText.split("@");
-                elem.style = "--picture: var(--"+results[0]+");";
-                for (var i=1; i<results.length; i++) {
-                    if(results[i]!="") {
-                        var node = document.createElement("span");
-                        if (i==1) {
-                            results[i]+=" лайков";
-                            node.style="--highlight: green";
-                        }
-                        else
-                            node.style="--highlight: black";
-                        var textnode = document.createTextNode(results[i]);
-                        node.appendChild(textnode);
-                        elem.appendChild(node);
-                    }
-                }
+            {
+                elem.innerHTML=xhr.responseText;
             }
         }
         xhr.open('GET',ajaxAddress+id, true);
@@ -55,18 +37,9 @@ foreach ($meetings as $item) {
     echo "<li>".$item['Meeting']." (room ".$item['room']['Number'].")(members: ".$item['memberCount'].")";
 
     echo "&nbsp;<a href=$editaddress>изменить</a>/<a href=$deleteaddress>удалить</a>";
-
-    $likeParam=$item->getLikeStatus();
-    echo "<div onClick='toogleLikeRequest(this, $id);' class='button_icon' style=\"--picture: var(--".$likeParam['icon'].")\" >";
-    echo '<span style="--highlight: green">';
-    echo $likeParam['count']." лайков";
-    echo '</span>';
-    foreach($likeParam['tooltip'] as $lover) {
-        echo '<span style="--highlight: black">';
-        echo $lover;
-        echo '</span>';
-    }
-    echo "</div>\n";
+    echo "<div onClick='toogleLikeRequest(this, $id);'>";
+    $this->renderPartial("viewLikeButton", ['model'=>$item]);
+    echo "</div>";
     echo '<ul type="1">';
     foreach ($item['related_people'] as $jtem) {
         echo '<li>'. $jtem['Name'].'('.$jtem['dept']['Caption'].')</li>';

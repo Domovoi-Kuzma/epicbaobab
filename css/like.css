@@ -19,8 +19,8 @@
 	color:white;
 	box-shadow:1px 1px 3px gray;
 	position:relative;
+	top:0px;
 	padding:5px;
-	top:1.3em;
-	left:0px;
-	width:200px; /* I don't want the width to be too large... */
+	left: 64px;
+	width:200px;
 }

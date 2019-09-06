@@ -111,26 +111,32 @@ class Meets extends CActiveRecord
     public function getLikeStatus()
     {
         Yii::trace("Meets::getLikeStatus ID: ".$this->ID, 'system.web.CController');
-        $tooltip = [];
-        $icon = 'like_button_icon';
-        $count=0;
-        foreach($this->liked_by as $lover) {
-            $count++;
-            if ($lover->user_id == Yii::app()->user->id) {
-                $icon='dislike_button_icon';
-            } else {
-                $tooltip[]= $lover->user->username;
-            }
-        }
-        if (!empty($tooltip))
-            array_unshift($tooltip, "also liked by ");
-       // Yii::trace("Meets::getLikeStatus returned icon<$icon>, tooltip<$tooltip>", 'system.web.CController');
-        return ['icon'=>$icon, 'tooltip'=>$tooltip, 'count'=>$count];
+
+        //таск1 посчитать все лайки
+        $criteria=new CDbCriteria();
+        $criteria->addCondition('meet_id=:meet_crit');
+        $criteria->params=array(':meet_crit'=>$this->ID);
+        $count=Like::model()->count($criteria);//
+
+        //таск2 получить имена всех лайкнувших
+        $criteria=new CDbCriteria();
+        $criteria->addCondition('meet_id=:meet_crit');
+        $criteria->addCondition('user_id!=:user_crit');
+        $criteria->params=array(':meet_crit'=>$this->ID, ':user_crit'=>Yii::app()->user->id);
+        $co_likers=Like::model()->findAll($criteria);
+
+        //таск3 узнать, лайкнул ли юзер
+        $criteria=new CDbCriteria();
+        $criteria->addCondition('user_id=:user_crit');
+        $criteria->addCondition('meet_id=:meet_crit');
+        $criteria->params=array(':meet_crit'=>$this->ID, ':user_crit'=>Yii::app()->user->id);
+        $currentlike=Like::model()->find($criteria);
+
+        return ['current'=>$currentlike, 'tooltip'=>$co_likers, 'count'=>$count];
     }
 
     /**
      * переворот лайка (если есть - удаление, если нет - добавление)
-     * вывод массива результатов в документ для ajax в виде текста, разделённого @
      * @author  Sasha
      * @data    04.09.2019
      */

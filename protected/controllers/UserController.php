@@ -17,8 +17,8 @@ class UserController extends Controller
     private $_identity;
 
     /**
-     * место для вызова панели админа
-     * gazprom.loc/index.php?r=user/control
+     * Место для вызова панели админа
+     * gazprom.loc/user/control
      * @author  Sasha
      * @date    30.08.2019
      */
@@ -76,7 +76,7 @@ class UserController extends Controller
         $this->redirect('control');
     }
     /**
-     * на страницу входа пользователя
+     * На страницу входа пользователя
      * @author  Sasha
      * @date    30.08.2019
      */
@@ -91,7 +91,6 @@ class UserController extends Controller
             }
             $this->_identity->authenticate();
             if ($this->_identity->errorCode==UserId::ERROR_NONE) {
-                //$duration=$this->rememberMe ? 60 : 0;
                 $duration = 60; // 1 minute
                 Yii::app()->user->login($this->_identity, $duration);
                 $this->redirect(Yii::app()->homeUrl);
@@ -105,7 +104,9 @@ class UserController extends Controller
     }
 
     /**
-     * действие при разлогинивании - переход домой
+     * Действие при разлогинивании - переход домой
+     * @author  Sasha
+     * @date    06.09.2019
      */
     public function actionLogout()
     {

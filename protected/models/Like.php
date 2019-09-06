@@ -14,93 +14,106 @@
  */
 class Like extends CActiveRecord
 {
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return 'like';
-	}
-
-	/**
-	 * @return array validation rules for model attributes.
-	 */
-	public function rules()
-	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return array(
-			array('user_id, meet_id', 'numerical', 'integerOnly'=>true),
-			// The following rule is used by search().
-			// @todo Please remove those attributes that should not be searched.
-			array('ID, user_id, meet_id', 'safe', 'on'=>'search'),
-		);
-	}
-
-	/**
-	 * @return array relational rules.
-	 */
-	public function relations()
-	{
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
-		return array(
-			'meet' => array(self::BELONGS_TO, 'Meets', 'meet_id'),
-			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
-		);
-	}
-
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'ID' => 'ID',
-			'user_id' => 'User',
-			'meet_id' => 'Meet',
-		);
-	}
+    /**
+     * @return string the associated database table name
+     */
+    public function tableName()
+    {
+        return 'like';
+    }
 
     /**
-     * получение списка лайков к встрече $MID в виде массива + статус лайкнутости текущим юзером
-     * @param  MID ключ встречи, которую проверяют
-     * @return array
-     * @author  Sasha
-     * @data    04.09.2019
+     * @return array validation rules for model attributes.
      */
-    public static function getLikeStatus($MID)
+    public function rules()
     {
-        Yii::trace("Like::getLikeStatus ID: ".$MID, 'system.web.CController');
+        // NOTE: you should only define rules for those attributes that
+        // will receive user inputs.
+        return array(
+            array('user_id, meet_id', 'numerical', 'integerOnly' => true),
+            // The following rule is used by search().
+            // @todo Please remove those attributes that should not be searched.
+            array('ID, user_id, meet_id', 'safe', 'on' => 'search'),
+        );
+    }
 
-        //таск1 посчитать все лайки
-        $criteria=new CDbCriteria();
+    /**
+     * @return array relational rules.
+     */
+    public function relations()
+    {
+        // NOTE: you may need to adjust the relation name and the related
+        // class name for the relations automatically generated below.
+        return array(
+            'meet' => array(self::BELONGS_TO, 'Meets', 'meet_id'),
+            'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+        );
+    }
+
+    /**
+     * @return array customized attribute labels (name=>label)
+     */
+    public function attributeLabels()
+    {
+        return array(
+            'ID' => 'ID',
+            'user_id' => 'User',
+            'meet_id' => 'Meet',
+        );
+    }
+
+    /**
+     * Получение общего количества лайков к встрече с ключём MID
+     * @param MID ключ встречи, которую проверяют
+     * @return int количество лайков
+     * @author  Sasha
+     * @data    06.09.2019
+     */
+    public static function getCountByMeet($MID)
+    {
+        $criteria = new CDbCriteria();
         $criteria->addCondition('meet_id=:meet_crit');
-        $criteria->params=array(':meet_crit'=>$MID);
-        $count=Like::model()->count($criteria);//
+        $criteria->params = array(':meet_crit' => $MID);
+        return Like::model()->count($criteria);
+    }
 
-        //таск2 получить имена всех лайкнувших
+    /**
+     * Получение списка лайков других юзеров к встрече $MID в виде массива
+     * @param MID ключ встречи, которую проверяют
+     * @return array модели всех лайков других юзеров
+     * @author  Sasha
+     * @data    06.09.2019
+     */
+    public static function getOtherLikesByMeet($MID)
+    {
         $criteria=new CDbCriteria();
         $criteria->addCondition('meet_id=:meet_crit');
         $criteria->addCondition('user_id!=:user_crit');
         $criteria->params=array(':meet_crit'=>$MID, ':user_crit'=>Yii::app()->user->id);
-        $co_likers=Like::model()->findAll($criteria);
+        return Like::model()->findAll($criteria);
+    }
 
-        //таск3 узнать, лайкнул ли юзер
+    /**
+     * Получение статуса лайка текущим юзером встречи с ключём MID
+     * @param MID ключ встречи, которую проверяют
+     * @return bool юзер лайкал, то true
+     * @author  Sasha
+     * @data    06.09.2019
+     */
+    public static function isCurrentLikeByMeet($MID)
+    {
         $criteria=new CDbCriteria();
         $criteria->addCondition('user_id=:user_crit');
         $criteria->addCondition('meet_id=:meet_crit');
         $criteria->params=array(':meet_crit'=>$MID, ':user_crit'=>Yii::app()->user->id);
-        $currentlike=Like::model()->find($criteria);
-
-        return ['current'=>$currentlike, 'tooltip'=>$co_likers, 'count'=>$count];
+        return is_null(Like::model()->find($criteria));
     }
 
     /**
      * переворот лайка (если есть - удаление, если нет - добавление)
      * @param MID ключ модели в базе
      * @author  Sasha
-     * @data    04.09.2019
+     * @data    06.09.2019
      */
     public static function Toggle($MID)
     {

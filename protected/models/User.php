@@ -13,12 +13,10 @@ class User extends CActiveRecord
 {
 	public function saveAs()
 	{
-
 		$this->username=(isset($_POST['username']))?$_POST['username']:'';
 		$this->profile =(isset($_POST['profile'])) ?$_POST['profile'] :'';
         //$this->likes=[];
-        if (!empty($_POST['password']))
-        {
+        if (!empty($_POST['password'])) {
             $this->hashPassword($_POST['password']);
         }
         return $this->save();
@@ -126,7 +124,7 @@ class User extends CActiveRecord
      * возможно найду ему замену в std методах yii
      * @return string message
      * @author  Sasha
-     * @date    05.09
+     * @date    05.09.2019
      */
 	public function getAllErrors() {
         $source=$this->getErrors();

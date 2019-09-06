@@ -16,11 +16,11 @@ if(Yii::app()->user->hasFlash('error')) {
 }
 
 echo CHtml::beginForm('adminInsert', 'post', array('id'=>'AddUserForm'));
-//echo CHtml::label('Имя', '');
+echo CHtml::label('Имя', '');
 echo CHtml::textField('username');
-//echo CHtml::label('Пароль', '');
+echo CHtml::label('Пароль', '');
 echo CHtml::textField('password');
-//echo CHtml::label('Профиль', '');
+echo CHtml::label('Профиль', '');
 echo CHtml::dropDownList('profile','user', ['signed'=>'Обычный','admin'=>'Админский']);
 echo CHtml::submitButton('Добавить');
 echo CHtml::endForm();

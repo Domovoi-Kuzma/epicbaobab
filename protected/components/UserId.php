@@ -10,8 +10,6 @@
  * Class UserId
  * предоставляет данные для проверки пароля юзера
  * для теста установлен аккаунт demo/demo
- * @todo изменить на идентификацию по базе
- * @todo подумать не здесь ли задать суперпользователя
  * @author  Sasha
  * @data    30.08.2019
  */
@@ -39,7 +37,11 @@ class UserId extends CUserIdentity
         }
         return !$this->errorCode;
     }
-    /*служебная функция захода админа без проверки базы*/
+    /**
+     * служебная функция захода админа без проверки базы
+     * @author  Sasha
+     * @date    06.09.2019
+     */
     private function testSuperAccount()
     {
         $user=User::model()->find('LOWER(username)=\'admin\'');

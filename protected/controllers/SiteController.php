@@ -68,7 +68,7 @@ class SiteController extends Controller
     }
 
     /**
-     * AJAX script called when meeting, liked by user
+     * AJAX сценарий, вызываемый, когда сользователь нажимает по лайку/дизлайку
      * @param integer $id ключ лайкнутой встречи.
      * @author  Sasha
      * @data    04.09.2019
@@ -77,7 +77,12 @@ class SiteController extends Controller
     {
         Yii::trace("actionToggleLike ID: $meeting_id ", 'system.web.CController');
         Like::Toggle($meeting_id);
-        $this->renderPartial('viewLikeButton', ['likeParam'=>Like::getLikeStatus($meeting_id)]);
+        $this->renderPartial('viewLikeButton', [
+            'isCurrent' =>Like::isCurrentLikeByMeet($meeting_id),
+            'likeCount'     =>Like::getCountByMeet($meeting_id),
+            'tooltip'   =>Like::getOtherLikesByMeet($meeting_id),
+            ]
+        );
     }
 
     /**
@@ -189,7 +194,7 @@ class SiteController extends Controller
      *  Редактирование записи встречи.
      * @param integer $id ключ в таблице встреч
      * @author  Sasha
-     * @data    21.08.2019
+     * @data 21.08.2019
      */
     public function actionEditMeeting($id)
     {

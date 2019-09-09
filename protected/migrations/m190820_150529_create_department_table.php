@@ -11,7 +11,8 @@ class m190820_150529_create_department_table extends CDbMigration
                                             )
         );
 
-        $this->insertMultiple('department',[['Caption' => 'IT'],['Caption' => 'HQ'],]);
+        $this->insert('department',['Caption' => 'IT']);
+        $this->insert('department',['Caption' => 'HQ']);
 
         $this->addColumn('people', 'Dept_ID', 'int');
         $this->update('people', array(

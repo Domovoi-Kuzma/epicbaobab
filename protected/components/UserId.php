@@ -38,7 +38,9 @@ class UserId extends CUserIdentity
         return !$this->errorCode;
     }
     /**
-     * служебная функция захода админа без проверки базы
+     * Cлужебная функция захода админа без проверки базы
+     * (в конфиге должно быть 'params'=>'defaultAdmin'=>'true')
+     * @return  boolean успешность валидации супераккаунта
      * @author  Sasha
      * @date    06.09.2019
      */
@@ -59,7 +61,7 @@ class UserId extends CUserIdentity
         return false;
     }
     /**
-     * выдаёт
+     * Выдаёт ID пользователя
      * @return mixed
      */
     public function getId()

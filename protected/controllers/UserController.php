@@ -18,7 +18,6 @@ class UserController extends Controller
 
     /**
      * Место для вызова панели админа
-     * gazprom.loc/user/control
      * @author  Sasha
      * @date    30.08.2019
      */

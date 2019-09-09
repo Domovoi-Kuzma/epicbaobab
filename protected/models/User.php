@@ -11,11 +11,16 @@
  */
 class User extends CActiveRecord
 {
+    /**
+     * Сохраняет параметры $_POST в модель и в БД
+     * @return bool успешность сохранения
+     * @author  Sasha
+     * @data    09.09.2019
+     */
 	public function saveAs()
 	{
 		$this->username=(isset($_POST['username']))?$_POST['username']:'';
 		$this->profile =(isset($_POST['profile'])) ?$_POST['profile'] :'';
-        //$this->likes=[];
         if (!empty($_POST['password'])) {
             $this->hashPassword($_POST['password']);
         }
@@ -111,7 +116,7 @@ class User extends CActiveRecord
 	}
 	/**
 	 * Checks if the given password is correct.
-	 * @param string the password to be validated
+	 * @param string $password the password to be validated
 	 * @return boolean whether the password is valid
 	 */
 	public function validatePassword($password)
@@ -138,7 +143,7 @@ class User extends CActiveRecord
 
 	/**
 	 * Generates the password hash.
-	 * @param string password
+	 * @param string $password
 	 * @return string hash
 	 */
 	public function hashPassword($password)

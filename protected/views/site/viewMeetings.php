@@ -1,6 +1,6 @@
 <script>
 <?php
-//внимание! картинки отображаются в IE при указании папки CSS и наоборот в Chrome появляются только без папки!
+//Внимание! картинки отображаются в IE при указании папки CSS и наоборот в Chrome появляются только без папки!
 
 echo "    var ajaxAddress='".$this->createUrl('toggleLike',['meeting_id'=>''])."';\n";
 //URL адрес без конкретного айдишника в параметрах (его в скрипте конкатинируем в конец)
@@ -32,8 +32,6 @@ foreach ($meetings as $item) {
     $id=$item['ID'];
     $editaddress=$this->createUrl('editMeeting',['id'=>$id]);
     $deleteaddress=$this->createUrl('deleteMeeting',['id'=>$id]);
-
-    $commentaddress='index.php?r=user/comments&id='.$id;
     echo "<li>".$item['Meeting']." (room ".$item['room']['Number'].")(members: ".$item['memberCount'].")";
 
     echo "&nbsp;<a href=$editaddress>изменить</a>/<a href=$deleteaddress>удалить</a>";

@@ -8,8 +8,9 @@ class m190820_152140_create_room_table extends CDbMigration
             'ID' => 'pk',
             'Number' => 'varchar(255)',
         ));
-        $this->insertMultiple('room',[['Number' => '301'],['Number' => '302'],['Number' => '303']]);
-
+        $this->insert('room',['Number' => '301']);
+        $this->insert('room',['Number' => '302']);
+        $this->insert('room',['Number' => '303']);
         $this->addColumn('meets', 'Place', 'int');
         $this->update('meets', array(
             'Place' => '1'),

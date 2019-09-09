@@ -30,6 +30,7 @@ class Meets extends CActiveRecord
             $this->related_people=[];
         return $this->save();
     }
+
     /**
      * @return string the associated database table name
      */
@@ -37,7 +38,6 @@ class Meets extends CActiveRecord
     {
         return 'meets';
     }
-
     /**
      * @return array validation rules for model attributes.
      */
@@ -86,7 +86,7 @@ class Meets extends CActiveRecord
      * Возвращает массив встреч,
      * с числом участников не меньше $count
      * @return array массив моделей встреч
-     * @param  $count заданный пользователем минимум участников
+     * @param  int $count заданный пользователем минимум участников
      * @author  Sasha
      * @data    21.08.2019
      */
@@ -102,7 +102,6 @@ class Meets extends CActiveRecord
         return  Meets::model()->findAll($criteria);;
     }
 
-
     /**
      * Retrieves a list of models based on the current search/filter conditions.
      *
@@ -117,13 +116,10 @@ class Meets extends CActiveRecord
      */
     public function search()
     {
-
         $criteria=new CDbCriteria;
-
         $criteria->compare('ID',$this->ID);
         $criteria->compare('Meeting',$this->Meeting,true);
         $criteria->compare('Place',$this->Place);
-
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,
         ));

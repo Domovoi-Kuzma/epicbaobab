@@ -64,7 +64,7 @@ class Like extends CActiveRecord
 
     /**
      * Получение общего количества лайков к встрече с ключём MID
-     * @param MID ключ встречи, которую проверяют
+     * @param int $MID ключ встречи, которую проверяют
      * @return int количество лайков
      * @author  Sasha
      * @data    06.09.2019
@@ -79,7 +79,7 @@ class Like extends CActiveRecord
 
     /**
      * Получение списка лайков других юзеров к встрече $MID в виде массива
-     * @param MID ключ встречи, которую проверяют
+     * @param int $MID ключ встречи, которую проверяют
      * @return array модели всех лайков других юзеров
      * @author  Sasha
      * @data    06.09.2019
@@ -95,8 +95,8 @@ class Like extends CActiveRecord
 
     /**
      * Получение статуса лайка текущим юзером встречи с ключём MID
-     * @param MID ключ встречи, которую проверяют
-     * @return bool юзер лайкал, то true
+     * @param int $MID ключ встречи, которую проверяют
+     * @return bool если юзер лайкал, то true
      * @author  Sasha
      * @data    06.09.2019
      */
@@ -110,14 +110,13 @@ class Like extends CActiveRecord
     }
 
     /**
-     * переворот лайка (если есть - удаление, если нет - добавление)
-     * @param MID ключ модели в базе
+     * Переворот лайка (если есть - удаление, если нет - добавление)
+     * @param int $MID ключ модели в базе
      * @author  Sasha
      * @data    06.09.2019
      */
     public static function Toggle($MID)
     {
-        Yii::trace("Like::Toggle ID: ".$MID, 'system.web.CController');
         $criteria=new CDbCriteria();
         $criteria->addCondition('user_id=:user_crit');
         $criteria->addCondition('meet_id=:meet_crit');

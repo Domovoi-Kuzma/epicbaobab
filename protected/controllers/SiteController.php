@@ -4,7 +4,6 @@
  */
 /**
  * Class SiteController
- *
  */
 class SiteController extends Controller
 {
@@ -66,20 +65,18 @@ class SiteController extends Controller
     {
         $this->render('viewMeetings',array('meetings'=>Meets::model()->findAll()));
     }
-
     /**
-     * AJAX сценарий, вызываемый, когда сользователь нажимает по лайку/дизлайку
+     * AJAX сценарий, вызываемый, когда пользователь нажимает по лайку/дизлайку
      * @param integer $id ключ лайкнутой встречи.
      * @author  Sasha
      * @data    04.09.2019
      */
     public function actionToggleLike($meeting_id)
     {
-        Yii::trace("actionToggleLike ID: $meeting_id ", 'system.web.CController');
         Like::Toggle($meeting_id);
         $this->renderPartial('viewLikeButton', [
             'isCurrent' =>Like::isCurrentLikeByMeet($meeting_id),
-            'likeCount'     =>Like::getCountByMeet($meeting_id),
+            'likeCount' =>Like::getCountByMeet($meeting_id),
             'tooltip'   =>Like::getOtherLikesByMeet($meeting_id),
             ]
         );
@@ -92,15 +89,15 @@ class SiteController extends Controller
      */
     public function actionInsertEmployee()
     {
-        $newman=new People();
+        $model=new People();
         if (isset($_POST['ID'])){
-            $newman->saveAs();
+            $model->saveAs();
             $this->redirect($this->createUrl('employees'));
         }
         else{
             $this->render('viewInsertEmployeeForm',
                 [
-                    'model'     =>$newman,
+                    'model'     =>$model,
                     'action'    =>$this->createUrl('insertEmployee'),
                     'optionsM'  =>Meets::model()->findAll(),
                     'optionsD'  =>Department::model()->findAll(),
@@ -115,14 +112,14 @@ class SiteController extends Controller
      */
     public function actionInsertMeeting()
     {
-        $newmeet=new Meets();
+        $model=new Meets();
         if (isset($_POST['ID'])) {
-            $newmeet->saveAs();
+            $model->saveAs();
             $this->redirect($this->createUrl('meeting'));
         }
         else {
             $this->render('viewInsertMeetingForm', [
-                'model'     =>$newmeet,
+                'model'     =>$model,
                 'action'    =>$this->createUrl('insertMeeting'),
                 'optionsP'  =>People::model()->findAll(),
                 'optionsR'  =>Room::model()->findAll(),
@@ -132,44 +129,42 @@ class SiteController extends Controller
     /**
      * Удаление записи
      * @param integer $id ключ сотрудника.
+     * @throws CHttpException
      * @author  Sasha
      * @data    21.08.2019
      */
     public function actionDeleteEmployee($id)
     {
-        $record=People::model()->findByPk($id);
-        if (is_null($record))
+        if (1!=People::model()->deleteByPk($id))
             throw new CHttpException(404,"Записи сотрудника с ключом $id нет в базе");
-        $record->delete();
         $this->redirect($this->createUrl('employees'));
     }
 
     /**
      * Удаление встречи из базы
      * @param integer $id ключ встречи.
+     * @throws CHttpException
      * @author  Sasha
      * @data    21.08.2019
      */
     public function actionDeleteMeeting($id)
     {
-        $record=Meets::model()->findByPk($id);
-        if (is_null($record))
+        if (Meets::model()->deleteByPk($id)!=1)
             throw new CHttpException(404,"Записи встречи с ключом $id нет в базе");
-        $record->delete();
         $this->redirect($this->createUrl('meeting'));
     }
 
     /**
      * Редактирование записи сотрудника
      * @param integer $id ключ записи в БД
+     * @throws CHttpException
      * @author  Sasha
      * @data    21.08.2019
      */
     public function actionEditEmployee($id)
     {
         if (isset($_POST['ID'])){
-            $record=People::model()->findByPk(intval($_POST['ID']));
-
+            $record=People::model()->findByPk($_POST['ID']);
             if (is_null($record))
                 throw new CHttpException(404,"Записи сотрудника с ключом $id нет в базе");
             $record->saveAs();
@@ -193,15 +188,14 @@ class SiteController extends Controller
     /**
      *  Редактирование записи встречи.
      * @param integer $id ключ в таблице встреч
+     * @throws CHttpException
      * @author  Sasha
      * @data 21.08.2019
      */
     public function actionEditMeeting($id)
     {
-
         if (isset($_POST['ID'])) {
-            $id=intval($_POST['ID']);
-            $record=Meets::model()->findByPk($id);
+            $record=Meets::model()->findByPk($_POST['ID']);
             if (is_null($record))
                 throw new CHttpException(404,"Записи встречи с ключом $id нет в базе");
             $record->saveAs();
@@ -240,6 +234,7 @@ class SiteController extends Controller
      * Позволяет выбрать комнату и выводит список событий в ней
      * с параметром all выводит список всех комнат
      * @param  string $id ключ комнаты базе
+     * @throws CHttpException
      * @author  Sasha
      * @data    21.08.2019
      */
@@ -258,22 +253,16 @@ class SiteController extends Controller
 
     /**
      * Удаляет комнату
-     * @param  integer $id ключ комнаты базе
+     * @param integer $id ключ комнаты базе
+     * @throws CHttpException
      * @author  Sasha
      * @data    21.08.2019
      */
     public function actionRoomDelete($id)
     {
-        if (isset($id)) {
-            $model = Room::model()->findByPk($id);
-            if (is_null($model))
-                throw new CHttpException(404, "Записи комнаты с ключом $id нет в базе");
-            $model->delete();
-            $this->redirect($this->createUrl('roomExplore/all'));
-        }
-        else {
-            throw new CHttpException(404, "неверный формат адреса");
-        }
+        if (Room::model()->deleteByPk($id) != 1)
+            throw new CHttpException(404,"Записи комнаты с ключом $id нет в базе");
+        $this->redirect($this->createUrl('roomExplore/all'));
     }
     /**
      * Добавление новой записи комнаты в базу
@@ -282,15 +271,15 @@ class SiteController extends Controller
      */
     public function actionInsertRoom()
     {
-        $newrum = new Room();
+        $model = new Room();
         if (isset($_POST['ID'])) {
-            $newrum->saveAs();
+            $model->saveAs();
             $this->redirect($this->createUrl('roomExplore/all'));
         }
         else {
             $this->render('viewRoomForm',
                 [
-                    'model' => $newrum,
+                    'model' => $model,
                     'action' => 'insertRoom',
                 ]);
         }
@@ -298,25 +287,26 @@ class SiteController extends Controller
     /**
      * Редактирование записи комнаты
      * @param integer $id ключ записи в БД
+     * @throws CHttpException
      * @author  Sasha
      * @data    21.08.2019
      */
     public function actionEditRoom($id)
     {
         if (isset($_POST['ID'])) {
-            $newrum=Room::model()->findByPk(intval($_POST['ID']));
-            if (is_null($newrum))
+            $model=Room::model()->findByPk(intval($_POST['ID']));
+            if (is_null($model))
                 throw new CHttpException(404, "Записи комнаты с ключом $id нет в базе");
-            $newrum->SaveAs();
+            $model->SaveAs();
             $this->redirect($this->createUrl('roomExplore/all'));
         }
         else {
-            $newrum=Room::model()->findByPk($id);
-            if (is_null($newrum))
+            $model=Room::model()->findByPk($id);
+            if (is_null($model))
                 throw new CHttpException(404, "Записи комнаты с ключом $id нет в базе");
             $this->render('viewRoomForm',
                 [
-                    'model' => $newrum,
+                    'model' => $model,
                     'action' => 'editRoom',
                 ]);
         }
@@ -325,6 +315,7 @@ class SiteController extends Controller
      * Позволяет выбрать отдел и выводит список сотрудников в нём
      * с параметром all выводит список всех отделов
      * @param  string $id ключ отдела в базе
+     * @throws CHttpException
      * @author  Sasha
      * @data    21.08.2019
      */
@@ -344,23 +335,16 @@ class SiteController extends Controller
     /**
      * Удаляет отдел
      * @param  integer $id ключ отдела базе
+     * @throws CHttpException
      * @author  Sasha
      * @data    21.08.2019
      */
     public function actionDeptDelete($id)
     {
-        if (isset($id)) {
-            $model = Department::model()->findByPk($id);
-            if (is_null($model))
-                throw new CHttpException(404, "Записи отдела с ключом $id нет в базе");
-            $model->delete();
-            $this->redirect($this->createUrl('deptExplore/all'));
-        }
-        else
-            throw new CHttpException(404, "неверный формат адреса");
+        if (Department::model()->deleteByPk($id) != 1)
+            throw new CHttpException(404, "Записи отдела с ключом $id нет в базе");
+        $this->redirect($this->createUrl('deptExplore/all'));
     }
-
-
     /**
      * Добавление новой записи отдела в базу
      * @author  Sasha
@@ -368,41 +352,41 @@ class SiteController extends Controller
      */
     public function actionInsertDepartment()
     {
-        $newdept = new Department();
+        $model = new Department();
         if (isset($_POST['ID'])) {
-            $newdept->saveAs();
+            $model->saveAs();
             $this->redirect($this->createUrl('deptExplore/all'));
         } else {
             $this->render('viewDepartmentForm',
                 [
-                    'model' => $newdept,
+                    'model' => $model,
                     'action' => 'insertDepartment',
                 ]);
         }
     }
-
     /**
      * Редактирование записи отдела
      * @param integer $id ключ записи в БД
+     * @throws CHttpException
      * @author  Sasha
      * @data    21.08.2019
      */
     public function actionEditDepartment($id)
     {
         if (isset($_POST['ID'])) {
-            $newdept=Department::model()->findByPk(intval($_POST['ID']));
-            if (is_null($newdept))
+            $model=Department::model()->findByPk(intval($_POST['ID']));
+            if (is_null($model))
                 throw new CHttpException(404, "Ошибка! Не найден отдел с ключём $id");
-            $newdept->SaveAs();
+            $model->SaveAs();
             $this->redirect($this->createUrl('deptExplore/all'));
         }
         else {
-            $newdept=Department::model()->findByPk($id);
-            if (is_null($newdept))
+            $model=Department::model()->findByPk($id);
+            if (is_null($model))
                 throw new CHttpException(404, "Ошибка! Не найден отдел с ключём $id");
             $this->render('viewDepartmentForm',
                 [
-                    'model' => $newdept,
+                    'model' => $model,
                     'action' => 'editDepartment',
                 ]);
         }
@@ -415,16 +399,12 @@ class SiteController extends Controller
     }
 
     /**
-     * задаёт ограничения на посещение страниц категориям пользователей
+     * Задаёт ограничения на посещение страниц категориям пользователей
      * @return array
      */
     public function accessRules()
     {
         return array(
-           /* array('allow',
-                'actions' => array('Index', 'Login'),
-                'users'=>array('*'),
-            ),*/
             array('allow',
                 'actions' => array('employees', 'meeting', 'memberCountForm', 'roomExplore', 'deptExplore'),
                 'users'=>array('admin', 'signed'),

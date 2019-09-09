@@ -16,8 +16,8 @@ echo '<div class="form">';
     echo '<div class="row">';
             echo CHtml::submitButton('Submit');
     echo '</div>';
-echo '</div>';
 echo CHtml::endForm();
+echo '</div>';
         if (isset($meetingList)) {
             echo '<br> Вывод результата<ul>';
             foreach ($meetingList as $meetingValue) {
@@ -30,4 +30,3 @@ echo CHtml::endForm();
             echo '</ul>';
         }
 ?>
-</div>

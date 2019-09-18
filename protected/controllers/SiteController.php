@@ -76,10 +76,12 @@ class SiteController extends Controller
         if(isset($_GET['People']))
         {
             //http://gazprom.loc/listing?People%5BName%5D=1&People_page=1&ajax=source-grid
-            Yii::trace("actionList", 'system.web.CController');
-            //var_dump($_GET);
-            //die();
+            ob_start();
+            var_dump($_GET);
+            $logstr = ob_get_clean();
+            Yii::trace("actionListing _GET is $logstr", 'system.web.CController');
             $model->Name=$_GET['People']['Name'];
+            $model->Dept_ID=$_GET['People']['Dept_ID'];
         }
         $dataProvider=    $model->search();
         $this->render('viewList',array(

@@ -33,6 +33,16 @@ $this->widget('ext.BootGroupGridView', array(
                     "Name"),
             'value'  => '$data->Name',
         ),
+       array(
+            'type'  => 'raw',
+            'name'  => 'Dept_ID',
+            'filter' =>
+                CHtml::listData(
+                    Department::model()->findAll(),
+                    "ID",
+                    "Caption"),
+            'value'  => '$data->dept->Caption',
+        ),
     ),
 ));
 ?>

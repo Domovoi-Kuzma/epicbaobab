@@ -10,8 +10,7 @@ class m190903_153702_create_likes_table extends CDbMigration
             'user_id' => 'int',
             'meet_id' => 'int',
         ));
-        $this->addForeignKey('FK_like_user', 'like', 'user_id', 'user', 'ID', 'CASCADE', 'CASCADE');
-        $this->addForeignKey('FK_like_meet', 'like', 'meet_id', 'meets', 'ID', 'CASCADE', 'CASCADE');
+        $this->createIndex('likeIndex', 'like', 'meet_id,user_id', true);
 	}
 
 	public function down()

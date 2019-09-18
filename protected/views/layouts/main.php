@@ -33,6 +33,7 @@
             'items'=>array(
                 array('label'=>'Home', 'url'=>array('site/index')),
                 array('label'=>'Список сотрудников', 'url'=>array('site/employees'), 'visible'=>!Yii::app()->user->isGuest),
+                array('label'=>'Список advanced', 'url'=>array('site/listing')),
                 array('label'=>'Список Встреч', 'url'=>array('site/meeting'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Поиск Встреч', 'url'=>array('site/memberCountForm'), 'visible'=>!Yii::app()->user->isGuest),
                 array('label'=>'Вывод по комнатам', 'url'=>array('roomExplore/all'), 'visible'=>!Yii::app()->user->isGuest),

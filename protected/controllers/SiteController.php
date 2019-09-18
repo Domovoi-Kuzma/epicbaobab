@@ -66,6 +66,34 @@ class SiteController extends Controller
         $this->render('viewMeetings',array('meetings'=>Meets::model()->findAll()));
     }
     /**
+     * Вывод списка ВИДЖЕТОМ
+     * @author  Sasha
+     * @data    21.08.2019
+     */
+    public function actionListing()
+    {
+        $criteria=new CDbCriteria(array(
+            'condition'=>'ID>0',
+        ));
+        $dataProvider=new CActiveDataProvider('People', array(
+            'pagination'=>array(
+                'pageSize'=>10,
+            ),
+            'criteria'=>$criteria,
+        ));
+        $model=new People();
+        if(isset($_GET['People']))
+        {
+            Yii::trace("actionList", 'system.web.CController');
+            $model->Dept_ID=$_GET['People']['Dept_ID'];
+            $dataProvider=    $model->search();
+        }
+        $this->render('viewList',array(
+            'dataProvider'=>$dataProvider,
+            'model'=>$model,
+        ));
+    }
+    /**
      * AJAX сценарий, вызываемый, когда пользователь нажимает по лайку/дизлайку
      * @param integer $id ключ лайкнутой встречи.
      * @author  Sasha

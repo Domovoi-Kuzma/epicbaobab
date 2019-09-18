@@ -88,8 +88,7 @@ class Like extends CActiveRecord
     {
         $criteria=new CDbCriteria();
         $criteria->addCondition('meet_id=:meet_crit');
-        $criteria->addCondition('user_id!=:user_crit');
-        $criteria->params=array(':meet_crit'=>$MID, ':user_crit'=>Yii::app()->user->id);
+        $criteria->params=array(':meet_crit'=>$MID);
         return Like::model()->findAll($criteria);
     }
 

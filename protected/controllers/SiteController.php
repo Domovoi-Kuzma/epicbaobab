@@ -72,22 +72,16 @@ class SiteController extends Controller
      */
     public function actionListing()
     {
-        $criteria=new CDbCriteria(array(
-            'condition'=>'ID>0',
-        ));
-        $dataProvider=new CActiveDataProvider('People', array(
-            'pagination'=>array(
-                'pageSize'=>10,
-            ),
-            'criteria'=>$criteria,
-        ));
         $model=new People();
         if(isset($_GET['People']))
         {
+            //http://gazprom.loc/listing?People%5BName%5D=1&People_page=1&ajax=source-grid
             Yii::trace("actionList", 'system.web.CController');
-            $model->Dept_ID=$_GET['People']['Dept_ID'];
-            $dataProvider=    $model->search();
+            //var_dump($_GET);
+            //die();
+            $model->Name=$_GET['People']['Name'];
         }
+        $dataProvider=    $model->search();
         $this->render('viewList',array(
             'dataProvider'=>$dataProvider,
             'model'=>$model,

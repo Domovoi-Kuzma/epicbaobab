@@ -1,5 +1,7 @@
 assets/*.*
 protected\runtime\*.*
+protected\extensions\bootstrap\*.*
+protected\extensions\BootGroupGridView.php
 testBig.sql
 testOld.sql
 testSmall.sql

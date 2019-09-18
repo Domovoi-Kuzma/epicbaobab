@@ -96,10 +96,10 @@ class People extends CActiveRecord
         // @todo Please modify the following code to remove attributes that should not be searched.
 
         $criteria=new CDbCriteria;
-
-        $criteria->compare('ID',$this->ID);
+        Yii::trace('search called for name'.$this->Name,'system.web.CController');
+       // $criteria->compare('ID',$this->ID);
         $criteria->compare('Name',$this->Name,true);
-        $criteria->compare('Dept_ID',$this->Dept_ID);
+       // $criteria->compare('Dept_ID',$this->Dept_ID);
 
         return new CActiveDataProvider($this, array(
             'criteria'=>$criteria,

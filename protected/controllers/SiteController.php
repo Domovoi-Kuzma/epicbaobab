@@ -391,6 +391,11 @@ class SiteController extends Controller
                 ]);
         }
     }
+
+    public function actionRating()
+    {
+        $this->render('rating');
+    }
     public function filters()
     {
         return array(
